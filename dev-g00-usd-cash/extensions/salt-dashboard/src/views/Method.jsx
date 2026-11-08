@@ -1,14 +1,19 @@
+import katex from 'katex';
 import {Card, H3, Link, Text} from '@salt-ds/core';
 
+// The model's formulas in TeX, typeset by KaTeX as MathML so the browser's own math font draws them and no font files
+// are bundled. Symbols: B cash placed, d bank discount quote, n days, a inflation; P, N, F, R are defined in order.
 const FORMULAS = [
-  'price per 100 = 100 × (1 − d × n / 360)',
-  'nominal proceeds = B × 100 / price per 100',
-  'inflation factor = (1 + a)^(n / 365)',
-  'purchasing power = nominal proceeds / inflation factor',
-  'real holding return = purchasing power / B − 1',
-  'break-even annual inflation = (100 / price per 100)^(365 / n) − 1',
-  'CPI year on year = CPI month / CPI same month a year earlier − 1'
-];
+  {label: 'Price per $100 of face value', tex: 'P = 100\\left(1 - \\frac{d\\,n}{360}\\right)'},
+  {label: 'Nominal proceeds at maturity', tex: 'N = B \\cdot \\frac{100}{P}'},
+  {label: 'Inflation factor over the holding period', tex: 'F = (1 + a)^{n/365}'},
+  {label: 'Purchasing power in quote-date dollars', tex: 'R = \\frac{N}{F}'},
+  {label: 'Real holding-period return', tex: '\\frac{R}{B} - 1'},
+  {label: 'Break-even annual inflation', tex: '\\left(\\frac{100}{P}\\right)^{365/n} - 1'},
+  {label: 'CPI year on year', tex: '\\frac{\\mathrm{CPI}_{t}}{\\mathrm{CPI}_{t-12}} - 1'}
+].map(f => ({...f, html: katex.renderToString(f.tex, {output: 'mathml', displayMode: true, throwOnError: true})}));
+const SYMBOLS = [['B', 'cash placed'], ['d', 'bank discount quote, as a decimal'], ['n', 'calendar days from the saved quote date to maturity'],
+  ['a', 'assumed effective annual inflation rate']].map(([tex, text]) => ({text, html: katex.renderToString(tex, {output: 'mathml', throwOnError: true})}));
 
 export function Method({dash, ladder}) {
   const rule = dash.config.freshness;
@@ -16,8 +21,12 @@ export function Method({dash, ladder}) {
     <div className="view method">
       <Card className="card">
         <H3>How the numbers are made</H3>
-        <Text>B is the cash placed, d the bank discount quote as a decimal, n the actual calendar days from the saved quote date to maturity, and a the assumed effective annual inflation rate.</Text>
-        <pre className="formulas">{FORMULAS.join('\n')}</pre>
+        <dl className="symbols">
+          {SYMBOLS.map(s => <div key={s.text}><dt dangerouslySetInnerHTML={{__html: s.html}} /><dd>{s.text}</dd></div>)}
+        </dl>
+        <dl className="formulas">
+          {FORMULAS.map(f => <div key={f.label}><dt>{f.label}</dt><dd dangerouslySetInnerHTML={{__html: f.html}} /></div>)}
+        </dl>
         <Text color="secondary">Amounts display rounded to dollars and returns to two decimals; calculations keep full precision. "Real" means in quote-date dollars. The model starts at the saved quote date and does not price settlement, taxes, fees or early sale.</Text>
       </Card>
       <div className="split-even">

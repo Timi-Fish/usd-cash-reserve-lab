@@ -30,9 +30,9 @@
   --salt-text-action-letterSpacing: 0;
 }
 
-/* The letterhead spans the page; its content lines up with the 1320px shell below. */
+/* The letterhead spans the page; its text lines up with the text inside the cards below (the shell's edge plus a card's padding). */
 .app-header {
-  --lab-gutter: max(var(--salt-spacing-400), calc((100% - 1320px) / 2 + var(--salt-spacing-400)));
+  --lab-gutter: calc(max(var(--salt-spacing-400), (100% - 1320px) / 2) + var(--salt-spacing-200) + var(--salt-size-fixed-100));
 }
 .masthead-strip {
   margin: 0;
@@ -61,7 +61,7 @@
 }
 @media screen and (max-width: 600px) {
   .app-header {
-    --lab-gutter: var(--salt-spacing-200);
+    --lab-gutter: calc(var(--salt-spacing-200) * 2 + var(--salt-size-fixed-100));
   }
   .masthead {
     padding-block: var(--salt-spacing-200);

@@ -184,14 +184,51 @@ body {
 .memo-disclaimer {
   color: var(--salt-content-secondary-foreground);
 }
+/* Method: the symbols in one row, then one tile per formula, so the formulas fill the card's width. */
+.symbols,
 .formulas {
+  display: grid;
   margin: 0;
-  padding: var(--salt-spacing-200);
-  overflow-x: auto;
+}
+.symbols {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--salt-spacing-100) var(--salt-spacing-300);
+}
+.symbols div {
+  display: flex;
+  align-items: baseline;
+  gap: var(--salt-spacing-100);
+}
+.symbols dd {
+  margin: 0;
+  color: var(--salt-content-secondary-foreground);
+}
+.formulas {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--salt-spacing-150);
+}
+.formulas div {
+  display: grid;
+  align-content: start;
+  gap: var(--salt-spacing-100);
+  padding: var(--salt-spacing-150) var(--salt-spacing-200);
   background: var(--salt-container-secondary-background);
-  font-family: var(--salt-typography-fontFamily-code, monospace);
+}
+.formulas dt {
   font-size: var(--salt-text-label-fontSize);
-  line-height: 1.8;
+  color: var(--salt-content-secondary-foreground);
+}
+.formulas dd {
+  margin: 0;
+}
+/* MathML from KaTeX, drawn with the system's math font. */
+.method math {
+  font-family: 'STIX Two Math', 'Cambria Math', 'Latin Modern Math', math;
+  font-size: 1.15em;
+}
+/* Inline math layout keeps each formula on the tile's left edge, under its label, instead of centred. */
+.formulas math {
+  display: inline math;
 }
 .plain-list {
   margin: 0;
@@ -201,20 +238,27 @@ body {
 }
 
 /* Static About and footer from index.html */
+/* The same box as the cards above: the shell's gutter outside and a card's padding inside, so text and rule line up. */
 .lab-about,
 .lab-footer {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: var(--salt-spacing-200) var(--salt-spacing-400);
+  margin: 0 max(var(--salt-spacing-400), calc((100% - 1320px) / 2));
+  padding: var(--salt-spacing-200) calc(var(--salt-spacing-200) + var(--salt-size-fixed-100));
   color: var(--salt-content-secondary-foreground);
   font-size: var(--salt-text-label-fontSize);
 }
+/* The course's About text keeps its markup; its three paragraphs (who it serves, data, limits) sit side by side so the
+   band uses the full width instead of a narrow column. */
+.lab-about {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--salt-spacing-400);
+}
 .lab-about h2 {
+  grid-column: 1 / -1;
   font-size: var(--salt-text-h4-fontSize, 1rem);
   margin: 0 0 var(--salt-spacing-100);
 }
 .lab-about p {
-  max-width: 100ch;
   margin: 0 0 var(--salt-spacing-100);
 }
 .lab-footer {
@@ -222,6 +266,7 @@ body {
 }
 
 @media (max-width: 900px) {
+  .lab-about,
   .split,
   .split-wide,
   .split-even {
@@ -232,11 +277,14 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
-  .shell,
-  .lab-about,
-  .lab-footer {
+  .shell {
     padding-left: var(--salt-spacing-200);
     padding-right: var(--salt-spacing-200);
+  }
+  .lab-about,
+  .lab-footer {
+    margin-left: var(--salt-spacing-200);
+    margin-right: var(--salt-spacing-200);
   }
   .metrics {
     grid-template-columns: minmax(0, 1fr);
