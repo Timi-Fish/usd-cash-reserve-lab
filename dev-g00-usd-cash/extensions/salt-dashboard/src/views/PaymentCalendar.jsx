@@ -153,7 +153,7 @@ function Workspace({ladder, payments, setPayments, today}) {
           {undo !== null && <Button appearance="transparent" onClick={restore}>{undo.text}</Button>}
           {payments.length > 0 && <Button appearance="transparent" onClick={clear}>Clear all</Button>}
         </div>
-        <Text color="secondary" styleAs="label" className="privacy">Nothing is saved or sent. Closing the page clears the dates; copy or print the discussion summary to keep a record.</Text>
+        <Text color="secondary" styleAs="label" className="privacy">Nothing is saved or sent. Closing the page clears the dates; copy or print the summary from Overview to keep a record.</Text>
       </Card>
       <Card className="card">
         <H3>Saved maturities against your payment dates</H3>

@@ -163,6 +163,10 @@ body {
   position: relative;
   height: 320px;
 }
+/* The discussion summary exists only for printing; on screen, Copy and Print sit in the Overview's actions. */
+.print-memo {
+  display: none;
+}
 .memo {
   max-width: 80ch;
   padding: var(--salt-spacing-200) var(--salt-spacing-300);
@@ -303,8 +307,24 @@ body {
   .app-header .quote-status,
   [role='tablist'],
   .tab-panel[hidden],
-  .summary-actions,
   .lab-about {
     display: none !important;
+  }
+  /* Printing from Overview prints the summary alone, under the letterhead and data status. */
+  .overview > :not(.next-steps),
+  .overview .next-steps > :not(.print-memo) {
+    display: none !important;
+  }
+  /* The printed letterhead and footer already carry the disclaimer; the copied text keeps its own. */
+  .print-memo .memo-disclaimer {
+    display: none;
+  }
+  .print-memo {
+    display: block;
+    flex-basis: 100%;
+    max-width: none;
+    padding: 0;
+    border: 0;
+    background: none;
   }
 }

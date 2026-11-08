@@ -5,7 +5,6 @@ import {Overview} from './views/Overview.jsx';
 import {PaymentCalendar} from './views/PaymentCalendar.jsx';
 import {Scenarios} from './views/Scenarios.jsx';
 import {History} from './views/History.jsx';
-import {Summary} from './views/Summary.jsx';
 import {Method} from './views/Method.jsx';
 
 const {checkBills, DAY_MS} = globalThis.Ladder;
@@ -17,7 +16,6 @@ const TABS = [
   {id: 'calendar', label: 'Calendar', View: PaymentCalendar},
   {id: 'scenarios', label: 'Scenarios', View: Scenarios},
   {id: 'history', label: 'History', View: History},
-  {id: 'summary', label: 'Summary', View: Summary},
   {id: 'method', label: 'Method', View: Method}
 ];
 

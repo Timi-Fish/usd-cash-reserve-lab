@@ -4,6 +4,7 @@ import {BillKey} from '../components/BillKey.jsx';
 import {NoBreak} from '../components/NoBreak.jsx';
 import {PaymentTimeline} from '../components/PaymentTimeline.jsx';
 import {PowerBridge} from '../components/PowerBridge.jsx';
+import {SummaryActions} from '../components/SummaryActions.jsx';
 import {scenario} from '../model.js';
 import {evaluate} from '../summary.js';
 import {changeText, pct, signedPct, usd} from '../format.js';
@@ -45,12 +46,12 @@ function Timing({ladder, payments, bill, goTo}) {
   return <Card className="card">{head('All payment dates')}<PaymentTimeline ladder={ladder.value} payments={L.byDate(payments)} bill={bill} /></Card>;
 }
 
-export function Overview({dash, ladder, payments, inputs, setInputs, assumptions, goTo}) {
+export function Overview({dash, ladder, payments, inputs, setInputs, assumptions, goTo, today}) {
   const {bill, outcome, error} = evaluate(dash, assumptions);
   const outcomes = dash.instruments.map(q => error === null ? scenario(assumptions.principal, q.discount, q.days, assumptions.inflation) : null);
   const column = q => COLUMN[q.weeks === assumptions.weeks];
   return (
-    <div className="view">
+    <div className="view overview">
       <Timing ladder={ladder} payments={payments} bill={bill} goTo={goTo} />
       <div className="split split-wide">
         <Card className="card">
@@ -98,7 +99,7 @@ export function Overview({dash, ladder, payments, inputs, setInputs, assumptions
       <div className="next-steps" role="group" aria-label="Next steps">
         <Button appearance="bordered" onClick={() => goTo('calendar')}>Check payment dates</Button>
         <Button appearance="bordered" onClick={() => goTo('scenarios')}>Test other inflation rates</Button>
-        <Button appearance="bordered" onClick={() => goTo('summary')}>Open the discussion summary</Button>
+        <SummaryActions dash={dash} ladder={ladder} assumptions={assumptions} payments={payments} today={today} />
       </div>
     </div>
   );
