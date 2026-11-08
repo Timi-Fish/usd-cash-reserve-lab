@@ -13,3 +13,5 @@ export const signedPct = (value, digits = 2) =>
   nearZero(value, digits) ? pct(0, digits) : `${value > 0 ? '+' : '−'}${pct(Math.abs(value), digits)}`;
 export const changeText = value => nearZero(value, 0) ? 'Purchasing power is approximately unchanged.'
   : `Purchasing power ${value > 0 ? 'increases' : 'decreases'} by ${usd(Math.abs(value))}.`;
+// Splits text so dates and terms such as "8-week" can be kept on one line: odd-indexed parts are those terms.
+export const unbreakableParts = text => text.split(/(\d{4}-\d{2}-\d{2}|\d+-(?:week|day))/);
