@@ -1,0 +1,262 @@
+/* Layout on Salt tokens. Salt components bring their own styles; this file only places them. The calendar tab is in calendar.css, the letterhead and theme remaps in brand.css. */
+body {
+  margin: 0;
+  background: var(--salt-container-secondary-background);
+  font-variant-numeric: tabular-nums;
+}
+.nb {
+  white-space: nowrap;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.shell {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--salt-spacing-300) var(--salt-spacing-400) var(--salt-spacing-500);
+}
+.status-banner {
+  margin-bottom: var(--salt-spacing-200);
+}
+.tab-panel {
+  padding-top: var(--salt-spacing-300);
+}
+.view {
+  display: grid;
+  gap: var(--salt-spacing-300);
+}
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--salt-spacing-150);
+  min-width: 0;
+}
+.card h3 {
+  margin: 0;
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  gap: var(--salt-spacing-300);
+  align-items: start;
+}
+.split-wide {
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+}
+.split-even {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--salt-spacing-300);
+}
+.assumptions,
+.form {
+  display: grid;
+  gap: var(--salt-spacing-200);
+}
+.result h2 {
+  margin: var(--salt-spacing-50) 0;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--salt-spacing-200);
+  padding: var(--salt-spacing-200) 0;
+  border-top: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+  border-bottom: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+}
+.metric {
+  display: grid;
+  gap: var(--salt-spacing-50);
+}
+.parts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--salt-spacing-200);
+}
+.part {
+  display: grid;
+  gap: var(--salt-spacing-50);
+  padding: var(--salt-spacing-150);
+  background: var(--salt-container-secondary-background);
+}
+/* The result takes a neutral outline: the pale tints mean selected or hovered rows. */
+.part:last-child {
+  background: var(--salt-container-primary-background);
+  box-shadow: inset 0 0 0 1px var(--salt-separable-primary-borderColor);
+}
+.next-steps,
+.row-actions,
+.checks,
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--salt-spacing-150);
+  align-items: center;
+}
+.toolbar {
+  gap: var(--salt-spacing-400);
+  align-items: flex-start;
+}
+.toolbar > * {
+  width: auto;
+}
+.break-evens {
+  display: grid;
+  gap: var(--salt-spacing-75);
+  margin-top: var(--salt-spacing-100);
+}
+.break-even {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--salt-spacing-100);
+}
+.timing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--salt-spacing-100);
+  padding: var(--salt-spacing-150) var(--salt-spacing-200);
+  background: var(--salt-container-secondary-background);
+}
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--salt-spacing-200);
+}
+.table-scroll {
+  overflow-x: auto;
+}
+/* Keeps labels near their values on wide screens. */
+.compare-table {
+  max-width: 760px;
+}
+/* Dates, tenors and headers in the exact-value table never break; the table scrolls instead. */
+.values-table th,
+.values-table td {
+  white-space: nowrap;
+}
+.selected-note {
+  color: var(--salt-content-secondary-foreground);
+  font-weight: normal;
+}
+/* Salt rows paint their background from --table-background, so selected and hovered rows set that variable. */
+.salt-theme tr.is-selected {
+  --table-background: var(--salt-selectable-background-selected);
+}
+.salt-theme table.saltTable tbody tr:not(.is-selected):hover {
+  --table-background: var(--salt-selectable-background-hover);
+}
+/* The selected bill's column in the comparison table. */
+.compare-table .is-selected-col {
+  background: var(--salt-selectable-background-selected);
+}
+.chart {
+  position: relative;
+  height: 320px;
+}
+.memo {
+  max-width: 80ch;
+  padding: var(--salt-spacing-200) var(--salt-spacing-300);
+  border: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+  background: var(--salt-container-secondary-background);
+}
+.memo p {
+  margin: 0 0 var(--salt-spacing-100);
+}
+.memo .memo-title {
+  margin-bottom: var(--salt-spacing-150);
+}
+.memo section {
+  margin-bottom: var(--salt-spacing-150);
+}
+.memo h4 {
+  margin: 0 0 var(--salt-spacing-75);
+}
+.memo-disclaimer {
+  color: var(--salt-content-secondary-foreground);
+}
+.formulas {
+  margin: 0;
+  padding: var(--salt-spacing-200);
+  overflow-x: auto;
+  background: var(--salt-container-secondary-background);
+  font-family: var(--salt-typography-fontFamily-code, monospace);
+  font-size: var(--salt-text-label-fontSize);
+  line-height: 1.8;
+}
+.plain-list {
+  margin: 0;
+  padding-left: var(--salt-spacing-300);
+  display: grid;
+  gap: var(--salt-spacing-75);
+}
+
+/* Static About and footer from index.html */
+.lab-about,
+.lab-footer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--salt-spacing-200) var(--salt-spacing-400);
+  color: var(--salt-content-secondary-foreground);
+  font-size: var(--salt-text-label-fontSize);
+}
+.lab-about h2 {
+  font-size: var(--salt-text-h4-fontSize, 1rem);
+  margin: 0 0 var(--salt-spacing-100);
+}
+.lab-about p {
+  max-width: 100ch;
+  margin: 0 0 var(--salt-spacing-100);
+}
+.lab-footer {
+  border-top: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+}
+
+@media (max-width: 900px) {
+  .split,
+  .split-wide,
+  .split-even {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .parts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 600px) {
+  .shell,
+  .lab-about,
+  .lab-footer {
+    padding-left: var(--salt-spacing-200);
+    padding-right: var(--salt-spacing-200);
+  }
+  .metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--salt-spacing-150);
+  }
+}
+@media print {
+  body {
+    background: none;
+  }
+  .app-header .quote-status,
+  [role='tablist'],
+  .tab-panel[hidden],
+  .summary-actions,
+  .lab-about {
+    display: none !important;
+  }
+}

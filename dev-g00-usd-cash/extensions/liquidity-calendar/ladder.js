@@ -1,6 +1,7 @@
 // Calendar-fit logic for the liquidity calendar: pure functions, no DOM, storage or network.
-// Contract: extensions/INTERFACES.md. Loaded by index.html and by extensions/tests/check_extensions.mjs.
-const Ladder = (() => {
+// Contract: extensions/INTERFACES.md. Published on globalThis so the calendar page (classic script), the Salt dashboard
+// (module import) and extensions/tests/check_extensions.mjs (Node VM) all share this one copy.
+globalThis.Ladder = (() => {
   const DAY_MS = 86400000;
   const SCHEMA = 'usd-cash-reserve-lab/bill-ladder/v1';
   const LIMITS = Object.freeze({entries: 12, label: 60, daysAhead: 400, minSpanDays: 182});

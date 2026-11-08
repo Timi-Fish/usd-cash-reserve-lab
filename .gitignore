@@ -1,5 +1,7 @@
 # macOS and editor files
 .DS_Store
+# Installed packages for extensions/salt-dashboard (reinstall with npm ci)
+node_modules/
 # Python caches and partial writes
 __pycache__/
 *.pyc

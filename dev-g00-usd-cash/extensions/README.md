@@ -20,10 +20,12 @@ Educational project. Not investment advice.
 | `auto-refresh/cpi_release_schedule.csv` | BLS CPI release dates for observation months September 2026 to November 2027 | Update once a year |
 | `auto-refresh/candidate/` | Output of the live run on 2026-11-08 (quote date 2026-11-06, CPI September 2026) | Candidate, not accepted |
 | `liquidity-calendar/` | The calendar page (`index.html`, `ladder.js`, `app.js`) and its generated `bills.js`; `PRODUCT.md` and `DESIGN.md` record its product and visual decisions | Built and browser-checked; not accepted |
+| `salt-dashboard/` | A tabbed version of the whole dashboard on J.P. Morgan's Salt design system, including the payment calendar; `dist/index.html` opens by double-click. See `salt-dashboard/README.md` | Built, checked and design-reviewed; not accepted |
 | `tests/check_extensions.mjs` | 36 checks covering refresh reproduction, stop rules and the calendar logic | Passing on 2026-11-08 |
-| `evidence/extension_checks.json` | Output of the latest test run | |
+| `evidence/extension_checks.json`, `evidence/salt_model_checks.json` | Output of the latest runs of the two check suites | |
 | `REVIEW.md` | Review of the project against the professor's five questions | |
 | `INTERFACES.md` | Contracts between these pieces and the accepted project | |
+| `DECISIONS.md` | Why the Salt dashboard looks and behaves as it does | |
 | `CHANGELOG.md` | What was added and verified, with a work-log entry | |
 
 ## Quick start
