@@ -14,11 +14,10 @@ The layout is a letterhead (a black strip carrying the disclaimer over a blue ba
 
 | Tab | What it does |
 |---|---|
-| Overview | Payment timing as a bill ladder, the assumptions, the purchasing-power result with its breakdown, and both bills side by side |
+| Overview | Payment timing as a bill ladder, the assumptions, the purchasing-power result with its breakdown, both bills side by side, and Copy and Print for the discussion summary (the advisor's record of the meeting) |
 | Payment calendar | Several payment dates against all seven saved bill tenors, a month-by-month calendar and a fit table |
 | Inflation scenarios | A sensitivity chart and table, exact break-even buttons, the purchasing-power decomposition and a zero-interest comparison |
 | History | Rate and CPI charts on a shared 12-month, 24-month or full window, with an exact-value table |
-| Discussion summary | One text summary of the assumptions, outcomes, payment fit and items to confirm, with Copy and Print |
 | Method and data | Formulas, sources, freshness rules and limits |
 
 Assumptions and payment dates are kept in memory only, so closing the page clears them.
@@ -62,10 +61,10 @@ Source files:
 
 ## Differences from the original page
 
-- Six tabs replace one long page; the data status stays visible above them.
+- Five tabs replace one long page; the data status stays visible above them.
 - Salt components and tokens replace hand-made controls, using the next theme with rounded corners. A brand layer adds the letterhead, serif headings and figures (Source Serif 4) and cool neutral surfaces; controls keep Salt's blue accent. Charts use Chart.js, and each chart has a table of exact values.
 - The single cash date becomes a list of payment dates checked against all seven bill tenors in the source. Each date is marked as a fixed USD payment or a price-sensitive budget.
-- A discussion summary collects the result in one place.
+- A discussion summary, copied or printed from Overview, collects the result in one place.
 
 ## Presenting it
 

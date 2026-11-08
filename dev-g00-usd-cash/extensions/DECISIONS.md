@@ -17,7 +17,8 @@ Why the redesigned dashboard (`salt-dashboard/`) looks and behaves as it does. E
 | Decision | Reason |
 |---|---|
 | Salt design system (J.P. Morgan, open source) | Accessible, finance-grade components instead of hand-made controls |
-| Six tabs under one bar, with the data status above them | The original page is one long scroll; tabs give each question its own place |
+| Five tabs under one bar, with the data status above them | The original page is one long scroll; tabs give each question its own place |
+| The discussion summary has no tab: Copy and Print sit on Overview, and the summary text appears only when copied or printed | It is a record the advisor keeps after the meeting; on screen it repeated Overview as dense text |
 | Overview opens with payment timing, then the assumptions and the result | Whether the cash is there on the payment date matters before how much it is worth |
 | Several payment dates against all seven saved tenors, each fixed USD or price-sensitive | A family office plans several outflows, and the two types need different readings |
 | The two reference bills stay a table, not a bar chart | Bars would make the longer 26-week bill look better, which is the ranking the project avoids |
