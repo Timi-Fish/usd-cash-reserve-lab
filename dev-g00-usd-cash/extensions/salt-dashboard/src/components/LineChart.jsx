@@ -18,7 +18,7 @@ export function LineChart({xAxis, series, xTitle, yTitle, format, description}) 
     const grid = token('--salt-separable-tertiary-borderColor');
     const x = xAxis.type === 'linear'
       ? {type: 'linear', min: xAxis.min, max: xAxis.max, ticks: {stepSize: xAxis.step, callback: xAxis.format}}
-      : {type: 'category', labels: xAxis.labels, ticks: {maxRotation: 0, autoSkip: true, maxTicksLimit: 8}};
+      : {type: 'category', labels: xAxis.labels, ticks: {maxRotation: 0, autoSkip: true, autoSkipPadding: 16, maxTicksLimit: 8}};
     const chart = new Chart(canvas.current, {
       type: 'line',
       data: {datasets: series.map(s => ({label: s.label, data: s.values, borderColor: tones[s.tone], backgroundColor: tones[s.tone],

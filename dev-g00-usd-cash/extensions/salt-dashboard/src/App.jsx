@@ -11,7 +11,7 @@ import {Method} from './views/Method.jsx';
 const {checkBills, DAY_MS} = globalThis.Ladder;
 const now = new Date();
 const TODAY = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / DAY_MS;
-// Short labels keep all six tabs visible on a phone.
+// Short labels keep most tabs visible on a phone; Salt's tab bar moves the rest into its overflow menu.
 const TABS = [
   {id: 'overview', label: 'Overview', View: Overview},
   {id: 'calendar', label: 'Calendar', View: PaymentCalendar},

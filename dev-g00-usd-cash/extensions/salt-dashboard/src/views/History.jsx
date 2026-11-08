@@ -56,7 +56,7 @@ export function History({dash}) {
       <Card className="card">
         <H3>Exact values</H3>
         <div className="table-scroll">
-          <Table zebra>
+          <Table zebra className="values-table">
             <THead><TR><TH>Month</TH><TH>Quote date</TH><TH textAlign="right">13-week</TH><TH textAlign="right">26-week</TH><TH textAlign="right">CPI-U level</TH><TH textAlign="right">CPI year on year</TH></TR></THead>
             <TBody>
               {[...w.rows].reverse().map(r => (

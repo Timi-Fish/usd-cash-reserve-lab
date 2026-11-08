@@ -83,7 +83,7 @@ The file holds one statement: `window.BILL_LADDER_DATA = {JSON};`. Only `refresh
 |---|---|---|
 | `checkBills(data)` | `{quoteDate, quoteDay, accessDate, freshnessDays, bills, source}`; `bills` sorted by maturity, each `{name, tenor, cusip, maturity, maturityDay, days, discount}` | throws `Error` |
 | `checkEntry({label, date, type}, ladder, entries)` | `{label, date, day, type}` | throws `Error` with `.field` in `count`, `label`, `type`, `date` |
-| `fit(ladder, day)` | `{kind: 'none' \| 'same' \| 'early', before, after, wait, late}` | none |
+| `fit(ladder, day)` | `{kind: 'none' \| 'same' \| 'early', before, after, wait, late}`; reads only `ladder.bills` (sorted by `maturityDay`), so `{bills: [bill]}` places a single bill | none |
 | `describe(fit)`, `fitText(fit)` | table cells `{sentence, nearest, wait, next, nextSentence}`; one sentence | none |
 | `freshness(ladder, today)`, `freshnessText(ladder, today)` | `{age, state: 'clock' \| 'stale' \| 'fresh', matured, warn, short, long}`; one sentence | none |
 | `calendarMonths(ladder, entries)` | `[{key: 'YYYY-MM', title, weeks: [[day \| null] × 7]}]`, Monday first, from the quote month to the later of quote + 182 days and the last entry | none |

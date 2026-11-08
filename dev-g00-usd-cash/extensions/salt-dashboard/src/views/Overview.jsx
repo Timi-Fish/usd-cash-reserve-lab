@@ -19,8 +19,19 @@ const ROWS = [
   {label: 'Real holding-period return', outcome: s => signedPct(s.realReturnPct)}
 ];
 
-// Payment timing comes first: the next entered payment and the saved maturity that reaches it.
-function Timing({ladder, payments, goTo}) {
+// Where the selected reference matures against the next payment, by the calendar's own fit rule; the scenario numbers below are at that maturity.
+const SELECTED_TIMING = {
+  early: (bill, f) => `The selected ${bill.name} matures ${bill.maturity}, ${L.dayCount(f.wait)} before this payment.`,
+  same: bill => `The selected ${bill.name} matures on this payment date; receipt of funds is not assessed.`,
+  none: (bill, f) => `The selected ${bill.name} matures ${bill.maturity}, ${L.dayCount(f.late)} after this payment, so it would have to be sold before maturity at an unknown price.`
+};
+const selectedTiming = (bill, day) => {
+  const f = L.fit({bills: [bill]}, day);
+  return SELECTED_TIMING[f.kind](bill, f);
+};
+
+// Payment timing comes first: the next entered payment, the saved maturity that reaches it, and where the selected bill falls.
+function Timing({ladder, payments, bill, goTo}) {
   if (ladder.error !== null || payments.length === 0) return (
     <div className="timing">
       <Text>No payment dates yet. Timing comes first: add the planned payments to see which saved bill matures before each.</Text>
@@ -30,7 +41,10 @@ function Timing({ladder, payments, goTo}) {
   const next = L.byDate(payments)[0];
   return (
     <div className="timing">
-      <Text><strong>Next payment {next.date}, {next.label}.</strong> <NoBreak text={L.describe(L.fit(ladder.value, next.day)).sentence} /></Text>
+      <Text>
+        <strong>Next payment {next.date}, {next.label}.</strong> <NoBreak text={L.describe(L.fit(ladder.value, next.day)).sentence} />{' '}
+        <NoBreak text={selectedTiming(bill, next.day)} />
+      </Text>
       <Button appearance="transparent" sentiment="accented" onClick={() => goTo('calendar')}>All payment dates</Button>
     </div>
   );
@@ -47,7 +61,7 @@ export function Overview({dash, ladder, payments, inputs, setInputs, assumptions
           <Assumptions dash={dash} inputs={inputs} setInputs={setInputs} error={error} />
         </Card>
         <Card className="card result">
-          <Timing ladder={ladder} payments={payments} goTo={goTo} />
+          <Timing ladder={ladder} payments={payments} bill={bill} goTo={goTo} />
           {outcome === null ? <Text color="error">{error} Outcomes stay hidden until the inputs are valid.</Text> : (
             <>
               <Text color="secondary"><NoBreak text={`${bill.name} reference held to maturity · ${dash.quoteDate} to ${bill.maturity} (${L.dayCount(bill.days)}) · ${pct(assumptions.inflation)} assumed annual inflation`} /></Text>
@@ -65,7 +79,7 @@ export function Overview({dash, ladder, payments, inputs, setInputs, assumptions
       <Card className="card">
         <H3>Both reference bills on the saved quote date</H3>
         <Text color="secondary">Two different holding periods. A larger dollar result over a longer period is not evidence of a better choice; check the payment dates first.</Text>
-        <div className="table-scroll">
+        <div className="table-scroll compare-table">
           <Table>
             <THead><TR><TH>Measure</TH>{dash.instruments.map(q => <TH key={q.weeks} textAlign="right">{q.name}{q.weeks === assumptions.weeks ? ' (selected)' : ''}</TH>)}</TR></THead>
             <TBody>

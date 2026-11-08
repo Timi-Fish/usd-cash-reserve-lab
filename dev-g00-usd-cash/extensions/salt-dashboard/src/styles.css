@@ -143,6 +143,15 @@ body {
 .table-scroll {
   overflow-x: auto;
 }
+/* Keeps labels near their values on wide screens. */
+.compare-table {
+  max-width: 760px;
+}
+/* Dates, tenors and headers in the exact-value table never break; the table scrolls instead. */
+.values-table th,
+.values-table td {
+  white-space: nowrap;
+}
 .selected-note {
   color: var(--salt-content-secondary-foreground);
   font-weight: normal;
@@ -288,8 +297,8 @@ body {
 }
 /* Warning colours belong to the data-status banner; the calendar uses a categorical tint and the accent. */
 .swatch.wait {
-  background: var(--salt-category-2-subtle-background);
-  border-color: var(--salt-category-2-subtle-borderColor);
+  background: var(--salt-category-3-subtle-background);
+  border-color: var(--salt-category-3-subtle-borderColor);
 }
 .swatch.today {
   height: 3px;
@@ -340,7 +349,7 @@ body {
   background: var(--salt-container-secondary-background);
 }
 .month td.wait {
-  background: var(--salt-category-2-subtle-background);
+  background: var(--salt-category-3-subtle-background);
 }
 .month td.nearest {
   box-shadow: inset 0 0 0 2px var(--salt-accent-borderColor);
