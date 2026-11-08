@@ -16,7 +16,7 @@ Educational project. Not investment advice.
 | Component | Licence |
 |---|---|
 | Salt design system (J.P. Morgan) | Apache-2.0 |
-| React, Chart.js, Vite | MIT |
+| React, Chart.js, KaTeX, Vite | MIT |
 | Open Sans, Source Serif 4 fonts | SIL Open Font License 1.1 |
 | U.S. Treasury bill rates | CC0 |
 | BLS CPI data | Public domain |

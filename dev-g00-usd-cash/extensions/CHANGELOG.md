@@ -10,6 +10,7 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
   - Six tabs under one bar: overview, payment calendar, inflation scenarios, history, discussion summary, method and data.
   - A brand layer: a black strip with the disclaimer over a blue band with the title, serif headings and figures (Source Serif 4), cool neutral surfaces, and one meaning per colour across every chart, calendar and table.
   - Overview opens with payment timing as a bill ladder, then the assumptions and a purchasing-power bridge.
+  - Method typesets its formulas with KaTeX as MathML, one tile per formula; the course About text sits in three columns across the page.
   - The data-status banner names only the series past its limit: stale quotes can be refreshed because Treasury publishes daily; CPI shows its next monthly release.
   - It builds to a single offline `dist/index.html`, with the accepted `data.js` and a seven-tenor `bills.js` from the same snapshot.
   - `scripts/check-model.mjs` runs 31 checks; the arithmetic matches every saved result in `data.js`.

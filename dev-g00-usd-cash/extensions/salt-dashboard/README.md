@@ -97,7 +97,7 @@ Each colour means one thing on every chart, calendar and table. The page does no
 
 ## Limits
 
-- `dist/index.html` is about 1.2 MB because React, Salt, Chart.js and the Open Sans and Source Serif 4 fonts are inlined.
+- `dist/index.html` is about 1.4 MB because React, Salt, Chart.js, KaTeX (formula typesetting, MIT) and the Open Sans and Source Serif 4 fonts are inlined. Formulas render as MathML in the browser's own math font, so no KaTeX fonts are bundled.
 - Changing the page needs the Node build; the original page needs none.
 - The course allows only `index.html` and `data.js` to be served. This version also reads `bills.js`; serving it with the hosted dashboard would need the group to fold that data into `data.js`.
 - The required loader and the hosted-data path are unchanged but have not been tested on the course server.
