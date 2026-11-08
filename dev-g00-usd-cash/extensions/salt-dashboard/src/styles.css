@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  background: var(--salt-container-secondary-background);
+}
+.shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--salt-spacing-300);
+}
+.lab-about,
+.lab-footer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--salt-spacing-200) var(--salt-spacing-300);
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+}
