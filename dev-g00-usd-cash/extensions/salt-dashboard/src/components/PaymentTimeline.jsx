@@ -87,7 +87,7 @@ export function PaymentTimeline({ladder, payments, bill}) {
         <div><dt><span className={`swatch ${next.type}`} />Next payment</dt><dd>{next.date}<span>{next.label}</span></dd></div>
         <div><dt>Nearest maturity before it</dt><dd>{cells.nearest}</dd></div>
         <div><dt><span className="swatch wait" />Cash waits, no return assumed</dt><dd>{cells.wait}</dd></div>
-        <div><dt><BillKey tenor={bill.weeks} />Selected {bill.name} matures</dt><dd>{bill.maturity}<span>{SELECTED_NOTE[selected.kind](selected)}</span></dd></div>
+        <div><dt><BillKey tenor={bill.weeks}>Selected {bill.name} matures</BillKey></dt><dd>{bill.maturity}<span>{SELECTED_NOTE[selected.kind](selected)}</span></dd></div>
       </dl>
     </>
   );

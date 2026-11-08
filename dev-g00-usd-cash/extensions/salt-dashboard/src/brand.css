@@ -82,11 +82,15 @@
   --bill: var(--lab-bill-26);
   --on-bill: var(--salt-content-primary-foreground);
 }
+.keyed {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--salt-spacing-75);
+}
 .bill-key {
-  display: inline-block;
+  flex: none;
   width: 10px;
   height: 10px;
-  margin-right: var(--salt-spacing-75);
   background: var(--bill);
 }
 

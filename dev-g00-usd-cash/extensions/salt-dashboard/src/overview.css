@@ -228,10 +228,8 @@
   font-size: var(--salt-text-label-fontSize);
   color: var(--salt-content-secondary-foreground);
 }
-.timing-facts dt .swatch,
-.timing-facts dt .bill-key {
+.timing-facts dt .swatch {
   flex: none;
-  margin-right: 0;
 }
 .timing-facts dd {
   display: grid;

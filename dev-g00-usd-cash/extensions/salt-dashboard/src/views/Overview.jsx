@@ -78,7 +78,7 @@ export function Overview({dash, ladder, payments, inputs, setInputs, assumptions
         <Text color="secondary">Different holding periods, so a larger result is not by itself a better choice; check the payment dates first.</Text>
         <div className="table-scroll compare-table">
           <Table>
-            <THead><TR><TH>Measure</TH>{dash.instruments.map(q => <TH key={q.weeks} textAlign="right" className={column(q).head}><BillKey tenor={q.weeks} />{q.name}{column(q).suffix}</TH>)}</TR></THead>
+            <THead><TR><TH>Measure</TH>{dash.instruments.map(q => <TH key={q.weeks} textAlign="right" className={column(q).head}><BillKey tenor={q.weeks}>{q.name}{column(q).suffix}</BillKey></TH>)}</TR></THead>
             <TBody>
               {ROWS.map(row => (
                 <TR key={row.label}>

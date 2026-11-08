@@ -30,7 +30,7 @@ export function History({dash}) {
           <FormField>
             <FormFieldLabel>Rate series</FormFieldLabel>
             <div className="checks">
-              {SERIES.map(s => <Checkbox key={s.key} label={<><BillKey tenor={s.weeks} />{s.label}</>} checked={shown[s.key]} onChange={event => setShown({...shown, [s.key]: event.target.checked})} />)}
+              {SERIES.map(s => <Checkbox key={s.key} label={<BillKey tenor={s.weeks}>{s.label}</BillKey>} checked={shown[s.key]} onChange={event => setShown({...shown, [s.key]: event.target.checked})} />)}
             </div>
           </FormField>
         </div>
@@ -58,7 +58,7 @@ export function History({dash}) {
         <H3>Exact values</H3>
         <div className="table-scroll">
           <Table zebra className="values-table">
-            <THead><TR><TH>Month</TH><TH>Quote date</TH><TH textAlign="right"><BillKey tenor={13} />13-week</TH><TH textAlign="right"><BillKey tenor={26} />26-week</TH><TH textAlign="right">CPI-U level</TH><TH textAlign="right">CPI year on year</TH></TR></THead>
+            <THead><TR><TH>Month</TH><TH>Quote date</TH><TH textAlign="right"><BillKey tenor={13}>13-week</BillKey></TH><TH textAlign="right"><BillKey tenor={26}>26-week</BillKey></TH><TH textAlign="right">CPI-U level</TH><TH textAlign="right">CPI year on year</TH></TR></THead>
             <TBody>
               {[...w.rows].reverse().map(r => (
                 <TR key={r.month}>

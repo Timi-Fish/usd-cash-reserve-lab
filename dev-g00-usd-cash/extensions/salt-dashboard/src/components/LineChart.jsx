@@ -24,11 +24,17 @@ export function LineChart({xAxis, series, xTitle, yTitle, format, description}) 
       type: 'line',
       data: {datasets: series.map(s => ({label: s.label, data: s.values, borderColor: tones[s.tone], backgroundColor: tones[s.tone],
         borderWidth: s.tone === 'reference' ? 1 : 2, borderDash: s.dashed ? [6, 4] : [], pointRadius: s.radii, pointHoverRadius: 5,
+        // Chart.js darkens hovered points by default; they keep the series colour instead.
+        pointHoverBackgroundColor: tones[s.tone], pointHoverBorderColor: tones[s.tone],
         spanGaps: false, tension: 0}))},
       options: {responsive: true, maintainAspectRatio: false, animation: false, interaction: {mode: 'index', intersect: false},
         scales: {x: {...x, title: {display: true, text: xTitle}, grid: {display: false}},
           y: {title: {display: true, text: yTitle}, grid: {color: grid}, ticks: {callback: format, maxTicksLimit: 7}}},
-        plugins: {legend: {position: 'bottom', labels: {boxHeight: 2}}, tooltip: {callbacks: {label: c => `${c.dataset.label}: ${format(c.parsed.y)}`}}}}
+        plugins: {legend: {position: 'bottom', labels: {boxHeight: 2}}, // Tooltip keys are solid 10px squares like the page's bill keys, whatever the line's width or dash: a 'rect' point
+        // style inscribed in a 14px box (Chart.js's plain key box always adds a white frame).
+        tooltip: {usePointStyle: true, boxWidth: 14, boxHeight: 14, boxPadding: 4, callbacks: {label: c => `${c.dataset.label}: ${format(c.parsed.y)}`,
+          labelColor: c => ({borderColor: c.dataset.borderColor, backgroundColor: c.dataset.borderColor}),
+          labelPointStyle: () => ({pointStyle: 'rect', rotation: 0})}}}}
     });
     return () => chart.destroy();
   }, [key]); // key holds every input that changes the chart, so the chart is rebuilt only when the data does
