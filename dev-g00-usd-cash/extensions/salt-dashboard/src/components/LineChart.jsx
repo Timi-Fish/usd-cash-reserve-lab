@@ -4,25 +4,29 @@ import {CategoryScale, Chart, Legend, LinearScale, LineController, LineElement, 
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend);
 const token = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-// One wrapper so every chart shares Salt colours and type. series: [{label, values, tone: 'first'|'second'|'reference', dashed, radii}].
-// A null value leaves a gap; the chart never joins across missing observations.
-export function LineChart({labels, series, xTitle, yTitle, format, description}) {
+// One wrapper so every chart shares Salt colours and type.
+// series: [{label, values, tone: 'first'|'second'|'reference', dashed, radii}]; a null value leaves a gap.
+// xAxis: {type: 'category', labels} for months, or {type: 'linear', min, max, step, format} with values as {x, y} points.
+export function LineChart({xAxis, series, xTitle, yTitle, format, description}) {
   const canvas = useRef(null);
-  const key = JSON.stringify({labels, series, xTitle, yTitle});
+  const key = JSON.stringify({xAxis, series, xTitle, yTitle});
   useEffect(() => {
     const tones = {first: token('--salt-category-1-bold-background'), second: token('--salt-category-2-bold-background'),
       reference: token('--salt-content-secondary-foreground')};
     Chart.defaults.font.family = token('--salt-text-fontFamily');
     Chart.defaults.color = token('--salt-content-secondary-foreground');
     const grid = token('--salt-separable-tertiary-borderColor');
+    const x = xAxis.type === 'linear'
+      ? {type: 'linear', min: xAxis.min, max: xAxis.max, ticks: {stepSize: xAxis.step, callback: xAxis.format}}
+      : {type: 'category', labels: xAxis.labels, ticks: {maxRotation: 0, autoSkip: true, maxTicksLimit: 8}};
     const chart = new Chart(canvas.current, {
       type: 'line',
-      data: {labels, datasets: series.map(s => ({label: s.label, data: s.values, borderColor: tones[s.tone], backgroundColor: tones[s.tone],
+      data: {datasets: series.map(s => ({label: s.label, data: s.values, borderColor: tones[s.tone], backgroundColor: tones[s.tone],
         borderWidth: s.tone === 'reference' ? 1 : 2, borderDash: s.dashed ? [6, 4] : [], pointRadius: s.radii, pointHoverRadius: 5,
         spanGaps: false, tension: 0}))},
       options: {responsive: true, maintainAspectRatio: false, animation: false, interaction: {mode: 'index', intersect: false},
-        scales: {x: {title: {display: true, text: xTitle}, grid: {color: grid}, ticks: {maxRotation: 0, autoSkip: true, autoSkipPadding: 18}},
-          y: {title: {display: true, text: yTitle}, grid: {color: grid}, ticks: {callback: format}}},
+        scales: {x: {...x, title: {display: true, text: xTitle}, grid: {display: false}},
+          y: {title: {display: true, text: yTitle}, grid: {color: grid}, ticks: {callback: format, maxTicksLimit: 7}}},
         plugins: {legend: {position: 'bottom', labels: {boxHeight: 2}}, tooltip: {callbacks: {label: c => `${c.dataset.label}: ${format(c.parsed.y)}`}}}}
     });
     return () => chart.destroy();

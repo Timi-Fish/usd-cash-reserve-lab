@@ -1,5 +1,5 @@
 import {useMemo, useState} from 'react';
-import {Banner, BannerContent, StatusIndicator, Tab, TabBar, TabList, TabPanel, Tabs, TabTrigger, Text} from '@salt-ds/core';
+import {Banner, BannerContent, Tab, TabBar, TabList, TabPanel, Tabs, TabTrigger, Text} from '@salt-ds/core';
 import {freshness, readDashboard} from './model.js';
 import {Overview} from './views/Overview.jsx';
 import {PaymentCalendar} from './views/PaymentCalendar.jsx';
@@ -8,16 +8,17 @@ import {History} from './views/History.jsx';
 import {Summary} from './views/Summary.jsx';
 import {Method} from './views/Method.jsx';
 
-const {checkBills, DAY_MS, dayCount} = globalThis.Ladder;
+const {checkBills, DAY_MS} = globalThis.Ladder;
 const now = new Date();
 const TODAY = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / DAY_MS;
+// Short labels keep all six tabs visible on a phone.
 const TABS = [
   {id: 'overview', label: 'Overview', View: Overview},
-  {id: 'calendar', label: 'Payment calendar', View: PaymentCalendar},
-  {id: 'scenarios', label: 'Inflation scenarios', View: Scenarios},
+  {id: 'calendar', label: 'Calendar', View: PaymentCalendar},
+  {id: 'scenarios', label: 'Scenarios', View: Scenarios},
   {id: 'history', label: 'History', View: History},
-  {id: 'summary', label: 'Discussion summary', View: Summary},
-  {id: 'method', label: 'Method and data', View: Method}
+  {id: 'summary', label: 'Summary', View: Summary},
+  {id: 'method', label: 'Method', View: Method}
 ];
 
 // Data files are the trust boundary: a broken file becomes a visible message, never a page that looks valid.
@@ -46,21 +47,15 @@ export function App({summary, data, bills}) {
   return (
     <>
       <header className="app-header">
-        <div>
-          <Text styleAs="h3" as="p" className="brand">USD Cash Reserve Lab</Text>
-          <Text color="secondary">Short-term USD reserve: Treasury bill maturities and purchasing power</Text>
-        </div>
-        <p className="quote-status">
-          <StatusIndicator status={fresh.warn ? 'warning' : 'success'} />
-          <span>Saved quote {dash.value.quoteDate} · {fresh.state === 'clock' ? 'check device clock' : `${dayCount(fresh.quoteAge)} old`}</span>
-        </p>
+        <Text styleAs="h3" as="h1" className="brand">USD Cash Reserve Lab</Text>
+        <Text color="secondary">Short-term USD reserve: Treasury bill maturities and purchasing power · saved quote {dash.value.quoteDate}</Text>
       </header>
       <main className="shell">
         <Banner status={fresh.warn ? 'warning' : 'info'} variant="secondary" className="status-banner">
           <BannerContent>{fresh.text} Saved quotes are observations, not executable offers.</BannerContent>
         </Banner>
         <Tabs value={tab} onChange={(event, value) => setTab(value)}>
-          <TabBar inset divider>
+          <TabBar divider>
             <TabList appearance="transparent" aria-label="Dashboard views">
               {TABS.map(t => <Tab key={t.id} value={t.id}><TabTrigger>{t.label}</TabTrigger></Tab>)}
             </TabList>

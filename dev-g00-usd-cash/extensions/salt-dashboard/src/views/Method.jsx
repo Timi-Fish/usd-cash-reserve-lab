@@ -32,7 +32,7 @@ export function Method({dash, ladder}) {
         <Card className="card">
           <H3>Freshness and maintenance</H3>
           <Text>Quotes count as stale after {rule.quote_days} calendar days; CPI after {rule.cpi_days} days from its observation month end. Ages use your device date and never move the model start.</Text>
-          <Text color="secondary">The saved data come from <code>calculations/rebuild.py</code>; <code>extensions/auto-refresh/refresh.py</code> can download and validate newer official files. A person reviews every release.</Text>
+          <Text color="secondary">The project's maintainers rebuild the saved data from the official files and check each release before it is shown here. When quotes are stale, ask your advisor for a refreshed view before relying on the dates.</Text>
         </Card>
       </div>
       <Card className="card">
@@ -43,7 +43,6 @@ export function Method({dash, ladder}) {
           <li>Fixed USD payments need dollars on time; purchasing power matters for price-sensitive budgets.</li>
           <li>Calendar fit compares dates only. It does not judge whether a payment can be met, and no bill is ranked or recommended.</li>
         </ul>
-        <Text color="secondary" styleAs="label">Dashboard {dash.summary.dashboard} · candidate for group review.</Text>
       </Card>
     </div>
   );

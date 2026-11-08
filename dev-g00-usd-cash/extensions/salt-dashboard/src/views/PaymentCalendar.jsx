@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Banner, BannerContent, Button, Card, FormField, FormFieldHelperText, FormFieldLabel, H3, Input, RadioButton, RadioButtonGroup, Table, TBody, TD, TH, THead, TR, Text} from '@salt-ds/core';
+import {CloseIcon} from '@salt-ds/icons';
 import {MonthGrid} from '../components/MonthGrid.jsx';
 import {NoBreak} from '../components/NoBreak.jsx';
 
@@ -11,6 +12,7 @@ const EXAMPLES = [
   {label: 'Example: spring household budget', offset: 160, type: 'budget'}
 ];
 const COLUMNS = ['Payment', 'Payment type', 'Matures on or before', 'Cash waits', 'Next maturity after'];
+const EMPTY_FIT = 'No payment dates yet. Add one with the form, or try the example dates.';
 
 export function PaymentCalendar({ladder, payments, setPayments, today}) {
   if (ladder.error !== null) return (
@@ -28,9 +30,9 @@ function pickSelected(ordered, id) {
 const Legend = () => (
   <ul className="legend" aria-label="Calendar key">
     <li><span className="tag quote" aria-hidden="true">Q</span>Saved quote date</li>
-    <li><span className="swatch mat" />Reference bill matures (tag shows weeks)</li>
+    <li><span className="tag" aria-hidden="true">wk</span>Reference bill matures (the tag shows its weeks)</li>
     <li><span className="swatch nearest" />Nearest maturity on or before the selected payment</li>
-    <li><span className="swatch next" />Next maturity after it</li>
+    <li><span className="tag outline" aria-hidden="true">wk</span>Next maturity after it</li>
     <li><span className="swatch fixed" />Fixed USD payment</li>
     <li><span className="swatch budget" />Price-sensitive budget</li>
     <li><span className="swatch wait" />Days cash waits</li>
@@ -54,6 +56,11 @@ function Workspace({ladder, payments, setPayments, today}) {
 
   const ordered = L.byDate(payments);
   const selected = pickSelected(ordered, selectedId);
+  const isChosen = p => selected !== null && selected.id === p.id;
+  const fitRows = ordered.map(p => {
+    const d = L.describe(L.fit(ladder, p.day));
+    return {p, chosen: isChosen(p), cells: [p.label, L.PAYMENT_TYPES[p.type].label, d.nearest, d.wait, d.next]};
+  });
   const nextId = () => Math.max(0, ...payments.map(p => p.id)) + 1;
   const first = L.isoDate(ladder.quoteDay + 1), last = L.isoDate(ladder.quoteDay + L.LIMITS.daysAhead);
   const fieldStatus = field => problem !== null && problem.field === field ? 'error' : undefined;
@@ -110,12 +117,12 @@ function Workspace({ladder, payments, setPayments, today}) {
         <form className="form" onSubmit={add} noValidate>
           <FormField validationStatus={fieldStatus('label')}>
             <FormFieldLabel>Payment</FormFieldLabel>
-            <Input value={form.label} onChange={event => setForm({...form, label: event.target.value})}
+            <Input variant="secondary" value={form.label} onChange={event => setForm({...form, label: event.target.value})}
               inputProps={{maxLength: L.LIMITS.label, placeholder: 'e.g. Property tax installment', 'data-key': 'payment-name', autoComplete: 'off'}} />
           </FormField>
           <FormField validationStatus={fieldStatus('date')}>
             <FormFieldLabel>Date</FormFieldLabel>
-            <Input value={form.date} onChange={event => setForm({...form, date: event.target.value})} inputProps={{type: 'date', min: first, max: last}} />
+            <Input variant="secondary" value={form.date} onChange={event => setForm({...form, date: event.target.value})} inputProps={{type: 'date', min: first, max: last}} />
             <FormFieldHelperText>Between {first} and {last}. Calendar timing only.</FormFieldHelperText>
           </FormField>
           <FormField>
@@ -133,11 +140,11 @@ function Workspace({ladder, payments, setPayments, today}) {
         <ul className="entries">
           {ordered.map(p => (
             <li key={p.id} className="entry">
-              <Button appearance="transparent" className="pick" data-key={`pick-${p.id}`} aria-pressed={selected !== null && selected.id === p.id}
+              <Button appearance="transparent" className="pick" data-key={`pick-${p.id}`} aria-pressed={isChosen(p)}
                 onClick={() => select(p.id, `pick-${p.id}`)}>
                 <span className="pick-text"><strong>{p.label}</strong><span>{p.date} · {L.PAYMENT_TYPES[p.type].short}</span></span>
               </Button>
-              <Button appearance="bordered" aria-label={`Remove ${p.label}`} onClick={() => remove(p.id)}>Remove</Button>
+              <Button appearance="transparent" aria-label={`Remove ${p.label}`} title="Remove" onClick={() => remove(p.id)}><CloseIcon aria-hidden /></Button>
             </li>
           ))}
         </ul>
@@ -156,24 +163,36 @@ function Workspace({ladder, payments, setPayments, today}) {
             <><strong>{selected.label}, {L.longDate(selected.day)}. </strong><NoBreak text={L.fitText(L.fit(ladder, selected.day))} /></>
           )}
         </p>
-        <MonthGrid ladder={ladder} payments={payments} selected={selected} today={today} onSelect={select} />
-        <H3 className="list-title">Calendar fit by payment</H3>
-        <div className="table-scroll">
+        <div className="calendar-body">
+        <div className="calendar-pages"><MonthGrid ladder={ladder} payments={payments} selected={selected} today={today} onSelect={select} /></div>
+        <section className="fit-section" aria-labelledby="fit-title">
+        <H3 className="list-title" id="fit-title">Calendar fit by payment</H3>
+        {/* Phones get the stacked list, wider screens the table; both read the same rows. */}
+        <ul className="fit-list">
+          {fitRows.length === 0 && <li>{EMPTY_FIT}</li>}
+          {fitRows.map(({p, cells, chosen}) => (
+            <li key={p.id} className={chosen ? 'is-selected' : ''}>
+              <Button appearance="transparent" sentiment="accented" onClick={() => select(p.id, `pay-${p.day}`)}
+                aria-label={`${p.date}: show ${p.label} on the calendar`}>{p.date}</Button>
+              <dl>{cells.map((text, i) => <div key={COLUMNS[i]}><dt>{COLUMNS[i]}</dt><dd><NoBreak text={text} /></dd></div>)}</dl>
+            </li>
+          ))}
+        </ul>
+        <div className="table-scroll fit-table-wrap">
           <Table className="fit-table">
             <THead><TR><TH>Date</TH>{COLUMNS.map(c => <TH key={c}>{c}</TH>)}</TR></THead>
             <TBody>
-              {ordered.length === 0 && <TR><TD colSpan={COLUMNS.length + 1}>No payment dates yet. Add one with the form, or try the example dates.</TD></TR>}
-              {ordered.map(p => {
-                const d = L.describe(L.fit(ladder, p.day));
-                return (
-                  <TR key={p.id} className={selected !== null && selected.id === p.id ? 'is-selected' : ''}>
-                    <TH scope="row"><Button appearance="transparent" aria-label={`${p.date}: show ${p.label} on the calendar`} onClick={() => select(p.id, `pay-${p.day}`)}>{p.date}</Button></TH>
-                    {[p.label, L.PAYMENT_TYPES[p.type].label, d.nearest, d.wait, d.next].map((text, i) => <TD key={COLUMNS[i]} data-label={COLUMNS[i]}><NoBreak text={text} /></TD>)}
-                  </TR>
-                );
-              })}
+              {fitRows.length === 0 && <TR><TD colSpan={COLUMNS.length + 1}>{EMPTY_FIT}</TD></TR>}
+              {fitRows.map(({p, cells, chosen}) => (
+                <TR key={p.id} className={chosen ? 'is-selected' : ''}>
+                  <TH scope="row"><Button appearance="transparent" aria-label={`${p.date}: show ${p.label} on the calendar`} onClick={() => select(p.id, `pay-${p.day}`)}>{p.date}</Button></TH>
+                  {cells.map((text, i) => <TD key={COLUMNS[i]}><NoBreak text={text} /></TD>)}
+                </TR>
+              ))}
             </TBody>
           </Table>
+        </div>
+        </section>
         </div>
       </Card>
     </div>

@@ -21,12 +21,14 @@ export function Scenarios({dash, inputs, setInputs, assumptions}) {
         <Card className="card">
           <H3>Inflation assumption</H3>
           <Assumptions dash={dash} inputs={inputs} setInputs={setInputs} error={error} />
-          <Label color="secondary" className="break-title">Exact break-even for each reference</Label>
           <div className="break-evens">
+            <Label color="secondary">Exact break-even inflation</Label>
             {breakEvens.map(({q, value}) => (
-              <Button key={q.weeks} appearance="bordered" onClick={() => setInputs(current => ({...current, weeks: q.weeks, inflation: value.toFixed(4)}))}>
-                {q.name}: {pct(value)}
-              </Button>
+              <div key={q.weeks} className="break-even">
+                <Text><strong>{q.name}</strong> {pct(value)}</Text>
+                <Button appearance="transparent" sentiment="accented" aria-label={`Use ${pct(value)} as the inflation assumption`}
+                  onClick={() => setInputs(current => ({...current, inflation: value.toFixed(4)}))}>Use {pct(value)}</Button>
+              </div>
             ))}
           </div>
           <Text color="secondary" styleAs="label">A break-even rate is the inflation that leaves purchasing power unchanged over that holding period. It is a threshold, not a forecast.</Text>
@@ -54,17 +56,18 @@ export function Scenarios({dash, inputs, setInputs, assumptions}) {
 }
 
 function Sensitivity({dash, assumptions}) {
-  const curves = sensitivity(dash, assumptions.principal, GRID);
-  const nearest = GRID.reduce((best, a, i) => Math.abs(a - assumptions.inflation) < Math.abs(GRID[best] - assumptions.inflation) ? i : best, 0);
-  const radii = GRID.map((a, i) => i === nearest ? 5 : 0);
+  const curves = sensitivity(dash, assumptions.principal, [...new Set([...GRID, assumptions.inflation])].sort((a, b) => a - b));
   const reads = [...new Set([...READ_POINTS, assumptions.inflation])].sort((a, b) => a - b);
+  const points = c => c.points.map(p => ({x: p.inflation, y: p.realEnd}));
+  const radii = c => c.points.map(p => p.inflation === assumptions.inflation ? 5 : 0);
   return (
     <>
-      <LineChart labels={GRID.map(a => `${a}%`)} xTitle="Assumed annual inflation" yTitle="Purchasing power, quote-date USD" format={v => usd(v)}
+      <LineChart xAxis={{type: 'linear', min: -5, max: 15, step: 5, format: v => `${v}%`}} xTitle="Assumed annual inflation"
+        yTitle="Purchasing power, quote-date USD" format={v => usd(v)}
         description="Purchasing power at maturity for each reference bill across annual inflation assumptions from minus 5 to 15 percent; the table below lists exact values."
-        series={[...curves.map((c, i) => ({label: c.name, values: c.points.map(p => p.realEnd), tone: TONES[i], dashed: i === 1, radii})),
-          {label: 'Cash placed', values: GRID.map(() => assumptions.principal), tone: 'reference', dashed: true, radii: 0}]} />
-      <Text color="secondary" styleAs="label">Each curve covers its own holding period, so a higher curve is not a ranking. The marker shows the current assumption.</Text>
+        series={[...curves.map((c, i) => ({label: c.name, values: points(c), tone: TONES[i], dashed: i === 1, radii: radii(c)})),
+          {label: 'Cash placed', values: [{x: -5, y: assumptions.principal}, {x: 15, y: assumptions.principal}], tone: 'reference', dashed: true, radii: 0}]} />
+      <Text color="secondary" styleAs="label">Each curve covers its own holding period, so a higher curve is not a ranking. The markers show the current assumption.</Text>
       <div className="table-scroll">
         <Table>
           <THead><TR><TH>Annual inflation</TH>{dash.instruments.map(q => <TH key={q.weeks} textAlign="right">{q.name} purchasing power</TH>)}</TR></THead>

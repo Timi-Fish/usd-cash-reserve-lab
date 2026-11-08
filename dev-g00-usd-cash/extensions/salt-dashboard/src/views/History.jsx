@@ -39,7 +39,7 @@ export function History({dash}) {
         <Card className="card">
           <H3>Treasury bill discount quotes</H3>
           {visible.length === 0 ? <Text color="secondary">Both rate series are hidden. Tick one to draw the chart.</Text> : (
-            <LineChart labels={labels} xTitle="Month (last saved quote)" yTitle="Bank discount, percent" format={v => pct(v)}
+            <LineChart xAxis={{type: 'category', labels}} xTitle="Month (last saved quote)" yTitle="Bank discount, percent" format={v => pct(v)}
               description="Monthly last saved bank discount quotes for the selected Treasury bills; the table below lists exact values."
               series={visible.map(s => ({label: s.label, values: w.rows.map(r => r.rate === null ? null : r.rate[s.key]), tone: s.tone, dashed: s.dashed, radii: 0}))} />
           )}
@@ -47,7 +47,7 @@ export function History({dash}) {
         </Card>
         <Card className="card">
           <H3>CPI-U, year on year</H3>
-          <LineChart labels={labels} xTitle="Observation month" yTitle="Year-on-year change, percent" format={v => pct(v)}
+          <LineChart xAxis={{type: 'category', labels}} xTitle="Observation month" yTitle="Year-on-year change, percent" format={v => pct(v)}
             description="Year-on-year change in CPI-U, U.S. city average, not seasonally adjusted, by observation month; the table below lists exact values."
             series={[{label: 'CPI-U year on year', values: w.rows.map(r => r.cpi === null ? null : r.cpi.yoy), tone: 'first', dashed: false, radii: 0}]} />
           <Text color="secondary" styleAs="label">Plotted by observation month, not release date. October 2025 was not published by BLS and stays missing.</Text>

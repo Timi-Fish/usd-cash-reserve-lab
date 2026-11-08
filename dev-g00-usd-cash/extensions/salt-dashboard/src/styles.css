@@ -19,25 +19,11 @@ body {
   max-width: 1320px;
   margin: 0 auto;
   padding: var(--salt-spacing-300) var(--salt-spacing-400) var(--salt-spacing-200);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--salt-spacing-300);
+  display: grid;
+  gap: var(--salt-spacing-50);
 }
 .brand {
   margin: 0;
-}
-.quote-status {
-  display: flex;
-  align-items: center;
-  gap: var(--salt-spacing-100);
-  margin: 0;
-  padding: var(--salt-spacing-75) var(--salt-spacing-150);
-  border: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
-  border-radius: var(--salt-palette-corner-weak, 4px);
-  background: var(--salt-container-primary-background);
-  font-size: var(--salt-text-label-fontSize);
-  white-space: nowrap;
 }
 .shell {
   max-width: 1320px;
@@ -113,7 +99,6 @@ body {
 }
 .next-steps,
 .row-actions,
-.break-evens,
 .checks,
 .toolbar {
   display: flex;
@@ -128,8 +113,32 @@ body {
 .toolbar > * {
   width: auto;
 }
-.break-title {
+.break-evens {
+  display: grid;
+  gap: var(--salt-spacing-75);
   margin-top: var(--salt-spacing-100);
+}
+.break-even {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--salt-spacing-100);
+}
+.timing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--salt-spacing-100);
+  padding: var(--salt-spacing-150) var(--salt-spacing-200);
+  background: var(--salt-container-secondary-background);
+}
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--salt-spacing-200);
 }
 .table-scroll {
   overflow-x: auto;
@@ -138,8 +147,9 @@ body {
   color: var(--salt-content-secondary-foreground);
   font-weight: normal;
 }
-tr.is-selected {
-  background: var(--salt-selectable-background-selected);
+/* Salt rows paint their background from --table-background, so the selected row sets that variable. */
+.salt-theme tr.is-selected {
+  --table-background: var(--salt-selectable-background-selected);
 }
 .chart {
   position: relative;
@@ -203,16 +213,25 @@ tr.is-selected {
   white-space: nowrap;
 }
 .memo {
+  max-width: 80ch;
   padding: var(--salt-spacing-200) var(--salt-spacing-300);
   border: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
   background: var(--salt-container-secondary-background);
 }
 .memo p {
-  max-width: 80ch;
   margin: 0 0 var(--salt-spacing-100);
 }
-.memo p:first-child {
-  font-weight: var(--salt-text-fontWeight-strong);
+.memo .memo-title {
+  margin-bottom: var(--salt-spacing-150);
+}
+.memo section {
+  margin-bottom: var(--salt-spacing-150);
+}
+.memo h4 {
+  margin: 0 0 var(--salt-spacing-75);
+}
+.memo-disclaimer {
+  color: var(--salt-content-secondary-foreground);
 }
 .formulas {
   margin: 0;
@@ -252,16 +271,8 @@ tr.is-selected {
   height: 14px;
   border: var(--salt-size-border) solid var(--salt-separable-secondary-borderColor);
 }
-.swatch.mat {
-  background: var(--salt-accent-background);
-  border-color: var(--salt-accent-background);
-}
 .swatch.nearest {
   box-shadow: inset 0 0 0 2px var(--salt-accent-borderColor);
-  border-color: transparent;
-}
-.swatch.next {
-  box-shadow: inset 0 0 0 1px var(--salt-accent-borderColor);
   border-color: transparent;
 }
 .swatch.fixed {
@@ -275,14 +286,15 @@ tr.is-selected {
   border-radius: 50%;
   border: 2px dashed var(--salt-content-primary-foreground);
 }
+/* Warning colours belong to the data-status banner; the calendar uses a categorical tint and the accent. */
 .swatch.wait {
-  background: var(--salt-status-warning-background);
-  border-color: var(--salt-status-warning-borderColor);
+  background: var(--salt-category-2-subtle-background);
+  border-color: var(--salt-category-2-subtle-borderColor);
 }
 .swatch.today {
   height: 3px;
   border: 0;
-  background: var(--salt-status-warning-borderColor);
+  background: var(--salt-accent-borderColor);
 }
 .readout {
   margin: 0;
@@ -328,14 +340,14 @@ tr.is-selected {
   background: var(--salt-container-secondary-background);
 }
 .month td.wait {
-  background: var(--salt-status-warning-background);
+  background: var(--salt-category-2-subtle-background);
 }
 .month td.nearest {
   box-shadow: inset 0 0 0 2px var(--salt-accent-borderColor);
 }
 .month td.today .daynum {
   font-weight: var(--salt-text-fontWeight-strong);
-  text-decoration: underline 3px var(--salt-status-warning-borderColor);
+  text-decoration: underline 3px var(--salt-accent-borderColor);
   text-underline-offset: 4px;
 }
 .daynum {
@@ -376,7 +388,7 @@ tr.is-selected {
   outline-offset: -2px;
 }
 .pay[aria-pressed='true'] {
-  box-shadow: 0 0 0 3px var(--salt-status-warning-borderColor);
+  box-shadow: 0 0 0 3px var(--salt-accent-borderColor);
 }
 .pay:focus-visible {
   outline: var(--salt-focused-outline);
@@ -402,10 +414,47 @@ tr.is-selected {
   color: var(--salt-content-secondary-foreground);
   box-shadow: inset 0 0 0 1px var(--salt-content-secondary-foreground);
 }
+.tag.outline,
 .month td.after .tag:not(.quote) {
   background: var(--salt-container-primary-background);
   color: var(--salt-accent-foreground-informative, var(--salt-content-primary-foreground));
   box-shadow: inset 0 0 0 1px var(--salt-accent-borderColor);
+}
+
+/* Fit section: a table on wide screens, a stacked list on phones (both render the same rows). */
+.calendar-body {
+  display: grid;
+  gap: var(--salt-spacing-200);
+}
+.fit-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fit-list li {
+  padding: var(--salt-spacing-100) 0;
+  border-top: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+}
+.fit-list li.is-selected {
+  background: var(--salt-selectable-background-selected);
+}
+.fit-list dl {
+  display: grid;
+  gap: var(--salt-spacing-50);
+  margin: var(--salt-spacing-50) 0 0;
+}
+.fit-list dl div {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr);
+  gap: var(--salt-spacing-100);
+}
+.fit-list dt {
+  color: var(--salt-content-secondary-foreground);
+  font-size: var(--salt-text-label-fontSize);
+}
+.fit-list dd {
+  margin: 0;
 }
 
 /* Static About and footer from index.html */
@@ -454,26 +503,24 @@ tr.is-selected {
   .metrics {
     grid-template-columns: minmax(0, 1fr);
   }
+  .metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--salt-spacing-150);
+  }
   .month td {
     height: 44px;
     padding: 2px;
   }
-  .fit-table thead {
+  .fit-list {
+    display: grid;
+  }
+  .fit-table-wrap {
     display: none;
   }
-  .fit-table,
-  .fit-table tbody,
-  .fit-table tr,
-  .fit-table th,
-  .fit-table td {
-    display: block;
-    width: 100%;
-  }
-  .fit-table td[data-label]::before {
-    content: attr(data-label);
-    display: block;
-    font-size: var(--salt-text-label-fontSize);
-    color: var(--salt-content-secondary-foreground);
+  .fit-section {
+    order: -1;
   }
 }
 @media print {
