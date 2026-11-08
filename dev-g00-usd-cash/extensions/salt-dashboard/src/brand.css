@@ -1,0 +1,106 @@
+/* Brand layer: a black strip over a Goldman Sachs blue band, cool neutrals and serif headings on top of Salt. It remaps theme roles and draws the letterhead; layout stays in styles.css. */
+
+/* The selector carries both font attributes so it outranks the theme's per-font rules. */
+.salt-theme.salt-theme-next[data-heading-font][data-action-font] {
+  --lab-strip: oklch(0.16 0 0);
+  --lab-on-strip: oklch(0.93 0 0);
+  /* The header blue of goldmansachs.com. Like that site, the band carries dark text: white on this blue is only 3:1. */
+  --lab-band: #7297c5;
+  --lab-on-band: oklch(0.2 0.02 255);
+  --lab-on-band-secondary: oklch(0.28 0.03 255);
+  /* Shades of the band blue, each with one meaning on every chart, calendar and table (see README, Colour meanings):
+     the 13-week bill, the 26-week bill, the other saved bills, and pale tints for selected and hovered rows.
+     Interactive controls keep Salt's blue accent. */
+  --lab-blue-900: oklch(0.32 0.075 254);
+  --lab-blue-200: oklch(0.9 0.03 254);
+  --lab-blue-100: oklch(0.955 0.018 254);
+  --lab-blue-50: oklch(0.975 0.01 254);
+  --lab-bill-13: var(--lab-blue-900);
+  --lab-bill-26: var(--lab-band);
+  --lab-bill-other: var(--lab-blue-200);
+  --salt-selectable-background-selected: var(--lab-blue-100);
+  --salt-selectable-background-hover: var(--lab-blue-50);
+  --lab-canvas: oklch(0.972 0.006 250);
+  --lab-hairline: oklch(0.9 0.008 250);
+  --salt-container-secondary-background: var(--lab-canvas);
+  /* Headings and display figures are serif; text, labels, tables and actions stay in Open Sans. */
+  --salt-text-heading-fontFamily: "Source Serif 4", Georgia, serif;
+  --salt-text-display-fontFamily: "Source Serif 4", Georgia, serif;
+  --salt-text-action-textTransform: none;
+  --salt-text-action-letterSpacing: 0;
+}
+
+/* The letterhead spans the page; its content lines up with the 1320px shell below. */
+.app-header {
+  --lab-gutter: max(var(--salt-spacing-400), calc((100% - 1320px) / 2 + var(--salt-spacing-400)));
+}
+.masthead-strip {
+  margin: 0;
+  padding: var(--salt-spacing-100) var(--lab-gutter);
+  text-align: right;
+}
+.masthead {
+  display: grid;
+  gap: var(--salt-spacing-50);
+  padding: var(--salt-spacing-300) var(--lab-gutter);
+}
+.brand {
+  margin: 0;
+}
+/* Screen only: printers drop backgrounds, so a printout keeps the theme's own text colours. */
+@media screen {
+  .masthead-strip {
+    background: var(--lab-strip);
+    --salt-content-primary-foreground: var(--lab-on-strip);
+  }
+  .masthead {
+    background: var(--lab-band);
+    --salt-content-primary-foreground: var(--lab-on-band);
+    --salt-content-secondary-foreground: var(--lab-on-band-secondary);
+  }
+}
+@media screen and (max-width: 600px) {
+  .app-header {
+    --lab-gutter: var(--salt-spacing-200);
+  }
+  .masthead {
+    padding-block: var(--salt-spacing-200);
+  }
+}
+
+/* A bill's colour wherever it is drawn: ladder bars, calendar tags, chart keys and the purchasing-power bars.
+   --on-bill is the text colour that reads on that fill. */
+[data-tenor] {
+  --bill: var(--lab-bill-other);
+  --on-bill: var(--lab-blue-900);
+}
+[data-tenor='13'] {
+  --bill: var(--lab-bill-13);
+  --on-bill: var(--salt-container-primary-background);
+}
+[data-tenor='26'] {
+  --bill: var(--lab-bill-26);
+  --on-bill: var(--salt-content-primary-foreground);
+}
+.bill-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: var(--salt-spacing-75);
+  background: var(--bill);
+}
+
+/* Tabs read quiet until chosen: the active tab and the one under the pointer take the interactive accent. */
+.salt-theme .saltTab {
+  color: var(--salt-content-secondary-foreground);
+}
+.salt-theme .saltTab:hover,
+.salt-theme .saltTab.saltTab-selected {
+  color: var(--salt-content-accent-foreground);
+}
+
+/* Flat white cards on the canvas: a hairline instead of Salt's raised shadow. */
+.card {
+  --saltCard-boxShadow: none;
+  --saltCard-borderColor: var(--lab-hairline);
+}

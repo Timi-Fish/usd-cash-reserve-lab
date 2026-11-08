@@ -1,0 +1,284 @@
+/* Payment calendar tab: the payment list, month grid, legend and fit table, on Salt tokens like styles.css. */
+.note,
+.privacy {
+  color: var(--salt-content-secondary-foreground);
+  font-size: var(--salt-text-label-fontSize);
+}
+.form-error:empty {
+  display: none;
+}
+.list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: var(--salt-spacing-200) !important;
+}
+.list-title span {
+  font-size: var(--salt-text-label-fontSize);
+  font-weight: normal;
+  color: var(--salt-content-secondary-foreground);
+}
+.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.entry {
+  display: flex;
+  align-items: center;
+  gap: var(--salt-spacing-100);
+  padding: var(--salt-spacing-75) 0;
+  border-top: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+}
+/* Payment names are content, not action labels, so they keep their own case inside the selectable button. */
+.salt-theme .entry .pick {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  justify-content: flex-start;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: normal;
+  padding: var(--salt-spacing-75) var(--salt-spacing-100);
+}
+.salt-theme .entry .pick[aria-pressed='true'] {
+  background: var(--salt-container-secondary-background);
+  box-shadow: inset 0 0 0 1px var(--salt-accent-borderColor);
+}
+.pick-text {
+  display: grid;
+  gap: 2px;
+  white-space: normal;
+}
+.pick-text > span {
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+  white-space: nowrap;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--salt-spacing-100) var(--salt-spacing-300);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+}
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--salt-spacing-75);
+}
+.swatch {
+  display: inline-block;
+  width: 18px;
+  height: 14px;
+  border: var(--salt-size-border) solid var(--salt-separable-secondary-borderColor);
+}
+.swatch.nearest {
+  box-shadow: inset 0 0 0 2px var(--salt-content-primary-foreground);
+  border-color: transparent;
+}
+.swatch.after {
+  border: 2px dashed var(--salt-content-secondary-foreground);
+}
+.swatch.fixed {
+  width: 14px;
+  border-radius: 50%;
+  background: var(--salt-content-primary-foreground);
+  border-color: var(--salt-content-primary-foreground);
+}
+.swatch.budget {
+  width: 14px;
+  border-radius: 50%;
+  border: 2px dashed var(--salt-content-primary-foreground);
+}
+/* Colours keep their meaning across the dashboard: maturity tags take their bill's colour, plum is the days cash waits,
+   outlines and the today mark are neutral, the interactive accent marks only the selected payment, and warning colours
+   belong to the data-status banner. */
+.swatch.wait {
+  background: var(--salt-category-3-subtle-background);
+  border-color: var(--salt-category-3-subtle-borderColor);
+}
+.swatch.today {
+  height: 3px;
+  border: 0;
+  background: var(--salt-content-primary-foreground);
+}
+.readout {
+  margin: 0;
+  padding: var(--salt-spacing-150) var(--salt-spacing-200);
+  background: var(--salt-container-secondary-background);
+  min-height: 3em;
+}
+.months {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--salt-spacing-300);
+  align-items: start;
+}
+.month {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.month caption {
+  text-align: left;
+  font-weight: var(--salt-text-fontWeight-strong);
+  padding-bottom: var(--salt-spacing-100);
+}
+.month th {
+  font-size: var(--salt-text-label-fontSize);
+  font-weight: normal;
+  color: var(--salt-content-secondary-foreground);
+  padding-bottom: var(--salt-spacing-75);
+}
+.month td {
+  height: 50px;
+  padding: 3px;
+  vertical-align: top;
+  border: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+  background: var(--salt-container-primary-background);
+  font-size: var(--salt-text-label-fontSize);
+}
+.month td.blank {
+  border-style: none;
+  background: transparent;
+}
+.month td.weekend {
+  background: var(--salt-container-secondary-background);
+}
+.month td.wait {
+  background: var(--salt-category-3-subtle-background);
+}
+.month td.nearest {
+  box-shadow: inset 0 0 0 2px var(--salt-content-primary-foreground);
+}
+.month td.after {
+  outline: 2px dashed var(--salt-content-secondary-foreground);
+  outline-offset: -2px;
+}
+.month td.today .daynum {
+  font-weight: var(--salt-text-fontWeight-strong);
+  text-decoration: underline 3px var(--salt-content-primary-foreground);
+  text-underline-offset: 4px;
+}
+.daynum {
+  display: block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  border-radius: 50%;
+}
+.month td.quote .daynum {
+  box-shadow: inset 0 0 0 1px var(--salt-content-secondary-foreground);
+}
+.pay {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+}
+.pay .daynum {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-weight: var(--salt-text-fontWeight-strong);
+}
+.pay.fixed .daynum {
+  background: var(--salt-content-primary-foreground);
+  color: var(--salt-container-primary-background);
+}
+.pay.budget .daynum {
+  outline: 2px dashed var(--salt-content-primary-foreground);
+  outline-offset: -2px;
+}
+.pay[aria-pressed='true'] {
+  box-shadow: 0 0 0 3px var(--salt-accent-borderColor);
+}
+.pay:focus-visible {
+  outline: var(--salt-focused-outline);
+  outline-offset: 3px;
+}
+.count {
+  font-size: var(--salt-text-label-fontSize);
+  font-weight: var(--salt-text-fontWeight-strong);
+  margin-left: 2px;
+}
+.tag {
+  display: inline-block;
+  margin: 2px 2px 0 0;
+  padding: 2px 4px;
+  font-size: var(--salt-text-label-fontSize);
+  font-weight: var(--salt-text-fontWeight-strong);
+  line-height: 1.2;
+  background: var(--bill);
+  color: var(--on-bill);
+}
+.tag.quote {
+  background: var(--salt-container-primary-background);
+  color: var(--salt-content-secondary-foreground);
+  box-shadow: inset 0 0 0 1px var(--salt-content-secondary-foreground);
+}
+
+/* Fit section: a table on wide screens, a stacked list on phones (both render the same rows). */
+.calendar-body {
+  display: grid;
+  gap: var(--salt-spacing-200);
+}
+.fit-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fit-list li {
+  padding: var(--salt-spacing-100) 0;
+  border-top: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+}
+.fit-list li.is-selected {
+  background: var(--salt-selectable-background-selected);
+}
+.fit-list dl {
+  display: grid;
+  gap: var(--salt-spacing-50);
+  margin: var(--salt-spacing-50) 0 0;
+}
+.fit-list dl div {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr);
+  gap: var(--salt-spacing-100);
+}
+.fit-list dt {
+  color: var(--salt-content-secondary-foreground);
+  font-size: var(--salt-text-label-fontSize);
+}
+.fit-list dd {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .month td {
+    height: 44px;
+    padding: 2px;
+  }
+  .fit-list {
+    display: grid;
+  }
+  .fit-table-wrap {
+    display: none;
+  }
+  .fit-section {
+    order: -1;
+  }
+}

@@ -33,13 +33,14 @@ function DayCell({day, column, view}) {
       ) : number}
       {payments.length > 1 && <span className="count">×{payments.length}</span>}
       {day === ladder.quoteDay && <Tag short="Q" full="Saved quote date" quote />}
-      {marks !== undefined && marks.bills.map(bill => <Tag key={bill.cusip} short={`${bill.tenor}w`} full={`${bill.name} reference matures`} />)}
+      {marks !== undefined && marks.bills.map(bill => <Tag key={bill.cusip} short={`${bill.tenor}w`} full={`${bill.name} reference matures`} tenor={bill.tenor} />)}
     </td>
   );
 }
 
-const Tag = ({short, full, quote}) => (
-  <span className={quote ? 'tag quote' : 'tag'} title={full}><span aria-hidden="true">{short}</span><span className="visually-hidden">{full}</span></span>
+// A maturity tag takes its bill's colour (brand.css); the quote tag is neutral.
+const Tag = ({short, full, quote, tenor}) => (
+  <span className={quote ? 'tag quote' : 'tag'} data-tenor={tenor} title={full}><span aria-hidden="true">{short}</span><span className="visually-hidden">{full}</span></span>
 );
 
 export function MonthGrid({ladder, payments, selected, onSelect, today}) {

@@ -1,0 +1,314 @@
+/* Overview figures: the bill ladder with its facts, and the purchasing-power bridge. Bills are drawn in their own colour
+   (brand.css, [data-tenor]); the wait is the calendar's plum; payments are dark marks, as in the calendar. */
+/* Figures keep their fills when printed. */
+.ladder,
+.bridge {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* Bill ladder: a label column and a plot column. Every item names its grid row, so the month grid and the payment lines
+   can lie over the bar rows. */
+.ladder {
+  --ladder-grid: oklch(0.94 0.006 250);
+  display: grid;
+  grid-template-columns: 11em minmax(0, 1fr);
+  column-gap: var(--salt-spacing-200);
+  row-gap: 6px;
+  align-items: center;
+  margin-top: var(--salt-spacing-100);
+  font-size: var(--salt-text-label-fontSize);
+}
+.ladder-lane,
+.ladder-grid,
+.ladder-track,
+.ladder-lines,
+.ladder-months {
+  grid-column: 2;
+  position: relative;
+}
+.ladder-name {
+  grid-column: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--salt-spacing-100);
+  white-space: nowrap;
+  color: var(--salt-content-secondary-foreground);
+}
+.ladder-name.is-selected {
+  color: var(--salt-content-primary-foreground);
+  font-weight: var(--salt-text-fontWeight-strong);
+}
+
+/* Payment lane: a marker where each payment line starts, with its date beside it. */
+.ladder-lane {
+  height: 28px;
+  z-index: 3;
+}
+.lane-pay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--salt-spacing-75);
+  transform: translateX(-5px);
+  white-space: nowrap;
+  color: var(--salt-content-secondary-foreground);
+}
+.lane-pay.tl-end {
+  flex-direction: row-reverse;
+  transform: translateX(calc(-100% + 5px));
+}
+.lane-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.lane-pay.fixed .lane-dot {
+  background: var(--salt-content-primary-foreground);
+}
+.lane-pay.budget .lane-dot {
+  background: var(--salt-container-primary-background);
+  border: 2px dashed var(--salt-content-primary-foreground);
+}
+.lane-text {
+  padding: 0 2px;
+}
+.lane-pay.is-next .lane-text,
+.lane-pay:hover .lane-text {
+  color: var(--salt-content-primary-foreground);
+}
+.lane-pay:hover .lane-text {
+  background: var(--salt-container-primary-background);
+}
+.lane-name {
+  display: none;
+  margin-left: var(--salt-spacing-75);
+}
+.lane-pay:hover .lane-name {
+  display: inline;
+}
+.lane-pay.is-crowded:not(:hover) .lane-text {
+  visibility: hidden;
+}
+
+.ladder-grid,
+.ladder-lines {
+  align-self: stretch;
+  pointer-events: none;
+}
+.ladder-grid span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--ladder-grid);
+}
+.ladder-track {
+  height: 22px;
+}
+.ladder-row {
+  display: contents;
+}
+.ladder-bar {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 12px;
+  border-radius: 0 2px 2px 0;
+  background: var(--bill);
+}
+.ladder-bar.is-clipped {
+  border-radius: 0;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent);
+}
+/* The days the cash waits between the nearest maturity and the next payment. */
+.ladder-wait {
+  position: absolute;
+  top: 5px;
+  height: 12px;
+  box-sizing: border-box;
+  background: var(--salt-category-3-subtle-background);
+  border: var(--salt-size-border) solid var(--salt-category-3-subtle-borderColor);
+}
+.ladder-wait span {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 2px);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-weight: var(--salt-text-fontWeight-strong);
+  color: var(--salt-content-primary-foreground);
+}
+/* The row under the pointer stands out: its name darkens, the other bars step back, and its term and quote appear on a
+   white label at the end of its bar, above the wait segment and the payment lines (inside the bar when it runs off the edge). */
+.ladder-row:hover .ladder-name {
+  color: var(--salt-content-primary-foreground);
+}
+.ladder:has(.ladder-row:hover) .ladder-bar {
+  opacity: 0.4;
+}
+.ladder .ladder-row:hover .ladder-bar {
+  opacity: 1;
+}
+.ladder-bar::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 6px);
+  z-index: 4;
+  transform: translateY(-50%);
+  padding: 2px 4px;
+  white-space: nowrap;
+  line-height: 1;
+  font-weight: var(--salt-text-fontWeight-strong);
+  color: var(--salt-content-primary-foreground);
+  background: var(--salt-container-primary-background);
+  box-shadow: 0 0 0 1px var(--salt-separable-tertiary-borderColor);
+  opacity: 0;
+  pointer-events: none;
+}
+.ladder-row:hover .ladder-bar::after {
+  opacity: 1;
+}
+.ladder-bar.is-clipped::after {
+  left: auto;
+  right: 56px;
+}
+.ladder-bar,
+.ladder-bar::after {
+  transition: opacity 120ms ease-out;
+}
+/* Each line starts at its payment marker and runs through the bars; the next payment's line is solid. */
+.ladder-line {
+  position: absolute;
+  top: 14px;
+  bottom: 0;
+  border-left: 1px dashed var(--salt-content-secondary-foreground);
+}
+.ladder-line.is-next {
+  border-left: 2px solid var(--salt-content-primary-foreground);
+}
+.ladder-months {
+  height: 18px;
+  color: var(--salt-content-secondary-foreground);
+}
+.ladder-months span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+.ladder-note {
+  margin: 0;
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+}
+
+.timing-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--salt-spacing-200);
+  margin: 0;
+  padding-top: var(--salt-spacing-150);
+  border-top: var(--salt-size-border) solid var(--salt-separable-tertiary-borderColor);
+}
+.timing-facts > div {
+  display: grid;
+  align-content: start;
+  gap: var(--salt-spacing-50);
+  min-width: 0;
+}
+.timing-facts dt {
+  display: flex;
+  align-items: center;
+  gap: var(--salt-spacing-75);
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+}
+.timing-facts dt .swatch,
+.timing-facts dt .bill-key {
+  flex: none;
+  margin-right: 0;
+}
+.timing-facts dd {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  font-weight: var(--salt-text-fontWeight-strong);
+}
+.timing-facts dd span {
+  font-size: var(--salt-text-label-fontSize);
+  font-weight: normal;
+  color: var(--salt-content-secondary-foreground);
+}
+
+/* Bridge rows: label, a bar measured from the zero line (the cash placed), and the signed amount. All bars take the
+   selected bill's colour and one thickness, since only length carries a value; hatching marks what inflation takes away. */
+.bridge {
+  display: grid;
+  gap: var(--salt-spacing-75);
+  margin: 0;
+}
+.bridge figcaption {
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+}
+.bridge-row {
+  display: grid;
+  grid-template-columns: 14em minmax(0, 1fr) 6em;
+  align-items: center;
+  gap: var(--salt-spacing-150);
+}
+.bridge-label {
+  font-size: var(--salt-text-label-fontSize);
+  color: var(--salt-content-secondary-foreground);
+}
+.bridge-track {
+  position: relative;
+  height: 16px;
+}
+.bridge-bar {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  background: var(--bill);
+}
+.inflation .bridge-bar {
+  background: repeating-linear-gradient(135deg, var(--bill) 0 2px, transparent 2px 5px);
+  box-shadow: inset 0 0 0 1px var(--bill);
+}
+.bridge-zero {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--salt-content-primary-foreground);
+}
+.bridge-value {
+  text-align: right;
+  font-weight: var(--salt-text-fontWeight-strong);
+}
+.net .bridge-label {
+  color: var(--salt-content-primary-foreground);
+  font-weight: var(--salt-text-fontWeight-strong);
+}
+
+@media (max-width: 900px) {
+  .timing-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 600px) {
+  .ladder {
+    grid-template-columns: 4.5em minmax(0, 1fr);
+  }
+  .ladder-name span {
+    display: none;
+  }
+  .bridge-row {
+    grid-template-columns: 9em minmax(0, 1fr) 5em;
+  }
+}

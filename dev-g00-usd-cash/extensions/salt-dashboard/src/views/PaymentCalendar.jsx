@@ -30,9 +30,9 @@ function pickSelected(ordered, id) {
 const Legend = () => (
   <ul className="legend" aria-label="Calendar key">
     <li><span className="tag quote" aria-hidden="true">Q</span>Saved quote date</li>
-    <li><span className="tag" aria-hidden="true">wk</span>Reference bill matures (the tag shows its weeks)</li>
+    <li><span className="tag" data-tenor="other" aria-hidden="true">wk</span>Reference bill matures (the tag shows its weeks)</li>
     <li><span className="swatch nearest" />Nearest maturity on or before the selected payment</li>
-    <li><span className="tag outline" aria-hidden="true">wk</span>Next maturity after it</li>
+    <li><span className="swatch after" />Next maturity after it</li>
     <li><span className="swatch fixed" />Fixed USD payment</li>
     <li><span className="swatch budget" />Price-sensitive budget</li>
     <li><span className="swatch wait" />Days cash waits</li>

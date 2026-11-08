@@ -1,5 +1,6 @@
 import {Button, Card, Display4, H3, Label, Table, TBody, TD, TH, THead, TR, Text} from '@salt-ds/core';
 import {Assumptions} from '../components/Assumptions.jsx';
+import {BillKey} from '../components/BillKey.jsx';
 import {LineChart} from '../components/LineChart.jsx';
 import {scenario, sensitivity} from '../model.js';
 import {evaluate} from '../summary.js';
@@ -8,7 +9,7 @@ import {pct, signedUsd, usd} from '../format.js';
 const {dayCount} = globalThis.Ladder;
 const GRID = Array.from({length: 41}, (_, i) => -5 + i / 2);
 const READ_POINTS = [-2, 0, 3, 6, 10];
-const TONES = ['first', 'second'];
+const TONES = ['bill13', 'bill26'];
 
 const Part = ({sign, label, value}) => <div className="part"><Label color="secondary">{sign} {label}</Label><Display4>{value}</Display4></div>;
 
@@ -25,7 +26,7 @@ export function Scenarios({dash, inputs, setInputs, assumptions}) {
             <Label color="secondary">Exact break-even inflation</Label>
             {breakEvens.map(({q, value}) => (
               <div key={q.weeks} className="break-even">
-                <Text><strong>{q.name}</strong> {pct(value)}</Text>
+                <Text><BillKey tenor={q.weeks} /><strong>{q.name}</strong> {pct(value)}</Text>
                 <Button appearance="transparent" sentiment="accented" aria-label={`Use ${pct(value)} as the inflation assumption`}
                   onClick={() => setInputs(current => ({...current, inflation: value.toFixed(4)}))}>Use {pct(value)}</Button>
               </div>
@@ -70,7 +71,7 @@ function Sensitivity({dash, assumptions}) {
       <Text color="secondary" styleAs="label">Each curve covers its own holding period, so a higher curve is not a ranking. The markers show the current assumption.</Text>
       <div className="table-scroll">
         <Table>
-          <THead><TR><TH>Annual inflation</TH>{dash.instruments.map(q => <TH key={q.weeks} textAlign="right">{q.name} purchasing power</TH>)}</TR></THead>
+          <THead><TR><TH>Annual inflation</TH>{dash.instruments.map(q => <TH key={q.weeks} textAlign="right"><BillKey tenor={q.weeks} />{q.name} purchasing power</TH>)}</TR></THead>
           <TBody>
             {reads.map(a => (
               <TR key={a} className={a === assumptions.inflation ? 'is-selected' : ''}>

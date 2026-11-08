@@ -4,15 +4,16 @@ import {CategoryScale, Chart, Legend, LinearScale, LineController, LineElement, 
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend);
 const token = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-// One wrapper so every chart shares Salt colours and type.
-// series: [{label, values, tone: 'first'|'second'|'reference', dashed, radii}]; a null value leaves a gap.
+// One wrapper so every chart shares the brand chart shades (brand.css) and Salt type.
+// series: [{label, values, tone: 'bill13'|'bill26'|'neutral'|'reference', dashed, radii}]; a null value leaves a gap.
+// A bill keeps its colour on every chart; 'neutral' is data that is not a bill (CPI), 'reference' a thin guide line.
 // xAxis: {type: 'category', labels} for months, or {type: 'linear', min, max, step, format} with values as {x, y} points.
 export function LineChart({xAxis, series, xTitle, yTitle, format, description}) {
   const canvas = useRef(null);
   const key = JSON.stringify({xAxis, series, xTitle, yTitle});
   useEffect(() => {
-    const tones = {first: token('--salt-category-1-bold-background'), second: token('--salt-category-2-bold-background'),
-      reference: token('--salt-content-secondary-foreground')};
+    const tones = {bill13: token('--lab-bill-13'), bill26: token('--lab-bill-26'),
+      neutral: token('--salt-content-secondary-foreground'), reference: token('--salt-content-secondary-foreground')};
     Chart.defaults.font.family = token('--salt-text-fontFamily');
     Chart.defaults.color = token('--salt-content-secondary-foreground');
     const grid = token('--salt-separable-tertiary-borderColor');

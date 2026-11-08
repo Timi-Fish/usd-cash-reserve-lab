@@ -47,8 +47,11 @@ export function App({summary, data, bills}) {
   return (
     <>
       <header className="app-header">
-        <Text styleAs="h3" as="h1" className="brand">USD Cash Reserve Lab</Text>
-        <Text color="secondary">Short-term USD reserve: Treasury bill maturities and purchasing power · saved quote {dash.value.quoteDate}</Text>
+        <Text styleAs="label" as="p" className="masthead-strip">Educational project. Not investment advice.</Text>
+        <div className="masthead">
+          <Text styleAs="h1" as="h1" className="brand">USD Cash Reserve Lab</Text>
+          <Text color="secondary">Short-term USD reserve: Treasury bill maturities and purchasing power · saved quote {dash.value.quoteDate}</Text>
+        </div>
       </header>
       <main className="shell">
         <Banner status={fresh.warn ? 'warning' : 'info'} variant="secondary" className="status-banner">
