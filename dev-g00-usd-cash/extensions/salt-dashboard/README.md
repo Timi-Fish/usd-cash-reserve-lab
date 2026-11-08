@@ -10,11 +10,11 @@ Double-click `dist/index.html`. Keep `dist/data.js` and `dist/bills.js` beside i
 
 ## Structure
 
-The layout is a header, then the data-status banner, then one tab bar:
+The layout is a letterhead (a black strip carrying the disclaimer over a blue band with the title), then the data-status banner, then one tab bar:
 
 | Tab | What it does |
 |---|---|
-| Overview | Assumptions, the headline result for the selected reference bill, and both bills side by side |
+| Overview | Payment timing as a bill ladder, the assumptions, the purchasing-power result with its breakdown, and both bills side by side |
 | Payment calendar | Several payment dates against all seven saved bill tenors, a month-by-month calendar and a fit table |
 | Inflation scenarios | A sensitivity chart and table, exact break-even buttons, the purchasing-power decomposition and a zero-interest comparison |
 | History | Rate and CPI charts on a shared 12-month, 24-month or full window, with an exact-value table |
@@ -55,19 +55,49 @@ Source files:
 | `src/format.js` | Currency, percent and line-break formats |
 | `src/App.jsx` | Header, status banner, tabs, shared state |
 | `src/views/` | One file per tab |
-| `src/components/` | Assumptions form, month grid, Chart.js wrapper, line-break helper |
+| `src/components/` | Assumptions form, payment ladder, purchasing-power bridge, bill colour key, month grid, Chart.js wrapper, line-break helper |
+| `src/brand.css` | Letterhead, theme remaps and the bill colours |
+| `src/styles.css`, `src/calendar.css`, `src/overview.css` | Layout, the calendar tab, the Overview figures |
 | `../liquidity-calendar/ladder.js` | Calendar-fit logic shared with the standalone calendar page |
 
 ## Differences from the original page
 
 - Six tabs replace one long page; the data status stays visible above them.
-- Salt components and tokens replace hand-made controls, using the next theme with a teal accent and rounded corners. Charts use Chart.js, and each chart has a table of exact values.
+- Salt components and tokens replace hand-made controls, using the next theme with rounded corners. A brand layer adds the letterhead, serif headings and figures (Source Serif 4) and cool neutral surfaces; controls keep Salt's blue accent. Charts use Chart.js, and each chart has a table of exact values.
 - The single cash date becomes a list of payment dates checked against all seven bill tenors in the source. Each date is marked as a fixed USD payment or a price-sensitive budget.
 - A discussion summary collects the result in one place.
 
+## Presenting it
+
+A five-part walk-through on a computer, one speaker each. Start with nothing entered.
+
+| Question | Where | What to show |
+|---|---|---|
+| Whom does it serve? | Overview as it opens; the About section at the bottom | The title band, the data-status banner, and "for a family-office client and advisor reviewing a USD reserve" |
+| What is it? | Overview: Your assumptions, the purchasing-power result, the two-bill table | Inputs and outputs; saved data (quote date, banner) versus assumptions (the inflation field says it is not a forecast) |
+| What task does it help with? | Calendar: Try example dates or add dates, then back to Overview | The bill ladder: which maturity reaches each payment and how many days the cash waits |
+| Is it useful to the client? | Scenarios: the sensitivity chart and "Where the result comes from"; the Overview bridge | Change inflation or press a break-even button and read what happens to purchasing power |
+| Will it be used after a year? | Method: sources, Freshness and maintenance; the banner | Dated sources, the refresh script in `extensions/auto-refresh/`, the checks, and who maintains the data |
+
+## Colour meanings
+
+Each colour means one thing on every chart, calendar and table. The page does not explain this mapping; it is the design rule for anyone changing the dashboard.
+
+| Colour | Means | Where |
+|---|---|---|
+| Navy | The 13-week reference bill | Payment ladder, calendar tags, Scenarios and History charts, table keys, the purchasing-power bars when the 13-week is selected |
+| Goldman Sachs blue (#7297C5) | The 26-week reference bill | The same places |
+| Pale blue | The other saved bills (4, 6, 8, 17 and 52 weeks) | Payment ladder, calendar tags |
+| Plum | Days cash waits between a maturity and a payment | Calendar, payment ladder |
+| Dark marks | Payments: filled for a fixed USD payment, dashed for a price-sensitive budget | Calendar, payment ladder |
+| Grey | Data that is not a bill (CPI) and guide lines (cash placed) | History, Scenarios |
+| Salt blue accent | Controls: buttons, toggles, links, the active tab, the selected payment | Everywhere |
+| Pale blue tint | A selected or hovered row or column | Tables |
+| Orange | Data that needs review | The data-status banner only |
+
 ## Limits
 
-- `dist/index.html` is about 1.1 MB because React, Salt, Chart.js and the Open Sans font are inlined.
+- `dist/index.html` is about 1.2 MB because React, Salt, Chart.js and the Open Sans and Source Serif 4 fonts are inlined.
 - Changing the page needs the Node build; the original page needs none.
 - The course allows only `index.html` and `data.js` to be served. This version also reads `bills.js`; serving it with the hosted dashboard would need the group to fold that data into `data.js`.
 - The required loader and the hosted-data path are unchanged but have not been tested on the course server.

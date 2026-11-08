@@ -6,8 +6,11 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
 
 ### Added
 
-- `salt-dashboard/`: a tabbed version of the whole dashboard on J.P. Morgan's open-source Salt design system (next theme, teal accent).
+- `salt-dashboard/`: a tabbed version of the whole dashboard on J.P. Morgan's open-source Salt design system (next theme; Salt's blue accent for controls).
   - Six tabs under one bar: overview, payment calendar, inflation scenarios, history, discussion summary, method and data.
+  - A brand layer: a black strip with the disclaimer over a blue band with the title, serif headings and figures (Source Serif 4), cool neutral surfaces, and one meaning per colour across every chart, calendar and table.
+  - Overview opens with payment timing as a bill ladder, then the assumptions and a purchasing-power bridge.
+  - The data-status banner names only the series past its limit: stale quotes can be refreshed because Treasury publishes daily; CPI shows its next monthly release.
   - It builds to a single offline `dist/index.html`, with the accepted `data.js` and a seven-tenor `bills.js` from the same snapshot.
   - `scripts/check-model.mjs` runs 31 checks; the arithmetic matches every saved result in `data.js`.
 
@@ -24,7 +27,8 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
   - It takes dates only; nothing is stored or sent.
 - `liquidity-calendar/PRODUCT.md` and `liquidity-calendar/DESIGN.md`: the calendar's product record and visual system.
 - `tests/check_extensions.mjs` and `evidence/extension_checks.json`: 36 checks.
-- `README.md`, `INTERFACES.md` and `REVIEW.md`.
+- `README.md`, `INTERFACES.md`, `REVIEW.md` and `DECISIONS.md` (why the redesign looks and behaves as it does).
+- Outside the project folder: the repository `README.md` now carries an NUS Business School education-only disclaimer and the third-party licences, and `AGENTS.md` indexes where the work is.
 
 ### Changed
 
@@ -45,6 +49,7 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
 | Salt dashboard model | 31 checks pass: default results reproduced to within 1e-9, input bounds, data validation, history windows, freshness, formats, summary | `evidence/salt_model_checks.json` |
 | Salt dashboard in a browser | Headless Chrome opened `dist/index.html` over file:// at 1440×900 and 390×844, went through all six tabs and loaded the calendar examples, with no console errors or exceptions | Run by the assistant; screenshots in `salt-dashboard/screenshots/` |
 | Salt design review | Independent review by a fresh-context reviewer, two rounds. Round 1: ship-with-fixes, 7 material findings (phone tables, payment timing, calendar colours, input fields, scenario chart axis, summary actions, break-even buttons). Round 2: 4 resolved, 3 partly resolved (the phone history table, the selected bill's timing, the wait-day colour) and one new issue (chart labels running together on a phone). All four were fixed afterwards and checked by the assistant with screenshots at 1440×900 and 390×844, not re-reviewed | Reviewer reports summarized here |
+| Salt brand layer and figures | Came after both review rounds and were not reviewed independently. Shaped with the requester against private-bank and wealth-platform references (J.P. Morgan Private Bank, UBS, Julius Baer, GS PWM and Morgan Stanley apps; Masttro and Asora desktop dashboards). Checked by the assistant: headless screenshots of all tabs at both sizes, pointer hover on ladder rows and tabs, a print to PDF, and contrast ratios (band text 6.0:1, secondary text on the canvas 7.4:1) | Screenshots in `salt-dashboard/screenshots/` |
 
 ### Not run
 

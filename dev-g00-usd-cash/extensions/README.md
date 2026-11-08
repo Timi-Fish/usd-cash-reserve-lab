@@ -25,6 +25,7 @@ Educational project. Not investment advice.
 | `evidence/extension_checks.json`, `evidence/salt_model_checks.json` | Output of the latest runs of the two check suites | |
 | `REVIEW.md` | Review of the project against the professor's five questions | |
 | `INTERFACES.md` | Contracts between these pieces and the accepted project | |
+| `DECISIONS.md` | Why the Salt dashboard looks and behaves as it does | |
 | `CHANGELOG.md` | What was added and verified, with a work-log entry | |
 
 ## Quick start
