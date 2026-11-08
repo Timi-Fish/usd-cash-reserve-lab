@@ -10,6 +10,7 @@ Contracts between the pieces in `extensions/` and the accepted project. Only cro
 | `../calculations/rebuild.py` (accepted) | Source parsing rules and the dashboard payload | Not modified by the extensions |
 | `liquidity-calendar/ladder.js` | Calendar-fit logic as pure functions (global `Ladder`) | DOM, storage, network |
 | `liquidity-calendar/app.js` | All page state and DOM rendering | Storage and network (by product decision) |
+| `salt-dashboard/` | Its `src/` and the built `dist/`. At build time it copies the root `data.js` and writes `dist/bills.js` with `refresh.py --sources ../../data/raw` | Accepted files, storage and network |
 | `tests/check_extensions.mjs` | `evidence/extension_checks.json` and OS temp folders | Every other file is read only |
 
 ## refresh.py ↔ rebuild.py
@@ -76,7 +77,7 @@ The file holds one statement: `window.BILL_LADDER_DATA = {JSON};`. Only `refresh
 
 ## ladder.js (global `Ladder`, frozen)
 
-Day numbers count days since 1970-01-01 UTC.
+`ladder.js` assigns `globalThis.Ladder`. That works when the calendar page loads it as a classic script, when the tests run it in a Node VM, and when the Salt dashboard imports it as a module for its side effect. Day numbers count days since 1970-01-01 UTC.
 
 | Function | Returns | Failure |
 |---|---|---|
@@ -89,6 +90,17 @@ Day numbers count days since 1970-01-01 UTC.
 | `summaryLines(ladder, entries, today)` | the discussion summary as `string[]`; the page and the copy button both use it | none |
 
 The module also exports the helpers `dayNumber` (throws on a non-date), `isoDate`, `longDate`, `dayCount` and `byDate`, and the constants `DAY_MS`, `LIMITS` (`entries` 12, `label` 60, `daysAhead` 400, `minSpanDays` 182), `PAYMENT_TYPES` (`fixed` and `budget`, each with `label`, `short` and `note`) and `CONFIRM`.
+
+## Salt dashboard
+
+- **Input:** the course's required loader in `salt-dashboard/index.html` resolves the data, either the hosted `data.json` or `window.DASHBOARD_DATA`. It stores `{summary, data}` in `window.labDashboardInput` and dispatches a `lab-dashboard-data` event. `src/main.jsx` renders on whichever of the two happens first. The calendar tab reads `window.BILL_LADDER_DATA` from `dist/bills.js`.
+- **Model:** `src/model.js` exports `scenario(principal, discountPct, days, inflationPct)`, which throws on out-of-range input. It also exports `readDashboard(summary, data)`, which throws on inconsistent data, plus `freshness(dash, today)`, `historyWindow(dash, '12' | '24' | 'all')` and `sensitivity(dash, principal, inflations)`.
+- **Summary:** `src/summary.js` exports `evaluate(dash, assumptions)`, which returns `{bill, outcome, error}`, and `summaryLines(dash, assumptions, payments, ladder, today)`, which returns `string[]`.
+- **State:** `App.jsx` holds the form inputs as typed text, the payment list and the active tab, in memory only.
+- **Failures:**
+  - invalid `data.js`: a red banner replaces the page;
+  - invalid `bills.js`: a red banner on the calendar tab;
+  - invalid inputs: field errors, with outcomes hidden and Copy and Print disabled.
 
 ## Calendar page state
 

@@ -6,6 +6,11 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
 
 ### Added
 
+- `salt-dashboard/`: a tabbed version of the whole dashboard on J.P. Morgan's open-source Salt design system (next theme, teal accent).
+  - Six tabs under one bar: overview, payment calendar, inflation scenarios, history, discussion summary, method and data.
+  - It builds to a single offline `dist/index.html`, with the accepted `data.js` and a seven-tenor `bills.js` from the same snapshot.
+  - `scripts/check-model.mjs` runs 31 checks; the arithmetic matches every saved result in `data.js`.
+
 - `auto-refresh/refresh.py`: an automatic refresh that also runs on manually downloaded files (`--sources`).
   - It downloads Daily Treasury Bill Rates XML for the two latest years and the BLS CPI-U series (CUUR0000SA0), then validates them with the accepted `calculations/rebuild.py`.
   - It writes a coordinated set: dashboard `data.js`, `project.json`, raw inputs, normalized CSVs and `refresh_report.json`, plus the calendar's `bills.js`.
@@ -23,6 +28,7 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
 
 ### Changed
 
+- `liquidity-calendar/ladder.js` now assigns `globalThis.Ladder`, so the calendar page, the tests and the Salt dashboard share one copy. Its behaviour is unchanged.
 - Nothing outside `extensions/`. On 2026-11-08 every file outside this folder was compared byte for byte with the delivered v2 package and found identical.
 
 ### Verified on 2026-11-08
@@ -36,6 +42,9 @@ All notable changes to `extensions/`. The format follows [Keep a Changelog](http
 | Calendar in a browser | HTTP preview at 1440×900 and 390×844: adding dates, validation messages, same-day and no-fit dates, removing with undo, clearing with undo, example dates; keyboard focus after every action; copy and print disabled with no dates; no horizontal overflow on a phone; print preview keeps the table layout | Run by the assistant; screenshots not stored in the package |
 | Dashboard compatibility | The accepted `index.html` renders the live candidate without errors (quote 2026-11-06, "within project age limits") | HTTP preview run by the assistant |
 | Design review | Independent review by a fresh-context reviewer, two rounds. Round 1: ship-with-fixes, 7 material findings (grid borders, line breaks inside dates, hidden list, phone table overflow, lost keyboard focus, focus-ring contrast, source link). Round 2: all 7 resolved; one new issue (entry line wrapping) and two minor ones, fixed afterwards and checked by the assistant with screenshots and a print preview, not re-reviewed | Reviewer reports summarized here |
+
+| Salt dashboard model | 31 checks pass: default results reproduced to within 1e-9, input bounds, data validation, history windows, freshness, formats, summary | `evidence/salt_model_checks.json` |
+| Salt dashboard in a browser | Headless Chrome opened `dist/index.html` over file:// at 1440×900 and 390×844, went through all six tabs and loaded the calendar examples, with no console errors or exceptions | Run by the assistant; screenshots in `salt-dashboard/screenshots/` |
 
 ### Not run
 
