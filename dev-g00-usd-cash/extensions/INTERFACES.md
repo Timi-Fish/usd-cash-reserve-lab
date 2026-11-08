@@ -94,7 +94,7 @@ The module also exports the helpers `dayNumber` (throws on a non-date), `isoDate
 ## Salt dashboard
 
 - **Input:** the course's required loader in `salt-dashboard/index.html` resolves the data, either the hosted `data.json` or `window.DASHBOARD_DATA`. It stores `{summary, data}` in `window.labDashboardInput` and dispatches a `lab-dashboard-data` event. `src/main.jsx` renders on whichever of the two happens first. The calendar tab reads `window.BILL_LADDER_DATA` from `dist/bills.js`.
-- **Model:** `src/model.js` exports `scenario(principal, discountPct, days, inflationPct)`, which throws on out-of-range input. It also exports `readDashboard(summary, data)`, which throws on inconsistent data, plus `freshness(dash, today)`, `historyWindow(dash, '12' | '24' | 'all')` and `sensitivity(dash, principal, inflations)`.
+- **Model:** `src/model.js` exports `scenario(principal, discountPct, days, inflationPct)`, which throws on out-of-range input. It also exports `readDashboard(summary, data)`, which throws on inconsistent data, including a missing `cpi.release.next_release_date` (the data-status banner names the next CPI release), plus `freshness(dash, today)`, `historyWindow(dash, '12' | '24' | 'all')` and `sensitivity(dash, principal, inflations)`.
 - **Summary:** `src/summary.js` exports `evaluate(dash, assumptions)`, which returns `{bill, outcome, error}`, and `summaryLines(dash, assumptions, payments, ladder, today)`, which returns `string[]`.
 - **State:** `App.jsx` holds the form inputs as typed text, the payment list and the active tab, in memory only.
 - **Failures:**

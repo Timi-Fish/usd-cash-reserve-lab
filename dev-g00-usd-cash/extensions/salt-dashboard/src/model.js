@@ -44,6 +44,7 @@ export function readDashboard(summary, data) {
   if (cpi.release.observation_month !== cpi.dates[cpi.dates.length - 1] || cpi.levels[cpi.levels.length - 1] === null)
     throw new Error('CPI metadata in data.js disagrees with the latest observation.');
   dayNumber(cpi.release.release_date);
+  dayNumber(cpi.release.next_release_date);
   return {summary, config: data.config, quoteDate: summary.as_of, instruments, cpi,
     rates: {dates: data.dates, bill13: data.series.bill13_discount, bill26: data.series.bill26_discount}, sources: data.sources};
 }
@@ -52,23 +53,39 @@ const monthIndex = key => { const d = new Date(dayNumber(`${key}-01`) * DAY_MS);
 const monthKey = index => isoDate(Date.UTC(Math.floor(index / 12), index % 12, 1) / DAY_MS).slice(0, 7);
 const monthEnd = key => { const i = monthIndex(key) + 1; return Date.UTC(Math.floor(i / 12), i % 12, 0) / DAY_MS; };
 
+// Each saved series states its own age, keyed by whether it is past its project limit. Only a series past its limit
+// asks for a refresh: the Treasury publishes bill rates every business day, while BLS publishes CPI once a month.
+const SERIES_TEXT = {
+  quotes: {
+    true: (f, rule) => `Bill quotes are ${dayCount(f.quoteAge)} old (limit ${rule.quote_days} days). ` +
+      'The Treasury publishes new rates every business day, so the data maintainer can refresh them.',
+    false: (f, rule) => `Bill quotes are ${dayCount(f.quoteAge)} old (limit ${rule.quote_days} days).`
+  },
+  cpi: {
+    true: (f, rule) => `CPI for ${f.cpiMonth} is ${dayCount(f.cpiAge)} past its month end (limit ${rule.cpi_days} days), ` +
+      'so a newer monthly BLS release should be out; the data maintainer can refresh it.',
+    false: f => `CPI is for ${f.cpiMonth} (BLS publishes monthly; next release ${f.nextCpi}).`
+  }
+};
+const seriesText = (f, rule) => ['quotes', 'cpi'].map(series => SERIES_TEXT[series][f.over[series]](f, rule));
 const FRESH_TEXT = {
   clock: () => 'The device date is before the saved quote date; check the clock.',
-  stale: (f, rule) => `Review required: quotes are ${dayCount(f.quoteAge)} old and CPI ${dayCount(f.cpiAge)} past its month end ` +
-    `(project limits: ${rule.quote_days} and ${rule.cpi_days} days). Ask the data maintainer to refresh.`,
-  fresh: (f, rule) => `Within project age limits: quotes ${dayCount(f.quoteAge)} old (limit ${rule.quote_days} days).`
+  stale: (f, rule) => ['Review required.', ...seriesText(f, rule)].join(' '),
+  fresh: (f, rule) => ['Within project age limits.', ...seriesText(f, rule)].join(' ')
 };
 
 // Ages are counted against the viewer's calendar date; they never move the model start away from the saved quote.
 export function freshness(dash, today) {
   const rule = dash.config.freshness;
+  const release = dash.cpi.release;
   const quoteAge = today - dayNumber(dash.quoteDate);
-  const cpiAge = today - monthEnd(dash.cpi.release.observation_month);
-  const state = quoteAge < 0 ? 'clock' : quoteAge > rule.quote_days || cpiAge > rule.cpi_days ? 'stale' : 'fresh';
+  const cpiAge = today - monthEnd(release.observation_month);
+  const over = {quotes: quoteAge > rule.quote_days, cpi: cpiAge > rule.cpi_days};
+  const state = quoteAge < 0 ? 'clock' : over.quotes || over.cpi ? 'stale' : 'fresh';
   const matured = dash.instruments.filter(q => q.maturityDay < today);
   const maturedText = matured.length ? ` Already matured: ${matured.map(q => q.name).join(', ')}; historical scenarios only.` : '';
-  return {quoteAge, cpiAge, state, matured, warn: state !== 'fresh' || matured.length > 0,
-    text: FRESH_TEXT[state]({quoteAge, cpiAge}, rule) + maturedText};
+  const facts = {quoteAge, cpiAge, over, cpiMonth: release.observation_month, nextCpi: release.next_release_date};
+  return {quoteAge, cpiAge, state, matured, warn: state !== 'fresh' || matured.length > 0, text: FRESH_TEXT[state](facts, rule) + maturedText};
 }
 
 // Shared calendar window for the rate and CPI charts, anchored to the latest saved month. A month without an
