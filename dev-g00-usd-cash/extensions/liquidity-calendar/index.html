@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquidity calendar · USD Cash Reserve Lab</title>
+<style>
+:root{--ink:#17343e;--muted:#536970;--teal:#007477;--gold:#99621d;--line:#dbe3df;--paper:#f2f4f0;--warning:#fff1dc;--red:#933e2e;--soft:#eaf3ee;--wait:#f6e6cf;--weekend:#f7f8f5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+a{color:var(--teal)}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid #a9b9b2;border-radius:7px;background:white;padding:9px 14px;transition:background-color .18s ease-out,box-shadow .18s ease-out}
+button:hover{background:var(--soft)}
+button:active{background:#dcebe3}
+button:disabled{cursor:not-allowed;color:#7d8f94;background:#f3f5f2;border-color:#cfd9d4}
+input[type=text],input[type=date]{width:100%;min-width:0;border:1px solid #a9b9b2;border-radius:7px;background:white;padding:10px}
+input[aria-invalid=true]{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.nb{white-space:nowrap}
+header{max-width:1440px;margin:auto;padding:24px 34px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line)}
+.brand{font-size:18px;font-weight:750;letter-spacing:-.02em}
+.brand span{font-weight:500;color:var(--muted)}
+.pill{font-size:12px;border:1px solid var(--line);border-radius:24px;padding:5px 11px;white-space:nowrap;background:white}
+.pill.warn{border-color:#c49652;background:var(--warning);color:#643e14}
+.shell{max-width:1440px;margin:auto;padding:28px 34px 52px;display:grid;grid-template-columns:300px minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"aside intro" "aside content";gap:0 28px;align-items:start}
+.intro{grid-area:intro;min-width:0}
+.content{grid-area:content;min-width:0}
+.controls{grid-area:aside;border:1px solid var(--line);border-radius:12px;background:white;padding:22px}
+.controls h2{font-size:20px;line-height:1.25;letter-spacing:-.02em;margin:0 0 4px}
+.controls h3{font-size:15px;margin:26px 0 4px;display:flex;justify-content:space-between;align-items:baseline}
+.controls h3 span{font-size:12px;font-weight:500;color:var(--muted)}
+.field{margin:16px 0}
+label,legend{display:block;font-size:13px;font-weight:700;margin-bottom:6px;padding:0}
+fieldset{border:0;padding:0;margin:16px 0}
+.choice{display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:600;margin:8px 0;cursor:pointer}
+.choice input{margin:4px 0 0;accent-color:var(--teal)}
+.choice small{display:block;font-size:12px;font-weight:400;color:var(--muted)}
+.help{font-size:12px;color:var(--muted);margin:6px 0}
+.primary{width:100%;background:var(--ink);border-color:var(--ink);color:white;font-weight:650}
+.primary:hover{background:#25505c}
+.form-error{color:var(--red);font-size:13px;min-height:1.4em;margin:8px 0 0}
+.entries{list-style:none;padding:0;margin:8px 0 12px}
+.entry{display:flex;gap:6px;align-items:center;border-top:1px solid var(--line);padding:6px 0}
+.entry .pick{flex:1;min-width:0;text-align:left;border:0;background:none;padding:6px 8px;border-radius:7px}
+.entry .pick > strong{display:block;font-size:14px;overflow-wrap:anywhere}
+.entry .pick > span{display:block;font-size:12px;color:var(--muted)}
+.entry .pick[aria-pressed=true]{background:var(--soft);box-shadow:inset 0 0 0 1px #a5c6b8}
+.entry .remove{font-size:12px;padding:5px 8px}
+.row-actions{display:flex;gap:8px;flex-wrap:wrap}
+.row-actions button{font-size:13px}
+.privacy{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
+h1{font-size:32px;line-height:1.15;letter-spacing:-.035em;margin:0 0 10px;max-width:820px;text-wrap:balance}
+h2{font-size:22px;line-height:1.2;letter-spacing:-.025em;margin:0 0 6px}
+h3{font-size:16px;line-height:1.3;margin:0 0 6px}
+p{margin:6px 0 12px}
+.lede{max-width:760px;color:var(--muted);margin-bottom:16px}
+.status{padding:11px 15px;border:1px solid #a5c6b8;background:var(--soft);font-size:13px;border-radius:7px;margin:0 0 22px}
+.status.warn{border-color:#c49652;background:var(--warning);color:#643e14}
+.fatal{background:#fff0ec;color:var(--red);padding:14px 16px;border:1px solid #c98a7d;border-radius:7px;margin:0 0 22px}
+.panel{border:1px solid var(--line);border-radius:12px;background:white;padding:24px;margin-bottom:22px}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--muted);margin:10px 0 0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:7px}
+.legend .tag{margin:0}
+.swatch{display:inline-block;width:18px;height:14px;border-radius:3px;border:1px solid var(--line);background:white}
+.swatch.nearest{box-shadow:inset 0 0 0 2px var(--teal);border-color:transparent}
+.swatch.mat{background:var(--teal);border-color:var(--teal)}
+.swatch.next{box-shadow:inset 0 0 0 1px var(--teal);border-color:transparent}
+.swatch.fixed{background:var(--ink);border-color:var(--ink);border-radius:50%;width:14px}
+.swatch.budget{border:2px dashed var(--ink);border-radius:50%;width:14px}
+.swatch.wait{background:var(--wait);border-color:#e3c9a4}
+.swatch.today{height:3px;border:0;border-radius:2px;background:var(--gold)}
+.readout{font-size:15px;margin:16px 0 4px;padding:12px 14px;border-radius:8px;background:var(--paper);border:1px solid var(--line);min-height:50px}
+.readout strong{font-weight:700}
+.months{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px 22px;margin-top:18px;align-items:start}
+.month{border-collapse:collapse;width:100%;table-layout:fixed}
+.month caption{text-align:left;font-weight:700;font-size:15px;padding:0 0 8px}
+.month th{font-size:11px;font-weight:600;color:var(--muted);padding:2px 0 6px;text-align:center}
+.month td{height:50px;border:1px solid var(--line);vertical-align:top;padding:3px;background:white;font-size:12px;transition:background-color .2s ease-out}
+.month td.blank{border-style:none;background:transparent}
+.month td.weekend{background:var(--weekend)}
+.month td.wait{background:var(--wait)}
+.month td.today .daynum{font-weight:700;text-decoration:underline 3px var(--gold);text-underline-offset:4px}
+.month td.nearest{box-shadow:inset 0 0 0 2px var(--teal)}
+.daynum{display:block;font-size:12px;line-height:20px;width:22px;height:22px;text-align:center;border-radius:50%}
+.month td.quote .daynum{box-shadow:inset 0 0 0 1px var(--muted)}
+.pay{display:block;padding:0;border:0;background:none;border-radius:50%;width:24px;height:24px;margin:-1px}
+.pay .daynum{width:24px;height:24px;line-height:24px;font-weight:700;transition:transform .15s ease-out}
+.pay.fixed .daynum{background:var(--ink);color:white}
+.pay.budget .daynum{background:white;outline:2px dashed var(--ink);outline-offset:-2px}
+.pay[aria-pressed=true]{box-shadow:0 0 0 3px var(--gold)}
+.pay:hover{background:none}
+.pay:hover .daynum{transform:scale(1.08)}
+.count{position:relative;top:-2px;font-size:11px;font-weight:700;color:var(--ink);margin-left:2px}
+.tag{display:inline-block;font-size:11px;font-weight:700;line-height:1;padding:3px 4px;border-radius:4px;background:var(--teal);color:white;margin:2px 2px 0 0}
+.tag.quote{background:white;color:var(--muted);box-shadow:inset 0 0 0 1px var(--muted)}
+.month td.after .tag:not(.quote){background:white;color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal)}
+.tablewrap{overflow-x:auto}
+table.fit{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0 0}
+table.fit th,table.fit td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+table.fit thead th{background:var(--paper);font-size:12px;font-weight:700}
+table.fit td.num{text-align:right;white-space:nowrap}
+table.fit tr.selected{background:var(--soft)}
+table.fit .linkish{border:0;background:none;padding:0;color:var(--teal);font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+table.fit .empty-row{color:var(--muted);text-align:left}
+.summary{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fbfcfa;margin:14px 0}
+.summary p{margin:0 0 8px;max-width:78ch;font-size:14px}
+.summary p:first-child{font-weight:700;font-size:15px}
+.summary-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.copy-status{font-size:13px;color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 32px;margin-top:14px}
+.about-grid p,.about-grid li{font-size:14px;color:var(--muted)}
+.about-grid ul{padding-left:18px;margin:6px 0 12px}
+code{font-size:13px;background:var(--paper);padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}
+footer{max-width:1440px;margin:auto;padding:20px 34px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:12px}
+@media(max-width:1050px){.shell{grid-template-columns:260px minmax(0,1fr);padding:24px 22px;gap:0 20px}.controls{padding:18px}.about-grid{grid-template-columns:1fr}}
+@media screen and (max-width:760px){
+header{padding:18px 16px;flex-wrap:wrap}
+.shell{display:flex;flex-direction:column;padding:20px 16px;gap:22px}
+.controls,.intro,.content{width:100%}
+h1{font-size:27px}
+.panel{padding:18px 14px}
+.month td{height:46px;padding:2px}
+.tag{padding:3px 3px}
+table.fit thead{display:none}
+table.fit,table.fit tbody,table.fit tr,table.fit th,table.fit td{display:block;width:100%}
+table.fit tr{border-bottom:1px solid var(--line);padding:10px 4px}
+table.fit th,table.fit td{border:0;padding:3px 0}
+table.fit td.num{text-align:left}
+table.fit td[data-label]::before{content:attr(data-label);display:block;font-size:11px;font-weight:700;color:var(--muted)}
+footer{padding:20px 16px;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{body{background:white}header .pill,.controls,#calendarPanel,#lab-about,.summary-actions,.panel .help{display:none}.shell{display:block;padding:0}.panel{border:0;padding:0}table.fit{font-size:11px}table.fit th,table.fit td{padding:6px}table.fit .linkish{color:var(--ink);text-decoration:none}footer{border:0}}
+</style>
+</head>
+<body>
+<!--
+THESIS: The page is a wall calendar of the client's own payment dates; each saved reference bill's maturity sits on its real day, so early, on time or late is read off month pages, not a chart. It refuses the cards-and-charts dashboard arrangement.
+OWN-WORLD: The incumbent USD Cash Reserve Lab system: sage paper #f2f4f0, white sheets ruled #dbe3df, ink #17343e, teal #007477 maturity tags, gold #99621d and its tint for the waiting gap, system sans with tabular figures, 7px controls, 12px sheets.
+STORY: With their advisor, the client adds a few payment dates, sees which saved bill matures before each and how many days cash would wait, separates fixed from price-sensitive payments, and prints a summary of what to confirm.
+FIRST VIEWPORT: Left sheet adds a payment (name, date, type). Right: question headline, saved-quote status, then the first row of three month pages with tags, payment marks and the shaded wait.
+FORM: Month calendar grid, candidate 6 of 7 by resonance; seed key 69bf8d72.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<header>
+  <div class="brand">USD Cash Reserve Lab <span>/ Liquidity calendar</span></div>
+  <div class="pill" id="quotePill" aria-live="polite"></div>
+</header>
+<main class="shell">
+  <div class="intro">
+    <h1>Which saved Treasury bill matures before each payment?</h1>
+    <p class="lede">For a family-office client and advisor reviewing USD payments planned for the coming months. Add each payment date; the calendar marks the days the saved reference bills mature and how long cash would wait before each payment.</p>
+    <p class="fatal" id="fatal" role="alert" hidden></p>
+    <p class="status" id="status"></p>
+  </div>
+  <aside class="controls" aria-labelledby="addTitle">
+    <h2 id="addTitle">Add a payment date</h2>
+    <p class="help">One line per planned USD payment in the coming months.</p>
+    <form id="addForm" novalidate>
+      <div class="field">
+        <label for="payLabel">Payment</label>
+        <input id="payLabel" name="payLabel" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Property tax installment" aria-describedby="formError">
+      </div>
+      <div class="field">
+        <label for="payDate">Date</label>
+        <input id="payDate" name="payDate" type="date" aria-describedby="dateHelp formError">
+        <p class="help" id="dateHelp"></p>
+      </div>
+      <fieldset>
+        <legend>Payment type</legend>
+        <label class="choice"><input type="radio" name="payType" value="fixed" checked><span>Fixed USD payment<small>The dollar amount is set, such as an invoice or tax bill.</small></span></label>
+        <label class="choice"><input type="radio" name="payType" value="budget"><span>Price-sensitive budget<small>The cost may rise with prices, such as living costs.</small></span></label>
+      </fieldset>
+      <button class="primary" type="submit">Add to calendar</button>
+      <p class="form-error" id="formError" role="alert"></p>
+    </form>
+    <h3>Payment dates <span id="count"></span></h3>
+    <ul class="entries" id="entries"></ul>
+    <div class="row-actions">
+      <button type="button" id="example">Try example dates</button>
+      <button type="button" id="undo" hidden></button>
+      <button type="button" id="clear" hidden>Clear all</button>
+    </div>
+    <p class="privacy">Nothing is saved or sent. Closing this page clears the dates; copy or print the summary to keep a record.</p>
+  </aside>
+  <div class="content">
+    <section class="panel" id="calendarPanel" aria-labelledby="calendarTitle">
+      <div class="panel-head">
+        <h2 id="calendarTitle">Calendar</h2>
+        <ul class="legend" aria-label="Calendar key">
+          <li><span class="tag quote" aria-hidden="true">Q</span>Saved quote date</li>
+          <li><span class="swatch mat"></span>Reference bill matures (tag shows weeks, e.g. 13w)</li>
+          <li><span class="swatch nearest"></span>Nearest maturity on or before the selected payment</li>
+          <li><span class="swatch next"></span>Next maturity after it (outlined tag)</li>
+          <li><span class="swatch fixed"></span>Fixed USD payment</li>
+          <li><span class="swatch budget"></span>Price-sensitive budget</li>
+          <li><span class="swatch wait"></span>Days cash waits</li>
+          <li><span class="swatch today"></span>Today</li>
+        </ul>
+      </div>
+      <p class="readout" id="readout" aria-live="polite"></p>
+      <div class="months" id="months"></div>
+      <p class="help" id="beyond"></p>
+    </section>
+    <section class="panel" aria-labelledby="fitTitle">
+      <h2 id="fitTitle">Calendar fit by payment</h2>
+      <p class="help">The nearest saved maturity on or before each payment, and the first one after it.</p>
+      <div class="tablewrap">
+        <table class="fit">
+          <thead><tr><th scope="col">Date</th><th scope="col">Payment</th><th scope="col">Payment type</th><th scope="col">Matures on or before</th><th scope="col">Cash waits</th><th scope="col">Next maturity after</th></tr></thead>
+          <tbody id="fitRows"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="summaryTitle">
+      <h2 id="summaryTitle">Discussion summary</h2>
+      <p class="help">Updates with every change. Copy it into meeting notes or print it.</p>
+      <div class="summary" id="summary"></div>
+      <div class="summary-actions">
+        <button type="button" id="copy">Copy summary</button>
+        <button type="button" id="print">Print summary</button>
+        <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+      </div>
+    </section>
+    <section class="panel" id="lab-about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About this calendar</h2>
+      <div class="about-grid">
+        <div>
+          <h3>How a fit is found</h3>
+          <p>For each payment, the calendar takes the latest saved maturity on or before that date. "Cash waits" counts calendar days from that maturity to the payment; no return is assumed for those days. The first maturity after the payment is shown for comparison: holding it would mean selling before maturity at an unknown price.</p>
+          <h3>Fixed and price-sensitive payments</h3>
+          <p>A fixed USD payment needs the dollars on time, so only the timing matters. A price-sensitive budget can cost more if prices rise; the dashboard's purchasing-power scenario uses an assumed inflation rate. U.S. CPI-U is a national average, so it may not match a family's own costs.</p>
+        </div>
+        <div>
+          <h3>Data</h3>
+          <p id="sourceNote"></p>
+          <h3>Not assessed</h3>
+          <ul>
+            <li>Purchase price, purchase date and whether a bill can still be bought</li>
+            <li>Settlement, receipt of funds, taxes, fees and minimum amounts</li>
+            <li>Whether a payment can be met; this page compares dates only</li>
+          </ul>
+          <p>The model starts at the saved quote date. Quotes are saved observations, not executable offers, and the calendar never ranks or recommends a bill.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer><span>Educational project. Not investment advice.</span><span>Liquidity calendar · candidate for group review</span></footer>
+<script src="bills.js"></script>
+<script src="ladder.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

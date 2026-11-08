@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-27",
+  "operator": "development assistant",
+  "environment": "Node VM: actual inline functions, no rendered DOM or actual file-protocol browser",
+  "index_sha256": "fa1ee032339814d7a8e0291626e6db892133e48cff1f3294aebc76918136b4f7",
+  "data_sha256": "93400fe76f7047d8f6063838f1dd5ab3d4b9f6be294793ec376b2206dbec3d6d",
+  "checks": [
+    {
+      "id": "valid candidate accepts",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w saved default unchanged within cent",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w actual day difference",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w nominal unaffected by inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w real falls with inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w zero inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w deflation negative adjustment",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w exact break-even",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w decomposition reconciles",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w cash same-period identity",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w missing cash date",
+      "expected": "none",
+      "actual": "none",
+      "pass": true
+    },
+    {
+      "id": "13w exact maturity",
+      "expected": "same",
+      "actual": "same",
+      "pass": true
+    },
+    {
+      "id": "13w one day before",
+      "expected": -1,
+      "actual": -1,
+      "pass": true
+    },
+    {
+      "id": "13w one day after",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "id": "13w prior to model start rejected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w invalid date rejected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13w matured status",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w saved default unchanged within cent",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w actual day difference",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w nominal unaffected by inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w real falls with inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w zero inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w deflation negative adjustment",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w exact break-even",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w decomposition reconciles",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w cash same-period identity",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w missing cash date",
+      "expected": "none",
+      "actual": "none",
+      "pass": true
+    },
+    {
+      "id": "26w exact maturity",
+      "expected": "same",
+      "actual": "same",
+      "pass": true
+    },
+    {
+      "id": "26w one day before",
+      "expected": -1,
+      "actual": -1,
+      "pass": true
+    },
+    {
+      "id": "26w one day after",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "id": "26w prior to model start rejected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w invalid date rejected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26w matured status",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "no misleading increase zero",
+      "expected": "Purchasing power is approximately unchanged.",
+      "actual": "Purchasing power is approximately unchanged.",
+      "pass": true
+    },
+    {
+      "id": "negative zero suppressed",
+      "expected": "0.00%",
+      "actual": "0.00%",
+      "pass": true
+    },
+    {
+      "id": "tiny dollar loss suppressed",
+      "expected": "$0.00",
+      "actual": "$0.00",
+      "pass": true
+    },
+    {
+      "id": "missing amount rejects",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "zero principal rejects",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "excess inflation rejects",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "day mismatch stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "invalid actual maturity stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "duplicate tenor stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "missing tenor stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "missing quote stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "missing quote date stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "duplicate security stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "unit mismatch stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "duplicate history month stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "summary date mismatch stops",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "shared 12-month interval",
+      "expected": [
+        "2025-11",
+        "2026-10",
+        12,
+        12
+      ],
+      "actual": [
+        "2025-11",
+        "2026-10",
+        12,
+        12
+      ],
+      "pass": true
+    },
+    {
+      "id": "shared 24-month interval",
+      "expected": [
+        "2024-11",
+        "2026-10",
+        24
+      ],
+      "actual": [
+        "2024-11",
+        "2026-10",
+        24
+      ],
+      "pass": true
+    },
+    {
+      "id": "all available calendar bounds",
+      "expected": [
+        "2023-01",
+        "2026-10"
+      ],
+      "actual": [
+        "2023-01",
+        "2026-10"
+      ],
+      "pass": true
+    },
+    {
+      "id": "latest CPI absent month retained",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "id": "known CPI gap retained",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "id": "line path breaks around null",
+      "expected": "M0,1 M2,2 ",
+      "actual": "M0,1 M2,2 ",
+      "pass": true
+    },
+    {
+      "id": "fresh on review date",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "stale after threshold",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "both matured flagged",
+      "expected": [
+        13,
+        26
+      ],
+      "actual": [
+        13,
+        26
+      ],
+      "pass": true
+    },
+    {
+      "id": "file loader logic only",
+      "expected": "same saved object and zero fetch",
+      "actual": {
+        "same": true,
+        "fetches": 0
+      },
+      "pass": true
+    },
+    {
+      "id": "valid hosted loader",
+      "pass": true
+    },
+    {
+      "id": "hosted failure local fallback",
+      "pass": true
+    },
+    {
+      "id": "bank discount ontology is group term",
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

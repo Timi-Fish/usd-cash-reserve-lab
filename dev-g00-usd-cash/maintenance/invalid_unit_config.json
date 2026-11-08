@@ -1,0 +1,22 @@
+{
+  "dashboard_id": "dev-g00-usd-cash",
+  "group_id": "g00",
+  "identity_status": "Development identifier. Replace with instructor-assigned class prefix and group before submission.",
+  "review_date": "2026-10-27",
+  "access_date": "2026-10-27",
+  "quote_cutoff": "2026-10-26",
+  "rate_unit": "basis-points",
+  "cpi_unit": "index-points",
+  "default_principal": 100000,
+  "default_inflation_pct": 3,
+  "freshness": {
+    "quote_days": 7,
+    "cpi_days": 60
+  },
+  "cpi_release": {
+    "observation_month": "2026-09",
+    "release_date": "2026-10-14",
+    "next_release_date": "2026-11-10",
+    "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm"
+  }
+}

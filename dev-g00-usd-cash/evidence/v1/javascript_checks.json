@@ -1,0 +1,87 @@
+{
+  "environment": "Node VM with minimal metadata stub; not a rendered browser",
+  "checks": [
+    {
+      "id": "file-protocol saved-data loader",
+      "expected": "same object, zero network requests",
+      "actual": {
+        "same": true,
+        "fetches": 0
+      },
+      "pass": true
+    },
+    {
+      "id": "valid dataset accepted",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "JS matches Python real amount within one cent",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "higher inflation reduces real proceeds",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "nominal independent of inflation",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "doubled principal doubles real proceeds",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "invalid principal rejects",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "nonfinite input rejects",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "freshness on build day",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "staleness after 90 days",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "wrong unit rejected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "missing latest quote rejected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "October 2025 CPI stays null",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

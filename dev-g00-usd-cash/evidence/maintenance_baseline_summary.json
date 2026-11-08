@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "dashboard": "dev-g00-usd-cash",
+    "title": "USD Cash Reserve Lab",
+    "personas": [
+      "family-office-client"
+    ],
+    "workflow": "wealth-planning",
+    "topics": [
+      "wealth-and-goals"
+    ],
+    "question": "When is the cash needed, which reference maturity fits that date, and how could purchasing power change?",
+    "as_of": "2026-10-23",
+    "refresh": {
+      "mode": "manual",
+      "cadence": "monthly"
+    },
+    "headline": "13-week reference: +0.29% modeled real return at 3.0% annual inflation.",
+    "state": null,
+    "key_numbers": [
+      {
+        "label": "13-week bank discount rate",
+        "concept": "g00:bank-discount-rate",
+        "value": 4.04,
+        "unit": "percent",
+        "as_of": "2026-10-23",
+        "trend": null
+      },
+      {
+        "label": "26-week bank discount rate",
+        "concept": "g00:bank-discount-rate",
+        "value": 4.17,
+        "unit": "percent",
+        "as_of": "2026-10-23",
+        "trend": null
+      },
+      {
+        "label": "Latest CPI year-on-year",
+        "concept": "core:inflation",
+        "value": 3.737684729064039,
+        "unit": "percent",
+        "as_of": "2026-09-30",
+        "trend": null
+      },
+      {
+        "label": "Default scenario real return",
+        "concept": "g00:real-holding-return",
+        "value": 0.286698122317941,
+        "unit": "percent",
+        "as_of": "2026-10-23",
+        "trend": null
+      }
+    ],
+    "disclaimer": "Educational project. Not investment advice."
+  },
+  "instruments": [
+    {
+      "weeks": 13,
+      "quote_date": "2026-10-23",
+      "maturity_date": "2027-01-21",
+      "days": 90,
+      "cusip": "912797TM9",
+      "discount_pct": 4.04,
+      "coupon_equivalent_pct": 4.14,
+      "default_result": {
+        "price_per_100": 98.99,
+        "nominal_return_pct": 1.0203050813213377,
+        "period_inflation_pct": 0.7315097343305155,
+        "real_return_pct": 0.286698122317941,
+        "nominal_end": 101020.30508132135,
+        "real_end": 100286.69812231793,
+        "real_change": 286.69812231793185,
+        "break_even_annual_pct": 4.202857707712138,
+        "zero_interest_real_end": 99273.80247128251,
+        "nominal_interest": 1020.3050813213486,
+        "purchasing_power_adjustment": 733.6069590034167,
+        "cash_advantage": 1012.8956510354183
+      }
+    },
+    {
+      "weeks": 26,
+      "quote_date": "2026-10-23",
+      "maturity_date": "2027-04-22",
+      "days": 181,
+      "cusip": "912797WV5",
+      "discount_pct": 4.17,
+      "coupon_equivalent_pct": 4.32,
+      "default_result": {
+        "price_per_100": 97.90341666666666,
+        "nominal_return_pct": 2.1414812727849952,
+        "period_inflation_pct": 1.476588081375696,
+        "real_return_pct": 0.6552183158504699,
+        "nominal_end": 102141.481272785,
+        "real_end": 100655.21831585046,
+        "real_change": 655.2183158504631,
+        "break_even_annual_pct": 4.365468113656523,
+        "zero_interest_real_end": 98544.89778451006,
+        "nominal_interest": 2141.481272784993,
+        "purchasing_power_adjustment": 1486.26295693453,
+        "cash_advantage": 2110.3205313404032
+      }
+    }
+  ]
+}

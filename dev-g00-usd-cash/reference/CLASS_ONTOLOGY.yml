@@ -1,0 +1,81 @@
+# Class ontology (shared vocabulary), version 1.0
+# Every dashboard's data.js summary and ontology.yml use these ids, so the class
+# master dashboard can compare dashboards. Groups ADD their own terms (g07:...)
+# in their ontology.yml, each with a "broader" core id. Never rename core ids.
+
+personas:
+  research-analyst: builds the investment case for securities, sectors or themes
+  portfolio-manager: decides allocation, sizing and risk across a portfolio
+  trader: times entries/exits and manages short-horizon risk
+  family-office-client: owns wealth; wants clarity on goals, risk and outcomes
+
+workflows:
+  macro-monitoring: track the economy and what it implies for markets
+  asset-allocation: decide weights across asset classes, regions or factors
+  security-selection: screen, research and value individual securities
+  risk-monitoring: measure and watch portfolio or market risk
+  performance-review: explain what drove returns versus a benchmark
+  credit-monitoring: track credit quality, spreads and default risk
+  wealth-planning: connect a client's goals to portfolio decisions
+
+topics: [market-regimes, business-cycles, stock-screening, credit-defaults, market-themes,
+         market-risk, portfolio-construction, valuation, performance-attribution, wealth-and-goals]
+
+# How to identify things (use in data and in ontology.yml)
+entity_types:
+  core:Country: ISO 3166-1 alpha-2, e.g. US, SG
+  core:Currency: ISO 4217, e.g. USD, SGD
+  core:Sector: GICS sector name in kebab-case, e.g. information-technology
+  core:Security: TICKER@MIC, e.g. AAPL@XNAS, D05@XSES
+  core:Index: short name, e.g. SPX, STI, MSCI-ACWI
+  core:AssetClass: equities | government-bonds | corporate-bonds | cash | commodities | real-estate | fx | crypto | multi-asset
+  core:Portfolio: group-defined name, e.g. g05:balanced-60-40
+
+# States a dashboard can report in summary.state (use one of the listed values)
+states:
+  core:MarketRegime: [risk-on, neutral, risk-off, crisis]
+  core:BusinessCyclePhase: [recovery, expansion, slowdown, contraction]
+  core:CreditCyclePhase: [repair, recovery, expansion, downturn]
+  core:VolatilityRegime: [low, normal, elevated, extreme]
+  core:ValuationState: [cheap, fair, expensive]
+  core:Trend: [up, flat, down]
+
+# Measurable concepts: id: unit (description)
+concepts:
+  core:total-return: percent (price change plus income over a stated period)
+  core:excess-return: percent (return minus benchmark or risk-free rate)
+  core:volatility: percent (annualised standard deviation of returns)
+  core:max-drawdown: percent (largest peak-to-trough fall)
+  core:sharpe-ratio: ratio (excess return per unit of volatility)
+  core:beta: ratio (sensitivity to a benchmark)
+  core:correlation: ratio (correlation between two return series)
+  core:value-at-risk: percent (loss not exceeded at a stated confidence and horizon)
+  core:tracking-error: percent (volatility of returns relative to a benchmark)
+  core:alpha: percent (return not explained by benchmark exposure)
+  core:allocation-effect: percent (attribution effect from weighting)
+  core:selection-effect: percent (attribution effect from security choice)
+  core:momentum: percent (trailing return used as a trend signal)
+  core:weight: percent (share of a portfolio or index)
+  core:pe-ratio: ratio (price / earnings; state trailing or forward)
+  core:pb-ratio: ratio (price / book value)
+  core:dividend-yield: percent (annual dividends / price)
+  core:earnings-yield: percent (earnings / price)
+  core:cost-of-equity: percent (required return on equity)
+  core:fair-value: currency (estimated intrinsic value per share)
+  core:policy-rate: percent (central bank policy rate)
+  core:bond-yield: percent (yield to maturity)
+  core:yield-curve-slope: percentage-points (long minus short yield; state tenors)
+  core:credit-spread: basis-points (yield over matching government bond)
+  core:default-rate: percent (share of issuers or loans defaulting)
+  core:gdp-growth: percent (real GDP growth; state period)
+  core:inflation: percent (year-on-year change in a price index)
+  core:unemployment-rate: percent (unemployed share of labour force)
+  core:industrial-production-growth: percent (change in industrial production; state period)
+  core:pmi: index-points (purchasing managers' index; 50 = no change)
+  core:consumer-sentiment: index-points (survey-based consumer confidence)
+  core:implied-volatility: index-points (option-implied volatility index, e.g. VIX)
+  core:price: currency (price or index level)
+  core:market-cap: currency (market capitalisation)
+  core:signal-score: score (a dashboard's composite score; define the scale in ontology.yml)
+
+units: [percent, percentage-points, basis-points, ratio, index-points, currency, score, count]

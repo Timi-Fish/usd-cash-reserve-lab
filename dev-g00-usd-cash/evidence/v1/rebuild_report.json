@@ -1,0 +1,9 @@
+{
+  "status": "candidate_generated",
+  "dashboard": "dev-g00-usd-cash",
+  "quote_date": "2026-10-26",
+  "cpi_month": "2026-09",
+  "rows": 704,
+  "human_release": "pending",
+  "sha256_data_js": "368620ecdd933116d279452671973d6f03785f36ec431d7d5d84ba7367f0f514"
+}

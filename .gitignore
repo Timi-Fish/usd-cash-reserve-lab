@@ -1,0 +1,10 @@
+# macOS and editor files
+.DS_Store
+# Python caches and partial writes
+__pycache__/
+*.pyc
+*.tmp
+# Rebuild output from calculations/rebuild.py (its default --out is candidate/)
+/dev-g00-usd-cash/candidate/
+# Submission ZIPs that tools/set_identity.py writes next to the project folder
+/*.zip

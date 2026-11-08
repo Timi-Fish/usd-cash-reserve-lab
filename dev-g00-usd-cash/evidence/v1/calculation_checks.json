@@ -1,0 +1,126 @@
+{
+  "observer": "AI-operated separate Decimal verification; student independent validation remains pending",
+  "checks": [
+    {
+      "check": "13 week price",
+      "expected": "98.942500",
+      "actual": "98.9425",
+      "tolerance": "0.00000001",
+      "status": "pass",
+      "method": "Decimal: 100*(1-d*n/360)"
+    },
+    {
+      "check": "13 week real proceeds",
+      "expected": "100302.3470297987839836907048604435007979",
+      "actual": "100302.3470297988",
+      "tolerance": "0.01",
+      "status": "pass",
+      "method": "Decimal logarithm/exponential for inflation factor; separate arithmetic path"
+    },
+    {
+      "check": "13 week nominal return",
+      "expected": "1.068802587361346236450463653131869520200",
+      "actual": "1.0688025873613505",
+      "tolerance": "0.00000001",
+      "status": "pass",
+      "method": "Decimal: face/price-1"
+    },
+    {
+      "check": "13 week original quote",
+      "expected": "4.05",
+      "actual": "4.05",
+      "tolerance": "0",
+      "status": "pass",
+      "method": "Exact XML field and observation date"
+    },
+    {
+      "check": "13 week calendar days",
+      "expected": "94",
+      "actual": "94",
+      "tolerance": "0",
+      "status": "pass",
+      "method": "Python date subtraction"
+    },
+    {
+      "check": "26 week price",
+      "expected": "97.83652777777777777777777777777777777778",
+      "actual": "97.83652777777777",
+      "tolerance": "0.00000001",
+      "status": "pass",
+      "method": "Decimal: 100*(1-d*n/360)"
+    },
+    {
+      "check": "26 week real proceeds",
+      "expected": "100691.4118255680125101030678329311201043",
+      "actual": "100691.411825568",
+      "tolerance": "0.01",
+      "status": "pass",
+      "method": "Decimal logarithm/exponential for inflation factor; separate arithmetic path"
+    },
+    {
+      "check": "26 week nominal return",
+      "expected": "2.211313372788793097329303557663506160400",
+      "actual": "2.2113133727887924",
+      "tolerance": "0.00000001",
+      "status": "pass",
+      "method": "Decimal: face/price-1"
+    },
+    {
+      "check": "26 week original quote",
+      "expected": "4.21",
+      "actual": "4.21",
+      "tolerance": "0",
+      "status": "pass",
+      "method": "Exact XML field and observation date"
+    },
+    {
+      "check": "26 week calendar days",
+      "expected": "185",
+      "actual": "185",
+      "tolerance": "0",
+      "status": "pass",
+      "method": "Python date subtraction"
+    },
+    {
+      "check": "Latest CPI annual change",
+      "expected": "3.737684729064039408866995073891625615800",
+      "actual": "3.737684729064039",
+      "tolerance": "0.00000001",
+      "status": "pass",
+      "method": "BLS raw JSON latest CPI divided by same month last year"
+    },
+    {
+      "check": "Zero rate, zero inflation boundary",
+      "expected": "100000",
+      "actual": "100000.0",
+      "tolerance": "0.01",
+      "status": "pass",
+      "method": "Identity: no discount, no price growth"
+    },
+    {
+      "check": "90-day 4% discount price",
+      "expected": "99",
+      "actual": "99.0",
+      "tolerance": "0.00000001",
+      "status": "pass",
+      "method": "100*(1-.04*90/360)=99"
+    },
+    {
+      "check": "90-day 4% nominal proceeds",
+      "expected": "101010.1010101010101010101010101010101010",
+      "actual": "101010.10101010102",
+      "tolerance": "0.01",
+      "status": "pass",
+      "method": "100000/.99"
+    },
+    {
+      "check": "Break-even annual inflation threshold",
+      "expected": "100000",
+      "actual": "100000.0",
+      "tolerance": "0.01",
+      "status": "pass",
+      "method": "Real return should be zero at modeled break-even"
+    }
+  ],
+  "all_pass": true
+}

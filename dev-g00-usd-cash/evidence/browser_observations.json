@@ -1,0 +1,105 @@
+{
+  "operator": "development assistant",
+  "protocol": "HTTP loopback preview; not file protocol",
+  "date": "2026-10-27",
+  "checks": [
+    {
+      "input": "2027-01-27",
+      "match": "Matures 1 days after cash is needed\nDoes not fit this hold-to-maturity schedule. Early sale is not modeled. Saved reference · not a current executable quote.",
+      "error": null
+    },
+    {
+      "input": "2027-01-28",
+      "match": "Same date as the cash need\nCalendar match only. Settlement and receipt of funds are not assessed. Saved reference · not a current executable quote.",
+      "error": null
+    },
+    {
+      "input": "2027-01-29",
+      "match": "Matures 1 days before cash is needed\nCalendar timing only. No return is assumed for the post-maturity gap. Saved reference · not a current executable quote.",
+      "error": null
+    },
+    {
+      "input": "2026-10-25",
+      "match": null,
+      "error": "Cash-need date must not precede the saved quote date 2026-10-26."
+    },
+    {
+      "input": "2027-02-30",
+      "match": null,
+      "error": "Enter a valid calendar date as YYYY-MM-DD."
+    },
+    {
+      "input": "Clear",
+      "match": "Cash-date fit not assessed\nEnter a cash-need date to compare calendar timing. Saved reference · not a current executable quote."
+    },
+    {
+      "inflation": "6",
+      "nominal": "$101,069",
+      "headline": "Purchasing power decreases by $437.",
+      "decomposition": "Start\n$100,000.00\nInitial principal\n+ Nominal interest\n+$1,068.80\nNominal proceeds minus principal\n− Conversion adjustment\n+$1,505.34\nNominal proceeds minus purchasing power.\n= Purchasing power\n$99,563.46\nIn scenario-start dollars",
+      "readout": "At 6.00% annual inflation: 13-week (94 days): −$436.54 · 26-week (185 days): −$763.21."
+    },
+    {
+      "inflation": "0",
+      "nominal": "$101,069",
+      "headline": "Purchasing power increases by $1,069.",
+      "decomposition": "Start\n$100,000.00\nInitial principal\n+ Nominal interest\n+$1,068.80\nNominal proceeds minus principal\n− Conversion adjustment\n$0.00\nNominal proceeds minus purchasing power.\n= Purchasing power\n$101,068.80\nIn scenario-start dollars",
+      "readout": "At 0.00% annual inflation: 13-week (94 days): +$1,068.80 · 26-week (185 days): +$2,211.31."
+    },
+    {
+      "inflation": "-2",
+      "nominal": "$101,069",
+      "headline": "Purchasing power increases by $1,596.",
+      "decomposition": "Start\n$100,000.00\nInitial principal\n+ Nominal interest\n+$1,068.80\nNominal proceeds minus principal\n− Conversion adjustment\n−$527.22\nNegative adjustment: subtracting it adds purchasing power.\n= Purchasing power\n$101,596.02\nIn scenario-start dollars",
+      "readout": "At -2.00% annual inflation: 13-week (94 days): +$1,596.02 · 26-week (185 days): +$3,263.31."
+    },
+    {
+      "action": "exact break even",
+      "headline": "Purchasing power is approximately unchanged.",
+      "return": "0.00%"
+    },
+    {
+      "action": "26-week",
+      "period": "26-week reference · 2026-10-26 → 2027-04-29 (185 days) · 4.21% annual inflation assumption",
+      "cashPeriod": "Identical comparison period: 2026-10-26 to 2027-04-29 (185 days), with 4.21% assumed annual inflation."
+    },
+    {
+      "action": "empty amount",
+      "error": "Enter both the invested amount and an inflation assumption.",
+      "resultsVisible": false
+    },
+    {
+      "action": "24-month missing CPI",
+      "window": "Shared calendar: 2024-11 through 2026-10. Both charts use these bounds; absent observations stay absent.",
+      "cpi": "CPI observation 2025-10: index missing; year-on-year Missing. This is an observation month, not its publication date."
+    },
+    {
+      "action": "hide 13",
+      "rates": "Treasury 2025-10: exact quote 2025-10-31. 13-week hidden; 26-week 3.70% bank discount.",
+      "paths": 1
+    },
+    {
+      "action": "hide both",
+      "chart": "No series selected or no observations."
+    },
+    {
+      "action": "all months",
+      "window": "Shared calendar: 2023-01 through 2026-10. Both charts use these bounds; absent observations stay absent."
+    },
+    {
+      "action": "post-fix singular day",
+      "actual": "Matures 1 day after cash is needed\nDoes not fit this hold-to-maturity schedule. Early sale is not modeled. Saved reference · not a current executable quote."
+    },
+    {
+      "action": "keyboard inflation slider",
+      "actual": "At 3.10% annual inflation: 13-week (94 days): +$277.28 · 26-week (185 days): +$641.90."
+    }
+  ],
+  "mobile": {
+    "viewport": "390 x 844",
+    "documentWidth": 390,
+    "scrollWidth": 390,
+    "maxPrincipalTest": 100000000
+  },
+  "fileProtocol": "Attempt blocked by browser URL policy; actual file-mode rendering NOT RUN"
+}

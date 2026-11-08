@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+"""Create a separate renamed submission candidate. Leaves the development pack intact."""
+import argparse,json,re,shutil,subprocess,sys,zipfile,tempfile
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--prefix',required=True);p.add_argument('--group',required=True);a=p.parse_args()
+if not re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*',a.prefix) or not re.fullmatch('g[0-9]{2,3}',a.group):p.error('Use a lowercase hyphenated class prefix and group such as g07')
+ident=a.prefix+'-'+a.group+'-usd-cash'
+if len(ident)>48:p.error('Dashboard ID must be at most 48 characters')
+target=ROOT.parent/ident
+if target.exists():p.error('Target already exists; choose a clean destination to avoid overwrite')
+shutil.copytree(ROOT,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc','candidate','.DS_Store'))
+old=json.loads((ROOT/'project.json').read_text());oldid=old['dashboard_id'];oldgroup=old['group_id']
+for f in target.rglob('*'):
+ if not f.is_file() or 'evidence' in f.relative_to(target).parts or 'data/raw' in f.as_posix():continue
+ if f.suffix in ['.md','.json','.html','.js','.yml','.csv']:
+  s=f.read_text();s=s.replace(oldid,ident).replace(oldgroup+':',a.group+':')
+  if f.name=='ontology.yml':s=s.replace('group: '+oldgroup,'group: '+a.group)
+  f.write_text(s)
+for f in [target/'project.json',target/'maintenance/baseline_config.json',target/'maintenance/invalid_unit_config.json']:
+ c=json.loads(f.read_text());c.update(dashboard_id=ident,group_id=a.group,identity_status='Group '+a.group+' · '+a.prefix);f.write_text(json.dumps(c,indent=2)+'\n')
+with tempfile.TemporaryDirectory() as tmp:
+ subprocess.run([sys.executable,str(target/'calculations/rebuild.py'),'--out',tmp],check=True)
+ for n in ['data.js']:shutil.copyfile(Path(tmp)/n,target/n)
+ for n in ['quotes_normalized.csv','cpi_normalized.csv']:shutil.copyfile(Path(tmp)/n,target/'data'/n)
+subprocess.run([sys.executable,str(target/'calculations/verify.py')],check=True)
+(target/'IDENTITY_CHANGE.md').write_text('# Identifier change\n\nCurrent ID: '+ident+'\nPrevious development ID: '+oldid+'\n\nHistorical screenshots and rehearsal evidence retain the original ID intentionally. Update the editable presentation group label and export presentation.pdf again. Update proposal.pdf from PROPOSAL.md too; binary PDFs are not automatically rewritten. Repeat the final ZIP opening and human checks. This tool does not approve the project or perform those human steps.\n')
+archive=target.with_suffix('.zip')
+if archive.exists():p.error('ZIP target already exists; the renamed folder was created but archive was not overwritten')
+with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
+ for f in sorted(target.rglob('*')):
+  if f.is_file() and '__pycache__' not in f.parts and f.suffix!='.pyc':z.write(f,Path(ident)/f.relative_to(target))
+print('Created '+str(archive));print('Update the presentation identity and complete SUBMISSION_CHECKLIST.md before submitting.')
