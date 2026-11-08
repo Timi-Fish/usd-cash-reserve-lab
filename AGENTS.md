@@ -24,7 +24,7 @@ Records, in reading order:
 3. `dev-g00-usd-cash/extensions/DECISIONS.md`: why the redesign looks and behaves as it does.
 4. `dev-g00-usd-cash/extensions/INTERFACES.md`: contracts between the pieces and the accepted project.
 5. `dev-g00-usd-cash/extensions/salt-dashboard/README.md`: the redesign's structure, colour meanings and presentation path.
-6. Commit history: Conventional Commits on the feature branch, `git log --oneline main..origin/feat/salt-dashboard`, and its pull request.
+6. Commit history: Conventional Commits. The redesign arrived through pull request #1 (`feat/salt-dashboard`); `git log --oneline -- dev-g00-usd-cash/extensions/salt-dashboard` lists its commits.
 
 ## Read first
 
