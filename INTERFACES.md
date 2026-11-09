@@ -1,6 +1,6 @@
 # Interfaces
 
-Contracts between the parts of `dev-g00-usd-cash/`. Only cross-module boundaries are listed; internals are in the code.
+Contracts between the parts of `bms5312-g09-usd-cash/`. Only cross-module boundaries are listed; internals are in the code.
 
 ## Ownership
 | Module | Owns, and writes only | Never touches |

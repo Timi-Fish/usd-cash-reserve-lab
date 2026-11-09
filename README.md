@@ -23,7 +23,7 @@ Educational project. Not investment advice.
 
 ## Layout
 
-- `dev-g00-usd-cash/` is the submission folder: the page (`index.html`, `data.js`), sources, method, maintenance skill, evaluations and evidence. Start with `dev-g00-usd-cash/README.md`.
+- `bms5312-g09-usd-cash/` is the submission folder: the page (`index.html`, `data.js`), sources, method, maintenance skill, evaluations and evidence. Start with `bms5312-g09-usd-cash/README.md`.
 - `group/` holds group material that is never submitted: tasks and prompts for members (`group/handoff/`), presentation notes, the submission checklist, the changelog, design decisions and an earlier review.
 - `reference/` holds the course's agent guide and class vocabulary.
 - `AGENTS.md` gives the rules for AI assistants working here, with an index of where the work is; `CLAUDE.md` points to it. `INTERFACES.md` lists the contracts between the parts.
@@ -32,7 +32,7 @@ The first dashboard version is kept as the git tag `original-v2`.
 
 ## See the dashboard
 
-Double-click `dev-g00-usd-cash/index.html`.
+Double-click `bms5312-g09-usd-cash/index.html`.
 
 ## Working together
 
@@ -43,8 +43,8 @@ Double-click `dev-g00-usd-cash/index.html`.
 ## Before every push
 
 - No names, student IDs, emails, client details, keys or local paths in any file or commit message (course rule).
-- From `dev-g00-usd-cash/`, run `node tests/check_refresh.mjs` and `node dashboard/scripts/check-model.mjs`.
+- From `bms5312-g09-usd-cash/`, run `node tests/check_refresh.mjs` and `node dashboard/scripts/check-model.mjs`.
 
 ## Making the submission ZIP
 
-`python3 dev-g00-usd-cash/tools/set_identity.py --prefix bms5312 --group g09` writes `bms5312-g09-usd-cash/` and `bms5312-g09-usd-cash.zip` in this repository's root. Both are ignored by git. Because `.git` lives outside the project folder, it is never copied into the package.
+`python3 bms5312-g09-usd-cash/tools/set_identity.py --prefix bms5312 --group g09` first checks that `data.js` still matches a rebuild of its inputs. It then writes `bms5312-g09-usd-cash.zip` in this repository's root, which git ignores. Working folders, `node_modules` and `dist` are left out. Because `.git` lives outside the submission folder, it is never packaged.
