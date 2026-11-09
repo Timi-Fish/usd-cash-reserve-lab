@@ -1,12 +1,16 @@
 # macOS and editor files
 .DS_Store
-# Installed packages for extensions/salt-dashboard (reinstall with npm ci)
+# Installed packages and build output of the dashboard source (reinstall with npm ci, rebuild with npm run build)
 node_modules/
+/dev-g00-usd-cash/dashboard/dist/
 # Python caches and partial writes
 __pycache__/
 *.pyc
 *.tmp
-# Rebuild output from calculations/rebuild.py (its default --out is candidate/)
+# Maintenance working folders of tools/candidate.py: the candidate under review and the version it replaced
 /dev-g00-usd-cash/candidate/
-# Submission ZIPs that tools/set_identity.py writes next to the project folder
+/dev-g00-usd-cash/previous/
+# Submission folder and ZIP that tools/set_identity.py writes next to the project folder
 /*.zip
+/*-usd-cash/
+!/dev-g00-usd-cash/

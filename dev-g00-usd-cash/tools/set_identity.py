@@ -9,7 +9,8 @@ ident=a.prefix+'-'+a.group+'-usd-cash'
 if len(ident)>48:p.error('Dashboard ID must be at most 48 characters')
 target=ROOT.parent/ident
 if target.exists():p.error('Target already exists; choose a clean destination to avoid overwrite')
-shutil.copytree(ROOT,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc','candidate','.DS_Store'))
+# Working folders, installed packages and build output stay out of the package (course rule).
+shutil.copytree(ROOT,target,ignore=shutil.ignore_patterns('__pycache__','*.pyc','*.tmp','candidate','previous','node_modules','dist','.DS_Store'))
 old=json.loads((ROOT/'project.json').read_text());oldid=old['dashboard_id'];oldgroup=old['group_id']
 for f in target.rglob('*'):
  if not f.is_file() or 'evidence' in f.relative_to(target).parts or 'data/raw' in f.as_posix():continue
@@ -24,10 +25,10 @@ with tempfile.TemporaryDirectory() as tmp:
  for n in ['data.js']:shutil.copyfile(Path(tmp)/n,target/n)
  for n in ['quotes_normalized.csv','cpi_normalized.csv']:shutil.copyfile(Path(tmp)/n,target/'data'/n)
 subprocess.run([sys.executable,str(target/'calculations/verify.py')],check=True)
-(target/'IDENTITY_CHANGE.md').write_text('# Identifier change\n\nCurrent ID: '+ident+'\nPrevious development ID: '+oldid+'\n\nHistorical screenshots and rehearsal evidence retain the original ID intentionally. Update the editable presentation group label and export presentation.pdf again. Update proposal.pdf from PROPOSAL.md too; binary PDFs are not automatically rewritten. Repeat the final ZIP opening and human checks. This tool does not approve the project or perform those human steps.\n')
 archive=target.with_suffix('.zip')
 if archive.exists():p.error('ZIP target already exists; the renamed folder was created but archive was not overwritten')
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
  for f in sorted(target.rglob('*')):
   if f.is_file() and '__pycache__' not in f.parts and f.suffix!='.pyc':z.write(f,Path(ident)/f.relative_to(target))
-print('Created '+str(archive));print('Update the presentation identity and complete SUBMISSION_CHECKLIST.md before submitting.')
+print('Created '+archive.name+' with folder '+ident+' (was '+oldid+').')
+print('presentation.pdf is not rewritten: export it again if it shows the old ID. Open the page from the unzipped folder before submitting.')

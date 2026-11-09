@@ -1,0 +1,299 @@
+{
+  "date": "2026-11-09",
+  "environment": "Node, ES modules from dashboard/src",
+  "data": {
+    "current_quote_date": "2026-10-26",
+    "frozen_fixture": "tests/fixtures/data_2026-10-26.js"
+  },
+  "checks": [
+    {
+      "id": "13-week default scenario reproduces every saved result",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "id": "13-week higher inflation lowers purchasing power, not nominal proceeds",
+      "expected": [
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "13-week decomposition adds up",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "13-week break-even inflation leaves purchasing power unchanged",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26-week default scenario reproduces every saved result",
+      "expected": [],
+      "actual": [],
+      "pass": true
+    },
+    {
+      "id": "26-week higher inflation lowers purchasing power, not nominal proceeds",
+      "expected": [
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "26-week decomposition adds up",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "26-week break-even inflation leaves purchasing power unchanged",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "rejects zero, oversized and non-numeric amounts",
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "rejects inflation outside -5% to 15%",
+      "expected": [
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "rejects a day count that disagrees with the dates",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "rejects a missing tenor",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "rejects a unit change",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "rejects a changed disclaimer",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "rejects CPI metadata that disagrees with the series",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "12-month window",
+      "expected": [
+        "2025-11",
+        "2026-10",
+        12
+      ],
+      "actual": [
+        "2025-11",
+        "2026-10",
+        12
+      ],
+      "pass": true
+    },
+    {
+      "id": "24-month window",
+      "expected": [
+        "2024-11",
+        "2026-10",
+        24
+      ],
+      "actual": [
+        "2024-11",
+        "2026-10",
+        24
+      ],
+      "pass": true
+    },
+    {
+      "id": "full window",
+      "expected": [
+        "2023-01",
+        "2026-10"
+      ],
+      "actual": [
+        "2023-01",
+        "2026-10"
+      ],
+      "pass": true
+    },
+    {
+      "id": "October 2025 CPI stays missing",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "id": "the newest month has no CPI yet",
+      "expected": null,
+      "actual": null,
+      "pass": true
+    },
+    {
+      "id": "fresh within seven days",
+      "expected": [
+        "fresh",
+        []
+      ],
+      "actual": [
+        "fresh",
+        []
+      ],
+      "pass": true
+    },
+    {
+      "id": "stale after seven days",
+      "expected": [
+        "stale",
+        []
+      ],
+      "actual": [
+        "stale",
+        []
+      ],
+      "pass": true
+    },
+    {
+      "id": "device clock before the quote",
+      "expected": [
+        "clock",
+        []
+      ],
+      "actual": [
+        "clock",
+        []
+      ],
+      "pass": true
+    },
+    {
+      "id": "matured reference is historical",
+      "expected": [
+        "stale",
+        [
+          "13-week"
+        ]
+      ],
+      "actual": [
+        "stale",
+        [
+          "13-week"
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "id": "near-zero values show as zero",
+      "expected": [
+        "0.00%",
+        "$0.00",
+        "Purchasing power is approximately unchanged."
+      ],
+      "actual": [
+        "0.00%",
+        "$0.00",
+        "Purchasing power is approximately unchanged."
+      ],
+      "pass": true
+    },
+    {
+      "id": "the current bill ladder is readable and holds both reference bills",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "summary states the selected outcome at maturity",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "summary uses the calendar fit text for payments",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "summary separates maturity amounts from payment dates and ends with the disclaimer",
+      "expected": [
+        true,
+        "Educational project. Not investment advice."
+      ],
+      "actual": [
+        true,
+        "Educational project. Not investment advice."
+      ],
+      "pass": true
+    },
+    {
+      "id": "invalid inputs show no outcome",
+      "expected": [
+        true,
+        false
+      ],
+      "actual": [
+        true,
+        false
+      ],
+      "pass": true
+    },
+    {
+      "id": "no payments means calendar fit not assessed",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "evaluate names the selected reference",
+      "expected": "26-week",
+      "actual": "26-week",
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

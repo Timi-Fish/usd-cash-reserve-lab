@@ -13,6 +13,10 @@
     "quote_days": 7,
     "cpi_days": 60
   },
+  "refresh": {
+    "mode": "automatic",
+    "cadence": "weekly"
+  },
   "cpi_release": {
     "observation_month": "2026-09",
     "release_date": "2026-10-14",

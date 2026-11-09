@@ -1,0 +1,506 @@
+{
+  "date": "2026-11-09",
+  "environment": "python3 -I subprocesses in a throwaway project copy; Node VM for ladder.js; no network",
+  "frozen_fixture": "tests/fixtures/data_2026-10-26.js",
+  "checks": [
+    {
+      "id": "offline refresh exits 0",
+      "expected": 0,
+      "actual": 0,
+      "pass": true
+    },
+    {
+      "id": "same inputs reproduce the frozen data.js exactly",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "same inputs reproduce the frozen project settings",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "refresh and rebuild write the same quotes_normalized.csv byte for byte",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "refresh and rebuild write the same cpi_normalized.csv byte for byte",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "the bill ladder carries every tenor in the source row",
+      "expected": [
+        4,
+        6,
+        8,
+        13,
+        17,
+        26,
+        52
+      ],
+      "actual": [
+        4,
+        6,
+        8,
+        13,
+        17,
+        26,
+        52
+      ],
+      "pass": true
+    },
+    {
+      "id": "the report records file names, never local paths",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "FIXTURE failed BLS request stops with exit 1 and writes no data set",
+      "expected": [
+        1,
+        true,
+        false
+      ],
+      "actual": [
+        1,
+        true,
+        false
+      ],
+      "pass": true
+    },
+    {
+      "id": "quotes older than the accepted release stop the refresh",
+      "expected": [
+        1,
+        true
+      ],
+      "actual": [
+        1,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "CPI without a past release date is held back with a warning",
+      "expected": [
+        0,
+        "2026-09",
+        true
+      ],
+      "actual": [
+        0,
+        "2026-09",
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "an incompatible unit setting stops before any download",
+      "expected": [
+        1,
+        "STOP: Incompatible input unit",
+        false
+      ],
+      "actual": [
+        1,
+        "STOP: Incompatible input unit",
+        false
+      ],
+      "pass": true
+    },
+    {
+      "id": "review passes a newer, reproducible candidate",
+      "expected": [
+        0,
+        true
+      ],
+      "actual": [
+        0,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "review shows the quote date before and after",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "review gives the Treasury page for the quote year and saves its report",
+      "expected": [
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "review leaves the accepted data.js untouched",
+      "expected": "984283772ccbc4a46017d7ecb297681bf275b905c574e5cd92e13dff84f700f3",
+      "actual": "984283772ccbc4a46017d7ecb297681bf275b905c574e5cd92e13dff84f700f3",
+      "pass": true
+    },
+    {
+      "id": "release installs the candidate and keeps the old version",
+      "expected": [
+        0,
+        true,
+        true
+      ],
+      "actual": [
+        0,
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "release records the decision and the evidence",
+      "expected": [
+        2,
+        true,
+        true
+      ],
+      "actual": [
+        2,
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "release moves the source register to the new quote date and access date",
+      "expected": [
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "a second review finds nothing newer and stops",
+      "expected": [
+        1,
+        true
+      ],
+      "actual": [
+        1,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "restore puts the previous version back, with its register dates, and logs it",
+      "expected": [
+        0,
+        true,
+        true,
+        3
+      ],
+      "actual": [
+        0,
+        true,
+        true,
+        3
+      ],
+      "pass": true
+    },
+    {
+      "id": "FIXTURE a dropped field stops the review",
+      "expected": [
+        1,
+        true
+      ],
+      "actual": [
+        1,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "release refuses a candidate whose review stops",
+      "expected": [
+        1,
+        true
+      ],
+      "actual": [
+        1,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "FIXTURE a hand-edited value stops the review",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "reject records the decision and changes nothing",
+      "expected": [
+        0,
+        4,
+        true,
+        true
+      ],
+      "actual": [
+        0,
+        4,
+        true,
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "cash date 2027-03-01 fits the 17-week bill, 6 days early",
+      "expected": [
+        "early",
+        "17-week",
+        6,
+        "26-week",
+        59
+      ],
+      "actual": [
+        "early",
+        "17-week",
+        6,
+        "26-week",
+        59
+      ],
+      "pass": true
+    },
+    {
+      "id": "maturity on the payment date is a same-day match",
+      "expected": [
+        "same",
+        "13-week",
+        0,
+        "17-week",
+        26
+      ],
+      "actual": [
+        "same",
+        "13-week",
+        0,
+        "17-week",
+        26
+      ],
+      "pass": true
+    },
+    {
+      "id": "a date before the shortest maturity has no fit",
+      "expected": [
+        "none",
+        null,
+        null,
+        "4-week",
+        14
+      ],
+      "actual": [
+        "none",
+        null,
+        null,
+        "4-week",
+        14
+      ],
+      "pass": true
+    },
+    {
+      "id": "a date after the longest maturity has no later bill",
+      "expected": [
+        "early",
+        "52-week",
+        30,
+        null,
+        null
+      ],
+      "actual": [
+        "early",
+        "52-week",
+        30,
+        null,
+        null
+      ],
+      "pass": true
+    },
+    {
+      "id": "rejects a date on the saved quote date",
+      "expected": "date",
+      "actual": "date",
+      "pass": true
+    },
+    {
+      "id": "rejects a rolled-over date",
+      "expected": "date",
+      "actual": "date",
+      "pass": true
+    },
+    {
+      "id": "rejects a date beyond the calendar range",
+      "expected": "date",
+      "actual": "date",
+      "pass": true
+    },
+    {
+      "id": "rejects an empty name",
+      "expected": "label",
+      "actual": "label",
+      "pass": true
+    },
+    {
+      "id": "rejects an inherited property as a payment type",
+      "expected": "type",
+      "actual": "type",
+      "pass": true
+    },
+    {
+      "id": "rejects a thirteenth date",
+      "expected": "count",
+      "actual": "count",
+      "pass": true
+    },
+    {
+      "id": "bill data with a day-count mismatch is rejected",
+      "expected": "error",
+      "actual": "error",
+      "pass": true
+    },
+    {
+      "id": "bill data with a repeated security is rejected",
+      "expected": "error",
+      "actual": "error",
+      "pass": true
+    },
+    {
+      "id": "bill data without an https source is rejected",
+      "expected": "error",
+      "actual": "error",
+      "pass": true
+    },
+    {
+      "id": "quotes 7 days old are within the limit",
+      "expected": [
+        "fresh",
+        [],
+        false
+      ],
+      "actual": [
+        "fresh",
+        [],
+        false
+      ],
+      "pass": true
+    },
+    {
+      "id": "quotes 8 days old are stale",
+      "expected": [
+        "stale",
+        [],
+        true
+      ],
+      "actual": [
+        "stale",
+        [],
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "a device date before the quote is flagged",
+      "expected": [
+        "clock",
+        [],
+        true
+      ],
+      "actual": [
+        "clock",
+        [],
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "matured references are listed as historical",
+      "expected": [
+        "stale",
+        [
+          "4-week"
+        ],
+        true
+      ],
+      "actual": [
+        "stale",
+        [
+          "4-week"
+        ],
+        true
+      ],
+      "pass": true
+    },
+    {
+      "id": "calendar spans the quote month to about six months out",
+      "expected": [
+        "2026-10",
+        "2026-11",
+        "2026-12",
+        "2027-01",
+        "2027-02",
+        "2027-03",
+        "2027-04"
+      ],
+      "actual": [
+        "2026-10",
+        "2026-11",
+        "2026-12",
+        "2027-01",
+        "2027-02",
+        "2027-03",
+        "2027-04"
+      ],
+      "pass": true
+    },
+    {
+      "id": "calendar weeks start on Monday",
+      "expected": [
+        null,
+        null,
+        null,
+        20727,
+        20728,
+        20729,
+        20730
+      ],
+      "actual": [
+        null,
+        null,
+        null,
+        20727,
+        20728,
+        20729,
+        20730
+      ],
+      "pass": true
+    },
+    {
+      "id": "calendar extends to the latest payment",
+      "expected": "2027-09",
+      "actual": "2027-09",
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

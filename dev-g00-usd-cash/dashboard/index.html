@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="lab:dashboard" content="dev-g00-usd-cash"> <!-- REQUIRED: the dashboard id -->
+<title>USD Cash Reserve Lab</title>
+<script type="module" src="./src/main.jsx"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <section id="lab-about" class="lab-about"> <!-- REQUIRED: plain-language About -->
+    <h2>About this dashboard</h2>
+    <p>What: for a family-office client and advisor, whether saved Treasury bill maturities reach planned payment dates, and what an assumed inflation rate does to the cash meanwhile.</p>
+    <p>Data: saved U.S. Treasury daily bill rates and BLS CPI-U, dated at the top of the page. Formulas and sources are on the Method tab.</p>
+    <p>Limits: quotes are not offers; settlement, taxes and fees are not assessed; inflation is an assumption, not a forecast; no bill is ranked or recommended.</p>
+  </section>
+  <footer class="lab-footer">Educational project. Not investment advice.</footer> <!-- REQUIRED text -->
+  <script src="data.js"></script> <!-- REQUIRED -->
+  <script>
+  /* REQUIRED loader: hosted data first, then data.js. Do not change. */
+  async function loadDashboardData() {
+    const id = document.querySelector('meta[name="lab:dashboard"]').content;
+    if (location.protocol.startsWith('http')) {
+      try {
+        const r = await fetch('/data/' + id + '/data.json', { cache: 'no-cache' });
+        if (r.ok && (r.headers.get('content-type') || '').includes('json')) {
+          const candidate = await r.json();
+          if (candidate && candidate.summary && candidate.data && candidate.summary.dashboard === id) return candidate;
+        }
+      } catch (e) {}
+    }
+    return window.DASHBOARD_DATA;
+  }
+  loadDashboardData().then(function (d) {
+    if (!d || !d.summary || !d.data) throw new Error("Dashboard data missing or invalid");
+    render(d.summary, d.data);
+  }).catch(function (e) {
+    const message = document.createElement("p");
+    message.textContent = "Unable to load dashboard data. Check data.js. " + e.message;
+    document.body.appendChild(message);
+  });
+
+  // Hands the loaded data to the Salt app, which may start before or after the loader resolves.
+  function render(summary, data) {
+    window.labDashboardInput = {summary: summary, data: data};
+    document.dispatchEvent(new Event('lab-dashboard-data'));
+  }
+  </script>
+</body>
+</html>
