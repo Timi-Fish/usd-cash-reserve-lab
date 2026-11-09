@@ -20,10 +20,17 @@ for f in target.rglob('*'):
   f.write_text(s)
 for f in [target/'project.json',target/'maintenance/baseline_config.json',target/'maintenance/invalid_unit_config.json']:
  c=json.loads(f.read_text());c.update(dashboard_id=ident,group_id=a.group,identity_status='Group '+a.group+' · '+a.prefix);f.write_text(json.dumps(c,indent=2)+'\n')
+# The frozen test data set takes the new identity as well, rebuilt by the same route so it stays self-consistent.
+fixture=target/'tests/fixtures/data_2026-10-26.js'
+fc=json.loads(fixture.read_text().split('=',1)[1].strip().removesuffix(';'))['data']['config']
+fc.update(dashboard_id=ident,group_id=a.group,identity_status='Group '+a.group+' · '+a.prefix)
 with tempfile.TemporaryDirectory() as tmp:
  subprocess.run([sys.executable,str(target/'calculations/rebuild.py'),'--out',tmp],check=True)
  for n in ['data.js']:shutil.copyfile(Path(tmp)/n,target/n)
  for n in ['quotes_normalized.csv','cpi_normalized.csv']:shutil.copyfile(Path(tmp)/n,target/'data'/n)
+ (Path(tmp)/'fixture.json').write_text(json.dumps(fc,indent=2))
+ subprocess.run([sys.executable,str(target/'calculations/rebuild.py'),'--config',str(Path(tmp)/'fixture.json'),'--out',str(Path(tmp)/'fixture')],check=True)
+ shutil.copyfile(Path(tmp)/'fixture'/'data.js',fixture)
 subprocess.run([sys.executable,str(target/'calculations/verify.py')],check=True)
 archive=target.with_suffix('.zip')
 if archive.exists():p.error('ZIP target already exists; the renamed folder was created but archive was not overwritten')
