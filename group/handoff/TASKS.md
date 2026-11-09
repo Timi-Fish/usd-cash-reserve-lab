@@ -46,12 +46,21 @@
 3. 让 Codex 把你的答案和命令结果填进 `evidence/user_test.md`，再更新 EVALS 里 E4、E5、E8 的 Student route 行和汇总表。只写角色，不改其他文件。
 4. **发回**：`evidence/user_test.md` 和 `EVALS.md`。
 
-## Task E：核对 AI_LOG 里你的那条记录（负责 user value 部分的同学）
-在你原来那个对话里，或者把原对话导出后交给你的 Astra，同时给它 `AI_LOG.md`，粘贴：
+## Task E：补全 AI_LOG 里你的那条记录（负责 user value 部分的同学）
+其他几条记录都写了：日期、具体工具、给 AI 的文件、问了什么和影响、AI 实际做了什么、AI 出的错和怎么核实的、分工。你那条要补到同样的程度。在你原来那个对话里，或者把原对话导出后交给你的 Astra，同时给它 `AI_LOG.md`，粘贴：
 
-> Compare the entry "Original dashboard review (user-value lead)" in AI_LOG.md with our original conversation. Correct anything that differs, add the session date and the tools used, and add any challenge that is missing as a new row at the same level of detail: what was asked, and its effect on the work. Roles only, no names. Write it as a plain record, without disclaimers. Change only that entry.
+> Open AI_LOG.md and rewrite only the entry "Original dashboard review (user-value lead)" so that it has the same fields and level of detail as the other entries. Use only what happened in our original conversation.
+> - Heading: add the session date, as in the other entries.
+> - Tool: the exact AI tools used.
+> - Supplied files: what was given to the AI.
+> - Keep the table of what was asked and its effect. Correct any row that differs and add any missing challenge as a new row.
+> - Executed: what the AI actually produced or changed, and in which files.
+> - Errors and concerns tested, and how they were checked: each AI mistake or rejected suggestion, who caught it and how it was checked. If there was none, write what was checked instead.
+> - Files and contributions: who did what, by role.
+>
+> Roles only: no names, student IDs or local paths. A plain record without disclaimers. Do not change any other entry or file.
 
-**发回**：`AI_LOG.md`。
+**发回**：只发 `AI_LOG.md`。没出过错就照实写核对了什么，不要补没发生的事。
 
 ## 负责人收尾
 1. 把收到的文件放回仓库的 `bms5312-g09-usd-cash/` 对应位置。两份 `EVALS.md` 和 `AGENT_TEST.md` 要按段合并。也可以全部交给 Claude 合并。
