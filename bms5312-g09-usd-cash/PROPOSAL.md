@@ -68,7 +68,7 @@ Controls: amount, inflation, reference bill, payment dates and type, history win
 ## Three substantive decisions and their reasons
 1. **Payment timing comes before purchasing power.** The Overview opens with the maturities against the payment dates, and the calendar uses all seven tenors of the latest quote date.
    - *Reason:* for a reserve, missing a payment date costs more than a few basis points.
-   - *Reason:* the two reference bills alone left wide gaps. A payment on 2027-03-01 was 32 days after the 13-week maturity, while a saved 17-week bill matured 6 days before it.
+   - *Reason:* the two reference bills alone left wide gaps. With the 2026-10-26 quotes, a payment on 2027-03-01 was 32 days after the 13-week maturity, while a saved 17-week bill matured 6 days before it.
 2. **Inflation over the same period as the holding.** The assumed annual rate is converted to the holding period, (1 + a)^(n/365), before dividing the proceeds.
    - *Reason:* subtracting last year's CPI from an annualised bill rate mixes two periods and two conventions.
    - *Reason:* a user-set assumption makes the uncertainty explicit.

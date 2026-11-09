@@ -117,7 +117,7 @@ Every release, rejection and restore is a line in `maintenance/release_log.csv`,
 | `calculations/` | `rebuild.py` (method), `verify.py` (second route), `method.md`, `manual_checks.csv` (hand-check formulas) |
 | `refresh.py`, `tools/candidate.py`, `SKILL.md` | Download, review and release, and the assistant's instructions |
 | `maintenance/` | CPI release schedule, release log, test inputs for the agent tests |
-| `tests/` | Maintenance checks and the frozen 2026-10-26 data set they use |
+| `tests/` | Maintenance checks and the frozen 2026-10-26 release (data set and raw inputs) they use |
 | `dashboard/` | Source of `index.html` (React with the Salt design system, built by Vite into one file) |
 | `tools/set_identity.py` | Writes the renamed submission folder and ZIP |
 | `PROPOSAL.md`, `SOURCE_REGISTER.csv`, `ontology.yml` | Brief and decisions, sources, vocabulary |
