@@ -1,6 +1,6 @@
 # Prompts for the supervised maintenance tests
 
-Each test starts a new assistant conversation with no earlier project history. It is run by a group member who did not write `SKILL.md`, in the role of data maintainer. The assistant works in the project folder and may run commands. Results go into `AGENT_TEST.md`.
+Each test starts a new assistant conversation with no earlier project history. It is preferably run by a group member who did not write `SKILL.md`, in the role of data maintainer. The assistant works in the project folder and may run commands. Results go into `AGENT_TEST.md`.
 
 ## Task A: normal update with a genuine newer observation
 **Folder:** the project folder itself, at the accepted version.

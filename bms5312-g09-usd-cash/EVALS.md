@@ -13,8 +13,8 @@ Expected results and tolerances were set before any comparison. The version chec
 | E3 | Second calculation and boundary | Pass | Pass |
 | E4 | Financial interpretation | Pass | Not run |
 | E5 | Interaction | Pass | Not run |
-| E6 | Missing or invalid input | Pass | Not run |
-| E7 | Freshness and update | Pass | Not run |
+| E6 | Missing or invalid input | Pass | Pass |
+| E7 | Freshness and update | Pass | Pass |
 | E8 | Clean reproduction | Pass | Not run |
 
 ## E1 Source match
@@ -27,7 +27,7 @@ Expected results and tolerances were set before any comparison. The version chec
 - **Expected:**
   - Exact match for the 13-week and 26-week bank discount rates (2 decimals as published), their maturity dates and CUSIPs on the quote date.
   - Exact match for the CPI-U index (3 decimals) of the saved month and of the same month a year earlier.
-- **Assistant route:** `calculations/verify.py` traced each rate, maturity date and day count to the raw XML field, and the CPI ratio to the raw JSON. Run on 2026-11-09 for quote date 2026-10-26: exact matches, pass.
+- **Assistant route:** `calculations/verify.py` traced each rate, maturity date and day count to the raw XML field, and the CPI ratio to the raw JSON. Run on 2026-11-09 for quote date 2026-11-06: exact matches, pass.
 - **Student route:** Independent student checker, 2026-11-09, checked quote date 2026-11-06. The checker confirmed personally obtaining the inputs from the official websites. Sheet 1 Source match records seven PASS results: quote date 2026-11-06; 13-week and 26-week bank discount rates 4.01% and 4.12%; maturity dates 2027-02-04 and 2027-05-06; September 2026 and September 2025 CPI-U indices 336.940 and 324.800. Official-source and dashboard columns agree exactly. Pass for the workbook source comparisons; CUSIPs are not separately recorded in this workbook.
 - **Evidence:** `evidence/calculation_checks.json`, `evidence/source_review.md` (a hand cross-check of three BLS index values), `evidence/independent_check.xlsx`.
 
@@ -108,7 +108,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - The unreleased CPI month is held back with a warning.
   - Each page entry error names its form field.
 - **Assistant route:** `node tests/check_refresh.mjs` (44 of 44, including the basis-points setting stopping before any download) and `check-model.mjs` (32 of 32). Run 2026-11-09, pass.
-- **Student route:** Task B in `AGENT_TEST.md`: a fresh assistant meets an incompatible unit in a test copy.
+- **Student route:** Task B in `AGENT_TEST.md`. The project lead, as data maintainer, gave a fresh assistant a test copy whose `rate_unit` was `basis-points`, on 2026-11-09. `refresh.py --out candidate` printed `STOP: Incompatible input unit` and exited 1. No `candidate/` folder appeared, `data.js` kept its SHA-256, and the assistant explained the unit conflict and asked for a corrected setting. This matches the response set before the test. Pass.
 - **Evidence:** `evidence/refresh_checks.json`, `evidence/model_checks.json`, `AGENT_TEST.md`.
 
 ## E7 Freshness and update
@@ -120,7 +120,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - A matured reference is listed as historical.
   - A refresh adds the newest observation without changing any field. A release happens only after a human accepts, and the old version stays restorable.
 - **Assistant route:** `check-model.mjs` and `tests/check_refresh.mjs` cover all four age states and the review, release, reject and restore steps. Run 2026-11-09, pass.
-- **Student route:** Task A in `AGENT_TEST.md` updates the live data with a fresh assistant, and the data maintainer decides.
+- **Student route:** Task A in `AGENT_TEST.md`, 2026-11-09. A fresh assistant downloaded the live sources; the review showed the quote date moving from 2026-10-26 to 2026-11-06 with no removed fields and no flags. The data maintainer accepted, and the release kept the previous version. When the page check could not run, `restore` brought the previous version back; the release was repeated after a matching SHA-256, and both checks passed. Pass.
 - **Evidence:** `evidence/model_checks.json`, `evidence/refresh_checks.json`, `AGENT_TEST.md`, `maintenance/release_log.csv`, `evidence/release_review.md`.
 
 ## E8 Clean reproduction

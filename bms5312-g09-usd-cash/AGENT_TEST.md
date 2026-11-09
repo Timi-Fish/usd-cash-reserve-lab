@@ -1,6 +1,6 @@
 # Supervised AI maintenance tests
 
-Both tests follow `SKILL.md` in a new assistant conversation, using the prompts in `maintenance/FRESH_CHAT_PROMPTS.md`. The operator is a group member in the data-maintainer role who did not write `SKILL.md`. Entries marked "—" are completed from the actual run.
+Both tests follow `SKILL.md` in a new assistant conversation, using the prompts in `maintenance/FRESH_CHAT_PROMPTS.md`. Each operator acted as data maintainer. Task A was run by a group member who did not write `SKILL.md`; Task B by the project lead, who directed its writing.
 
 ## Task A Normal update
 | Item | Record |
@@ -23,21 +23,24 @@ Both tests follow `SKILL.md` in a new assistant conversation, using the prompts 
 ## Task B Failure and stopping
 | Item | Record |
 |---|---|
-| Date | — |
-| AI tool and capabilities | — |
+| Date | 2026-11-09 |
+| AI tool and capabilities | Codex desktop; project-file reading, shell execution and Python; network-enabled execution was permitted for the official-source refresh command, but validation stopped before any download. Later version check reported Python 3.9.5, below the skill's stated Python 3.10+ prerequisite. Node was not invoked; no packages were installed. |
 | Operator role | Data maintainer |
 | Test-copy input | A separate copy of the project folder whose `project.json` is replaced by `maintenance/invalid_unit_config.json` |
 | Problem introduced | `rate_unit` is `basis-points`, while the Treasury source publishes percent |
 | Expected response, set before testing | `refresh.py` prints `STOP: Incompatible input unit` and exits 1. No `candidate/` folder. `data.js` keeps its SHA-256. The assistant explains the unit conflict and asks for a corrected `project.json` without changing numbers or the method. |
-| Exact prompt | Task B prompt in `maintenance/FRESH_CHAT_PROMPTS.md` |
-| Actual response | — |
-| Tool actions | — |
-| Preservation of accepted data | — |
-| Evidence paths | — |
-| Human decision | — |
+| Exact prompt | "Read SKILL.md in this folder and follow it to update the dashboard data to the newest official observations. I am the data maintainer and will review the result. Do only what SKILL.md allows. Before anything replaces the accepted files, show me the before/after table, any flags and the source links, and wait for my decision. answer in chinese" |
+| Actual response | Reported accepted quote date 2026-11-06 and CPI month 2026-09; refresh exited 1 with `STOP: Incompatible input unit`. Explained the conflict between `basis-points` in project.json and `percent` required by the accepted method. Supplied a current-versus-no-candidate table and official Treasury/BLS links, explicitly identifying the saved figures as not newly source-verified. After the maintainer requested simpler language, explained that 4% equals 400 basis points and ambiguous units risk a 100-fold interpretation error. Stopped without changing configuration, units, formulas or accepted data. |
+| Tool actions | Read SKILL.md, README.md, refresh.py, tools/candidate.py, calculations/rebuild.py, project.json, the CPI schedule and source register; inspected data.js and candidate existence using read-only Python. Ran `python3 refresh.py --out candidate`: exit 1, `STOP: Incompatible input unit`; `candidate_exists` was false. No review, release, reject, restore or post-release evaluations ran. Documentation follow-up: `shasum -a 256 data.js`; read prior refresh report and release log; `python3 --version` returned Python 3.9.5. See operations evidence for outputs and documentation checks. |
+| Preservation of accepted data | Current SHA-256 is `fdb77deea2335f9000f4d803b295b5ffe29caed6ab5e533a81f95a05649f1bca`, matching the pre-existing Task A refresh report and latest release-log entry. No hash was captured immediately before the failed Task B command; preservation is supported by the saved accepted hash comparison and the stop before writes, not a contemporaneous before/after hash pair. No candidate folder was generated. |
+| Evidence paths | evidence/task_b_operations.md; evidence/task_a_refresh_report.json (saved accepted hash); maintenance/release_log.csv (prior accepted release hash). The STOP and candidate-existence outputs are transcribed from this conversation in the operations record; no candidate/review.md exists. |
+| Human decision | Data maintainer, translated from Chinese: "I think this is reasonable. The harness should block conflicting input." The maintainer endorsed stopping conflicting input; did not authorize a configuration fix or accept a candidate. |
 
 ## Instruction improvements and retests
-—
+- Neither assistant misread `SKILL.md`. Task A followed candidate, review, human acceptance and release, and restored when a post-release check could not run. Task B stopped at the unit check and asked for a corrected setting.
+- Task A needed three environment fixes from the maintainer: network permission for the download, the system certificate file for Python, and a Node binary given by full path. Task B ran under Python 3.9.5, below the stated 3.10.
+- `SKILL.md` step 1 now checks the Python and Node versions before any download, and step 2 names the certificate fix. A missing Node is now found before a release, not after it.
+- Retest: in Task A, the page check that could not run was repeated with the supplied Node and passed, 32 of 32. The revised `SKILL.md` has not been run in a new conversation.
 
 ## Remaining limitations
 - The assistant cannot judge whether a market move is genuine. The review flags rate or CPI moves above 0.50 percentage points, and the data maintainer compares them with the source pages before accepting.

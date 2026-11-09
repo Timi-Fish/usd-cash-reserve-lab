@@ -41,10 +41,12 @@ Objective: replace the accepted data set with a newer one built by the accepted 
 
 ## Ordered steps
 1. Read `README.md` (sections Method, Refresh and Maintenance) and this file. Tell the person the accepted quote date and CPI month: `summary.as_of` and `data.cpi.release.observation_month` in `data.js`.
+   - Run `python3 --version` (3.10 or later) and `node --version` (18 or later). If either is missing or older, ask the person for a suitable one, by its full path if it is not on the PATH, before step 2.
 2. Run `python3 refresh.py --out candidate`.
    - It downloads the two latest Treasury years and the CPI series. It checks fields, units, dates, CPI release dates and that the data are newer than the accepted version. It recalculates everything with `calculations/rebuild.py`, including the seven-tenor `data.bill_ladder`.
    - It writes `candidate/` only if every check passes.
    - If the download fails because this assistant has no internet access, ask the person to allow network access for this one command, or to run it themselves. Alternatively, they can download the three files in the source list into one folder; then run `python3 refresh.py --out candidate --sources <that folder>`. Record which route was used.
+   - If it stops with `CERTIFICATE_VERIFY_FAILED`, Python cannot find the system certificates. Rerun with `SSL_CERT_FILE=/etc/ssl/cert.pem` (macOS) in front of the command. Never turn certificate checks off.
 3. Run `python3 tools/candidate.py review`. This is the assistant's own pre-review.
    - It rebuilds the candidate from its saved inputs and requires an identical `data.js`.
    - It stops if any field was removed or renamed, or if nothing is newer.
