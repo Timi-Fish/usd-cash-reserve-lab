@@ -1,4 +1,0 @@
-check,source_inputs,excel_formula_without_leading_equals,expected,tolerance
-13-week price,bank discount 4.05%; 94 days,100*(1-0.0405*94/360),98.9425,0.00000001 USD per 100 face
-13-week real proceeds,principal 100000; annual inflation 3%; 94 days,100000/(1-0.0405*94/360)/(1.03^(94/365)),100302.3470297988,0.01 USD
-September 2026 CPI annual growth,CPI Sep 2026=336.940; Sep 2025=324.800,(336.940/324.800-1)*100,3.737684729064039,0.01 percentage points

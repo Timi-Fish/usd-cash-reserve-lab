@@ -1,6 +1,6 @@
 window.DASHBOARD_DATA = {
   "summary": {
-    "dashboard": "dev-g00-usd-cash",
+    "dashboard": "bms5312-g09-usd-cash",
     "title": "USD Cash Reserve Lab",
     "personas": [
       "family-office-client"
@@ -20,7 +20,7 @@ window.DASHBOARD_DATA = {
     "key_numbers": [
       {
         "label": "13-week bank discount rate",
-        "concept": "g00:bank-discount-rate",
+        "concept": "g09:bank-discount-rate",
         "value": 4.05,
         "unit": "percent",
         "as_of": "2026-10-26",
@@ -28,7 +28,7 @@ window.DASHBOARD_DATA = {
       },
       {
         "label": "26-week bank discount rate",
-        "concept": "g00:bank-discount-rate",
+        "concept": "g09:bank-discount-rate",
         "value": 4.21,
         "unit": "percent",
         "as_of": "2026-10-26",
@@ -44,7 +44,7 @@ window.DASHBOARD_DATA = {
       },
       {
         "label": "Default scenario real return",
-        "concept": "g00:real-holding-return",
+        "concept": "g09:real-holding-return",
         "value": 0.30234702979878847,
         "unit": "percent",
         "as_of": "2026-10-26",
@@ -55,9 +55,9 @@ window.DASHBOARD_DATA = {
   },
   "data": {
     "config": {
-      "dashboard_id": "dev-g00-usd-cash",
-      "group_id": "g00",
-      "identity_status": "Development identifier. Replace with instructor-assigned class prefix and group before submission.",
+      "dashboard_id": "bms5312-g09-usd-cash",
+      "group_id": "g09",
+      "identity_status": "Group g09 \u00b7 bms5312",
       "review_date": "2026-10-27",
       "access_date": "2026-10-27",
       "quote_cutoff": "2026-10-26",

@@ -2,15 +2,13 @@
 .DS_Store
 # Installed packages and build output of the dashboard source (reinstall with npm ci, rebuild with npm run build)
 node_modules/
-/dev-g00-usd-cash/dashboard/dist/
+/*/dashboard/dist/
 # Python caches and partial writes
 __pycache__/
 *.pyc
 *.tmp
 # Maintenance working folders of tools/candidate.py: the candidate under review and the version it replaced
-/dev-g00-usd-cash/candidate/
-/dev-g00-usd-cash/previous/
-# Submission folder and ZIP that tools/set_identity.py writes next to the project folder
+/*/candidate/
+/*/previous/
+# Submission ZIPs that tools/set_identity.py writes next to the submission folder
 /*.zip
-/*-usd-cash/
-!/dev-g00-usd-cash/

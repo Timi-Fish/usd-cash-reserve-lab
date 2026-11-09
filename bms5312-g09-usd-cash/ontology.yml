@@ -1,4 +1,4 @@
-group: g00
+group: g09
 uses:
   - family-office-client
   - wealth-planning
@@ -7,38 +7,38 @@ uses:
   - core:price
   - core:total-return
 terms:
-  - id: g00:bank-discount-rate
+  - id: g09:bank-discount-rate
     label: Treasury bill bank discount quote
     definition: Annualized discount divided by face value using a 360-day year; not a holding-period return.
     unit: percent
     broader: core:price
     mapping_note: Related price quotation; the class has no general interest-rate parent. This is not a subtype or equivalent of yield to maturity.
-  - id: g00:real-holding-return
+  - id: g09:real-holding-return
     label: Scenario real holding-period return
     definition: Modeled maturity proceeds divided by assumed same-period inflation factor and initial investment, minus one.
     unit: percent
     broader: core:total-return
-  - id: g00:break-even-inflation
+  - id: g09:break-even-inflation
     label: Break-even effective annual inflation
     definition: Annual inflation assumption that makes modeled real holding return zero under the 365-day convention.
     unit: percent
     broader: core:inflation
-  - id: g00:purchasing-power
+  - id: g09:purchasing-power
     label: Scenario purchasing power in USD
     definition: Modeled nominal maturity proceeds deflated to scenario-start dollars.
     unit: currency
     broader: core:price
-  - id: g00:nominal-interest
+  - id: g09:nominal-interest
     label: Modeled nominal interest in USD
     definition: Nominal maturity proceeds minus initial principal under the saved quote-date model.
     unit: currency
     broader: core:price
-  - id: g00:purchasing-power-adjustment
+  - id: g09:purchasing-power-adjustment
     label: Purchasing-power conversion adjustment
     definition: Nominal proceeds minus scenario-start purchasing power; may be negative under deflation and is not an account debit.
     unit: currency
     broader: core:price
-  - id: g00:cash-date-gap
+  - id: g09:cash-date-gap
     label: Maturity to cash-need date gap
     definition: Calendar days from maturity to user-entered cash-need date; positive means earlier maturity, not guaranteed operational suitability.
     unit: count
