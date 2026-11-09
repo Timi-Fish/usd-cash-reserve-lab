@@ -131,11 +131,12 @@ Expected results and tolerances were set before any comparison. The version chec
   - `python3 calculations/rebuild.py --out candidate` gives a `candidate/data.js` byte-identical to `data.js`.
   - `node tests/check_refresh.mjs` and `node dashboard/scripts/check-model.mjs` pass.
   - In `dashboard/`, `npm ci && npm run build` writes an `index.html` byte-identical to the shipped one.
-- **Assistant route:** a copy packed by the same exclusion rules, with no `node_modules`, `dist` or working folders, was extracted into an empty folder on 2026-11-09. Results:
-  - 1.5 MB ZIP;
+- **Assistant route:** the final ZIP, with no `node_modules`, `dist` or working folders, was extracted into an empty folder on 2026-11-10. Results:
+  - 3.8 MB ZIP, 84 files;
   - `data.js` byte-identical after the rebuild;
   - 32, 44 and 15 checks passed;
-  - the page rebuilt byte-identically with Node 24 and Python 3.14.
+  - after `npm ci && npm run build`, `index.html` was byte-identical to the shipped one (Node 24, Python 3.14);
+  - the page opened from `file://` with no console errors.
 
   Pass.
 - **Student route:** a member repeats this on their own computer from the final ZIP and records the operating system and versions in `evidence/user_test.md`.
