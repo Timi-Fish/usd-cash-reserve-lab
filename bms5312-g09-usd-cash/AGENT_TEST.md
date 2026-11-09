@@ -5,20 +5,20 @@ Both tests follow `SKILL.md` in a new assistant conversation, using the prompts 
 ## Task A Normal update
 | Item | Record |
 |---|---|
-| Date | — |
-| AI tool and capabilities | — |
+| Date | 2026-11-09 |
+| AI tool and capabilities | Codex desktop; project file access, official-source downloads with network permission, Python 3 and existing bundled Node v24.22.1; no installation |
 | Operator role | Data maintainer |
 | Files supplied | The project folder at the accepted version (quote date 2026-10-26, CPI 2026-09) |
 | Observation and source | Genuine newer observations: Treasury Daily Treasury Bill Rates after 2026-10-26 and any newly released BLS CPI-U month, downloaded live by `refresh.py` |
-| Exact prompt | Task A prompt in `maintenance/FRESH_CHAT_PROMPTS.md` |
-| Actions actually executed | — |
-| Manual interventions | — |
-| Candidate output files | — |
-| Three before/after comparisons | — |
-| One independent calculation | — |
-| Evaluation results after release | — |
-| Evidence paths | — |
-| Human decision | — |
+| Exact prompt | Initial request to follow SKILL.md and stage/review only; subsequent system-certificate retry, explicit accept, and existing bundled Node retry instructions. See evidence/task_a_operations.md for actual interventions. |
+| Actions actually executed | Read SKILL.md and README.md; refresh failed DNS then certificate verification; system-certificate refresh succeeded; review passed; release; Node PATH failure; Decimal passed; restore; bundled Node version check; candidate hash check; repeat review and release; both final checks passed. |
+| Manual interventions | Maintainer authorized network access, specified system certificate trust without disabling SSL or changing code, replied accept, then supplied existing bundled Node and authorized unchanged-candidate acceptance reuse. No manual downloads; no software installation. |
+| Candidate output files | candidate/data.js, project.json, data/raw/, data/quotes_normalized.csv, data/cpi_normalized.csv, refresh_report.json and review.md; permanent refresh report and operations evidence saved under evidence/. |
+| Three before/after comparisons | Quote 2026-10-26 to 2026-11-06; 13-week discount 4.05% to 4.01%; 26-week discount 4.21% to 4.12%; CPI 336.940 unchanged (2026-09). Full table: evidence/release_review.md. |
+| One independent calculation | Not performed in the fresh maintenance conversation. Separate Task C evidence, completed by the Independent student checker on 2026-11-09 for the identical released data, is now merged: 13-week price 98.9975; nominal proceeds USD 101012.65183464228; purchasing power USD 100279.10045332712 at USD 100000 and 3% inflation. Workbook comparisons PASS. See evidence/independent_check.xlsx and EVALS.md E2. |
+| Evaluation results after release | First attempt: page check could not run (node absent from PATH), Decimal 15/15 passed; restored. Final attempt: bundled Node page checks 32/32, all_pass true; Decimal checks 15/15, all_pass true. |
+| Evidence paths | evidence/task_a_operations.md; evidence/task_a_refresh_report.json; evidence/release_review.md; evidence/model_checks.json; evidence/calculation_checks.json; maintenance/release_log.csv |
+| Human decision | Explicit accept in chat; later authorized reuse only if candidate unchanged. Candidate SHA-256 matched; acceptance reused. No detailed source-comparison statement was supplied in that fresh conversation. In the separate coordinating conversation, the maintainer confirmed checking the 13-week and 26-week bank discount rates of 4.01% and 4.12% and the September 2026 unadjusted CPI-U index of 336.940. This is supplemental evidence, not a statement made in the fresh test. |
 
 ## Task B Failure and stopping
 | Item | Record |

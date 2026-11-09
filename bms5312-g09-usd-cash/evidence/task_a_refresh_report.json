@@ -1,0 +1,42 @@
+{
+  "status": "refreshed",
+  "quote_date": "2026-11-06",
+  "cpi_month": "2026-09",
+  "access_date": "2026-11-09",
+  "accepted_before": {
+    "quote_date": "2026-10-26",
+    "cpi_month": "2026-09"
+  },
+  "rows": 713,
+  "bill_tenors": [
+    4,
+    6,
+    8,
+    13,
+    17,
+    26,
+    52
+  ],
+  "inputs": [
+    {
+      "file": "treasury_2025.xml",
+      "origin": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_bill_rates&field_tdr_date_value=2025",
+      "bytes": 909930,
+      "sha256": "0a8fdeadab19a1255605515bec6c7b842d28b03c5dadd6ae9f0498adcaa7c259"
+    },
+    {
+      "file": "treasury_2026.xml",
+      "origin": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_bill_rates&field_tdr_date_value=2026",
+      "bytes": 830546,
+      "sha256": "f08561d0386ad06e6ef677528fe9e34f5ee83a8b4f6f12b06fd36c577aa1f745"
+    },
+    {
+      "file": "cpi_2023_2026.json",
+      "origin": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SA0?startyear=2023&endyear=2026",
+      "bytes": 4172,
+      "sha256": "1363b0f2675cb619109a29e834655e2ec576719bc46dbe42e8b88f5625e126cb"
+    }
+  ],
+  "warnings": [],
+  "sha256_data_js": "fdb77deea2335f9000f4d803b295b5ffe29caed6ab5e533a81f95a05649f1bca"
+}

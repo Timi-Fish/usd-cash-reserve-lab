@@ -2,7 +2,7 @@
   "date": "2026-11-09",
   "environment": "Node, ES modules from dashboard/src",
   "data": {
-    "current_quote_date": "2026-10-26",
+    "current_quote_date": "2026-11-06",
     "frozen_fixture": "tests/fixtures/data_2026-10-26.js"
   },
   "checks": [

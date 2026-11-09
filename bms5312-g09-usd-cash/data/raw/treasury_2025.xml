@@ -2,11 +2,11 @@
 <feed xml:base="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom"> 
 <title type="text">DailyTreasuryBillRateData</title>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates</id>
-  <updated>2026-10-27T02:05:20Z</updated>
+  <updated>2026-11-09T01:03:39Z</updated>
   <link rel="self" title="DailyTreasuryBillRateData" href="DailyTreasuryBillRateData"/>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -57,7 +57,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -108,7 +108,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -159,7 +159,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -210,7 +210,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -261,7 +261,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -312,7 +312,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -363,7 +363,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -414,7 +414,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -465,7 +465,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -516,7 +516,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -567,7 +567,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -618,7 +618,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -669,7 +669,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -720,7 +720,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -771,7 +771,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -822,7 +822,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -873,7 +873,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -924,7 +924,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -975,7 +975,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1026,7 +1026,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1077,7 +1077,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1128,7 +1128,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1179,7 +1179,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1230,7 +1230,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1281,7 +1281,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1332,7 +1332,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1383,7 +1383,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1434,7 +1434,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1485,7 +1485,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1536,7 +1536,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1587,7 +1587,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1644,7 +1644,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1701,7 +1701,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1758,7 +1758,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1815,7 +1815,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1872,7 +1872,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1929,7 +1929,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -1986,7 +1986,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2043,7 +2043,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2100,7 +2100,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2157,7 +2157,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2214,7 +2214,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2271,7 +2271,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2328,7 +2328,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2385,7 +2385,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2442,7 +2442,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2499,7 +2499,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2556,7 +2556,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2613,7 +2613,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2670,7 +2670,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2727,7 +2727,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2784,7 +2784,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2841,7 +2841,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2898,7 +2898,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -2955,7 +2955,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3012,7 +3012,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3069,7 +3069,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3126,7 +3126,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3183,7 +3183,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3240,7 +3240,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3297,7 +3297,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3354,7 +3354,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3411,7 +3411,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3468,7 +3468,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3525,7 +3525,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3582,7 +3582,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3639,7 +3639,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3696,7 +3696,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3753,7 +3753,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3810,7 +3810,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3867,7 +3867,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3924,7 +3924,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -3981,7 +3981,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4038,7 +4038,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4095,7 +4095,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4152,7 +4152,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4209,7 +4209,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4266,7 +4266,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4323,7 +4323,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4380,7 +4380,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4437,7 +4437,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4494,7 +4494,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4551,7 +4551,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4608,7 +4608,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4665,7 +4665,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4722,7 +4722,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4779,7 +4779,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4836,7 +4836,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4893,7 +4893,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -4950,7 +4950,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5007,7 +5007,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5064,7 +5064,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5121,7 +5121,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5178,7 +5178,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5235,7 +5235,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5292,7 +5292,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5349,7 +5349,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5406,7 +5406,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5463,7 +5463,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5520,7 +5520,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5577,7 +5577,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5634,7 +5634,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5691,7 +5691,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5748,7 +5748,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5805,7 +5805,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5862,7 +5862,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5919,7 +5919,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -5976,7 +5976,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -6033,7 +6033,7 @@
 </entry>
 <entry>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
 <content type="application/xml">
@@ -6091,7 +6091,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=1</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=1" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6151,7 +6151,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=2</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=2" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6211,7 +6211,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=3</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=3" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6271,7 +6271,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=4</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=4" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6331,7 +6331,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=5</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=5" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6391,7 +6391,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=6</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=6" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6451,7 +6451,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=7</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=7" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6511,7 +6511,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=8</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=8" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6571,7 +6571,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=9</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=9" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6631,7 +6631,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=10</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=10" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6691,7 +6691,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=11</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=11" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6751,7 +6751,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=12</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=12" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6811,7 +6811,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=13</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=13" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6871,7 +6871,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=14</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=14" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6931,7 +6931,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=15</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=15" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -6991,7 +6991,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=16</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=16" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7051,7 +7051,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=17</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=17" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7111,7 +7111,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=18</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=18" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7171,7 +7171,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=19</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=19" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7231,7 +7231,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=20</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=20" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7291,7 +7291,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=21</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=21" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7351,7 +7351,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=22</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=22" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7411,7 +7411,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=23</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=23" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7471,7 +7471,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=24</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=24" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7531,7 +7531,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=25</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=25" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7591,7 +7591,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=26</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=26" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7651,7 +7651,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=27</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=27" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7711,7 +7711,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=28</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=28" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7771,7 +7771,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=29</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=29" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7831,7 +7831,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=30</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=30" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7891,7 +7891,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=31</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=31" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -7951,7 +7951,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=32</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=32" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8011,7 +8011,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=33</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=33" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8071,7 +8071,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=34</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=34" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8131,7 +8131,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=35</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=35" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8191,7 +8191,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=36</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=36" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8251,7 +8251,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=37</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=37" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8311,7 +8311,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=38</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=38" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8371,7 +8371,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=39</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=39" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8431,7 +8431,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=40</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=40" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8491,7 +8491,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=41</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=41" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8551,7 +8551,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=42</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=42" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8611,7 +8611,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=43</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=43" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8671,7 +8671,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=44</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=44" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8731,7 +8731,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=45</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=45" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8791,7 +8791,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=46</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=46" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8851,7 +8851,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=47</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=47" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8911,7 +8911,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=48</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=48" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -8971,7 +8971,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=49</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=49" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9031,7 +9031,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=50</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=50" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9091,7 +9091,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=51</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=51" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9151,7 +9151,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=52</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=52" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9211,7 +9211,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=53</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=53" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9271,7 +9271,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=54</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=54" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9331,7 +9331,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=55</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=55" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9391,7 +9391,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=56</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=56" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9451,7 +9451,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=57</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=57" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9511,7 +9511,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=58</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=58" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9571,7 +9571,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=59</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=59" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9631,7 +9631,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=60</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=60" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9691,7 +9691,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=61</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=61" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9751,7 +9751,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=62</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=62" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9811,7 +9811,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=63</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=63" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9871,7 +9871,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=64</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=64" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9931,7 +9931,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=65</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=65" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -9991,7 +9991,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=66</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=66" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10051,7 +10051,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=67</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=67" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10111,7 +10111,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=68</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=68" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10171,7 +10171,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=69</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=69" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10231,7 +10231,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=70</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=70" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10291,7 +10291,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=71</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=71" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10351,7 +10351,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=72</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=72" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10411,7 +10411,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=73</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=73" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10471,7 +10471,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=74</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=74" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10531,7 +10531,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=75</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=75" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10591,7 +10591,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=76</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=76" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10651,7 +10651,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=77</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=77" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10711,7 +10711,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=78</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=78" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10771,7 +10771,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=79</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=79" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10831,7 +10831,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=80</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=80" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10891,7 +10891,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=81</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=81" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -10951,7 +10951,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=82</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=82" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11011,7 +11011,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=83</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=83" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11071,7 +11071,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=84</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=84" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11131,7 +11131,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=85</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=85" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11191,7 +11191,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=86</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=86" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11251,7 +11251,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=87</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=87" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11311,7 +11311,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=88</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=88" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11371,7 +11371,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=89</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=89" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11431,7 +11431,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=90</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=90" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11491,7 +11491,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=91</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=91" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11551,7 +11551,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=92</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=92" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11611,7 +11611,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=93</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=93" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11671,7 +11671,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=94</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=94" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11731,7 +11731,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=95</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=95" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11791,7 +11791,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=96</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=96" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11851,7 +11851,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=97</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=97" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11911,7 +11911,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=98</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=98" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -11971,7 +11971,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=99</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=99" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12031,7 +12031,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=100</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=100" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12091,7 +12091,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=101</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=101" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12151,7 +12151,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=102</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=102" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12211,7 +12211,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=103</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=103" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12271,7 +12271,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=104</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=104" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12331,7 +12331,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=105</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=105" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12391,7 +12391,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=106</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=106" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12451,7 +12451,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=107</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=107" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12511,7 +12511,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=108</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=108" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12571,7 +12571,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=109</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=109" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12631,7 +12631,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=110</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=110" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12691,7 +12691,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=111</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=111" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12751,7 +12751,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=112</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=112" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12811,7 +12811,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=113</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=113" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12871,7 +12871,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=114</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=114" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12931,7 +12931,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=115</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=115" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -12991,7 +12991,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=116</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=116" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13051,7 +13051,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=117</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=117" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13111,7 +13111,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=118</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=118" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13171,7 +13171,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=119</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=119" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13231,7 +13231,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=120</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=120" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13291,7 +13291,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=121</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=121" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13351,7 +13351,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=122</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=122" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13411,7 +13411,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=123</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=123" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13471,7 +13471,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=124</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=124" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13531,7 +13531,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=125</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=125" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13591,7 +13591,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=126</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=126" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13651,7 +13651,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=127</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=127" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13711,7 +13711,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=128</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=128" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13771,7 +13771,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=129</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=129" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13831,7 +13831,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=130</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=130" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13891,7 +13891,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=131</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=131" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -13951,7 +13951,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=132</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=132" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14011,7 +14011,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=133</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=133" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14071,7 +14071,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=134</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=134" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14131,7 +14131,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=135</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=135" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14191,7 +14191,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=136</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=136" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14251,7 +14251,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=137</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=137" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14311,7 +14311,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=138</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=138" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
@@ -14371,7 +14371,7 @@
 <entry>
 <id>https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=139</id>
 <title type="text"></title>
-<updated>2026-10-27T02:05:20Z</updated>
+<updated>2026-11-09T01:03:39Z</updated>
 <author><name /></author>
 <link rel="edit" title="DailyTreasuryBillRateDatum" href="/resource-center/data-chart-center/interest-rates/pages/xml-item?data=daily_treasury_bill_rates&amp;id=139" />
 <category term="TreasuryDataWarehouseModel.DailyTreasuryBillRateDatum" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />

@@ -8,9 +8,9 @@ Expected results and tolerances were set before any comparison. The version chec
 
 | ID | Check | Assistant route | Student route |
 |---|---|---|---|
-| E1 | Source match | Pass | Not run |
-| E2 | Calculation check | Pass | Not run |
-| E3 | Second calculation and boundary | Pass | Not run |
+| E1 | Source match | Pass | Pass |
+| E2 | Calculation check | Pass | Pass |
+| E3 | Second calculation and boundary | Pass | Pass |
 | E4 | Financial interpretation | Pass | Not run |
 | E5 | Interaction | Pass | Not run |
 | E6 | Missing or invalid input | Pass | Not run |
@@ -28,7 +28,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - Exact match for the 13-week and 26-week bank discount rates (2 decimals as published), their maturity dates and CUSIPs on the quote date.
   - Exact match for the CPI-U index (3 decimals) of the saved month and of the same month a year earlier.
 - **Assistant route:** `calculations/verify.py` traced each rate, maturity date and day count to the raw XML field, and the CPI ratio to the raw JSON. Run on 2026-11-09 for quote date 2026-10-26: exact matches, pass.
-- **Student route:** a member reads the same values from the two web pages into sheet "1 Source match" of `evidence/independent_check.xlsx` and compares them with the Method tab.
+- **Student route:** Independent student checker, 2026-11-09, checked quote date 2026-11-06. The checker confirmed personally obtaining the inputs from the official websites. Sheet 1 Source match records seven PASS results: quote date 2026-11-06; 13-week and 26-week bank discount rates 4.01% and 4.12%; maturity dates 2027-02-04 and 2027-05-06; September 2026 and September 2025 CPI-U indices 336.940 and 324.800. Official-source and dashboard columns agree exactly. Pass for the workbook source comparisons; CUSIPs are not separately recorded in this workbook.
 - **Evidence:** `evidence/calculation_checks.json`, `evidence/source_review.md` (a hand cross-check of three BLS index values), `evidence/independent_check.xlsx`.
 
 ## E2 Calculation check
@@ -45,7 +45,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - `node dashboard/scripts/check-model.mjs`: the page's JavaScript reproduces all 12 saved results of both bills within 1e-9 (32 of 32 checks).
   - `calculations/verify.py`: the price and real proceeds again in Decimal arithmetic (15 of 15).
   - Both run on 2026-11-09, pass.
-- **Student route:** sheet "2 Calculation" recomputes P, N, F, R and the real return with visible Excel formulas from the E1 inputs. The member compares the results with the Overview.
+- **Student route:** Independent student checker, 2026-11-09, checked quote date 2026-11-06. Sheet 2 Calculation uses USD 100,000, 3% annual inflation, 4.01% bank discount and 90 days. Formula results: price 98.9975 per USD 100; nominal proceeds USD 101012.65183464228; inflation factor 1.0073150973433052; purchasing power USD 100279.10045332712; real return 0.279100453327108%. Entered dashboard comparisons: USD 101013, USD 100279 and 0.28%. All three comparisons PASS within the preset tolerances. Pass.
 - **Evidence:** `evidence/model_checks.json`, `evidence/calculation_checks.csv`, `evidence/independent_check.xlsx`.
 
 ## E3 Second calculation and boundary
@@ -58,7 +58,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - Cash of $0, cash above $100,000,000, and inflation below −5% or above 15% show a message and no result.
   - Nominal proceeds do not change with inflation; purchasing power falls as inflation rises.
 - **Assistant route:** `check-model.mjs` (break-even, decomposition, inflation direction, the four rejections) and `verify.py` (boundary fixtures). Run 2026-11-09, pass.
-- **Student route:** sheet "3 Boundary" computes both bills' break-even rates with a formula. The member checks that purchasing power at that rate equals the cash placed, and compares the rates with the Scenarios tab.
+- **Student route:** Independent student checker, 2026-11-09, checked quote date 2026-11-06. Sheet 3 Boundary calculates 13-week and 26-week break-even inflation at 4.170845416920055% and 4.311448537283158%, compared with entered dashboard values 4.17% and 4.31%: both PASS. Purchasing power at break-even equals USD 100000 within USD 0.01 for both bills: both PASS. Zero-rate/zero-inflation result is USD 100000: PASS. CPI year-on-year is 3.737684729064039%, compared with 3.74%: PASS. Six workbook checks PASS; additional interactive boundary tests are not evidenced by this workbook.
 - **Evidence:** `evidence/model_checks.json`, `evidence/calculation_checks.json`, `evidence/independent_check.xlsx`.
 
 ## E4 Financial interpretation
@@ -73,7 +73,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - `check-model.mjs` checks the summary wording: the outcome at maturity, the payment-fit text, the line about sale before maturity, and the disclaimer last.
   - Every view was read in headless Chrome at desktop and phone width.
   - Run 2026-11-09, pass.
-- **Student route:** a member who did not build the page answers the three questions in `evidence/user_test.md` using only the page.
+- **Student route:** a member who did not build the page answers the four questions in `evidence/user_test.md` using only the page.
 - **Evidence:** `evidence/model_checks.json`, `evidence/user_test.md`.
 
 ## E5 Interaction

@@ -10,28 +10,28 @@ window.DASHBOARD_DATA = {
       "wealth-and-goals"
     ],
     "question": "When is the cash needed, which reference maturity fits that date, and how could purchasing power change?",
-    "as_of": "2026-10-26",
+    "as_of": "2026-11-06",
     "refresh": {
       "mode": "automatic",
       "cadence": "weekly"
     },
-    "headline": "13-week reference: +0.30% modeled real return at 3.0% annual inflation.",
+    "headline": "13-week reference: +0.28% modeled real return at 3.0% annual inflation.",
     "state": null,
     "key_numbers": [
       {
         "label": "13-week bank discount rate",
         "concept": "g09:bank-discount-rate",
-        "value": 4.05,
+        "value": 4.01,
         "unit": "percent",
-        "as_of": "2026-10-26",
+        "as_of": "2026-11-06",
         "trend": null
       },
       {
         "label": "26-week bank discount rate",
         "concept": "g09:bank-discount-rate",
-        "value": 4.21,
+        "value": 4.12,
         "unit": "percent",
-        "as_of": "2026-10-26",
+        "as_of": "2026-11-06",
         "trend": null
       },
       {
@@ -45,9 +45,9 @@ window.DASHBOARD_DATA = {
       {
         "label": "Default scenario real return",
         "concept": "g09:real-holding-return",
-        "value": 0.30234702979878847,
+        "value": 0.279100453327108,
         "unit": "percent",
-        "as_of": "2026-10-26",
+        "as_of": "2026-11-06",
         "trend": null
       }
     ],
@@ -58,9 +58,9 @@ window.DASHBOARD_DATA = {
       "dashboard_id": "bms5312-g09-usd-cash",
       "group_id": "g09",
       "identity_status": "Group g09 \u00b7 bms5312",
-      "review_date": "2026-10-27",
-      "access_date": "2026-10-27",
-      "quote_cutoff": "2026-10-26",
+      "review_date": "2026-11-09",
+      "access_date": "2026-11-09",
+      "quote_cutoff": "2026-11-06",
       "rate_unit": "percent",
       "cpi_unit": "index-points",
       "default_principal": 100000,
@@ -83,48 +83,48 @@ window.DASHBOARD_DATA = {
     "instruments": [
       {
         "weeks": 13,
-        "quote_date": "2026-10-26",
-        "maturity_date": "2027-01-28",
-        "days": 94,
-        "cusip": "912797VU8",
-        "discount_pct": 4.05,
-        "coupon_equivalent_pct": 4.15,
+        "quote_date": "2026-11-06",
+        "maturity_date": "2027-02-04",
+        "days": 90,
+        "cusip": "912797VV6",
+        "discount_pct": 4.01,
+        "coupon_equivalent_pct": 4.11,
         "default_result": {
-          "price_per_100": 98.9425,
-          "nominal_return_pct": 1.0688025873613505,
-          "period_inflation_pct": 0.7641451872854477,
-          "real_return_pct": 0.30234702979878847,
-          "nominal_end": 101068.80258736135,
-          "real_end": 100302.3470297988,
-          "real_change": 302.3470297987951,
-          "break_even_annual_pct": 4.214507479898888,
-          "zero_interest_real_end": 99241.64970995867,
-          "nominal_interest": 1068.8025873613515,
-          "purchasing_power_adjustment": 766.4555575625564,
-          "cash_advantage": 1060.6973198401247
+          "price_per_100": 98.9975,
+          "nominal_return_pct": 1.0126518346422753,
+          "period_inflation_pct": 0.7315097343305155,
+          "real_return_pct": 0.279100453327108,
+          "nominal_end": 101012.65183464228,
+          "real_end": 100279.10045332712,
+          "real_change": 279.1004533271189,
+          "break_even_annual_pct": 4.170845416919966,
+          "zero_interest_real_end": 99273.80247128251,
+          "nominal_interest": 1012.6518346422818,
+          "purchasing_power_adjustment": 733.5513813151629,
+          "cash_advantage": 1005.2979820446053
         }
       },
       {
         "weeks": 26,
-        "quote_date": "2026-10-26",
-        "maturity_date": "2027-04-29",
-        "days": 185,
-        "cusip": "912797WW3",
-        "discount_pct": 4.21,
-        "coupon_equivalent_pct": 4.36,
+        "quote_date": "2026-11-06",
+        "maturity_date": "2027-05-06",
+        "days": 181,
+        "cusip": "912797WX1",
+        "discount_pct": 4.12,
+        "coupon_equivalent_pct": 4.26,
         "default_result": {
-          "price_per_100": 97.83652777777777,
-          "nominal_return_pct": 2.2113133727887924,
-          "period_inflation_pct": 1.5094649282043848,
-          "real_return_pct": 0.6914118255680002,
-          "nominal_end": 102211.31337278879,
-          "real_end": 100691.411825568,
-          "real_change": 691.4118255679932,
-          "break_even_annual_pct": 4.4097867548023695,
-          "zero_interest_real_end": 98512.98110055846,
-          "nominal_interest": 2211.3133727887907,
-          "purchasing_power_adjustment": 1519.9015472207975,
-          "cash_advantage": 2178.43072500953
+          "price_per_100": 97.92855555555555,
+          "nominal_return_pct": 2.1152608988185273,
+          "period_inflation_pct": 1.476588081375696,
+          "real_return_pct": 0.6293794751264903,
+          "nominal_end": 102115.26089881852,
+          "real_end": 100629.37947512648,
+          "real_change": 629.3794751264795,
+          "break_even_annual_pct": 4.311448537283158,
+          "zero_interest_real_end": 98544.89778451006,
+          "nominal_interest": 2115.260898818524,
+          "purchasing_power_adjustment": 1485.8814236920443,
+          "cash_advantage": 2084.4816906164197
         }
       }
     ],
@@ -162,7 +162,8 @@ window.DASHBOARD_DATA = {
       "2026-07-31",
       "2026-08-31",
       "2026-09-30",
-      "2026-10-26"
+      "2026-10-30",
+      "2026-11-06"
     ],
     "series": {
       "bill13_discount": [
@@ -199,7 +200,8 @@ window.DASHBOARD_DATA = {
         3.69,
         3.78,
         4.03,
-        4.05
+        3.99,
+        4.01
       ],
       "bill26_discount": [
         5.0,
@@ -235,7 +237,8 @@ window.DASHBOARD_DATA = {
         3.82,
         3.89,
         4.19,
-        4.21
+        4.11,
+        4.12
       ]
     },
     "cpi": {
@@ -388,7 +391,7 @@ window.DASHBOARD_DATA = {
       }
     },
     "freshness": {
-      "checked_on": "2026-10-27",
+      "checked_on": "2026-11-09",
       "stale_at_build": false
     },
     "sources": [
@@ -407,65 +410,65 @@ window.DASHBOARD_DATA = {
     ],
     "bill_ladder": {
       "schema": "usd-cash-reserve-lab/bill-ladder/v1",
-      "quote_date": "2026-10-26",
-      "access_date": "2026-10-27",
+      "quote_date": "2026-11-06",
+      "access_date": "2026-11-09",
       "freshness_days": 7,
       "bills": [
         {
           "tenor_weeks": 4,
-          "cusip": "912797VY0",
-          "maturity_date": "2026-11-24",
-          "days": 29,
-          "discount_pct": 3.94,
-          "coupon_equivalent_pct": 4.01
+          "cusip": "912797WE3",
+          "maturity_date": "2026-12-08",
+          "days": 32,
+          "discount_pct": 3.88,
+          "coupon_equivalent_pct": 3.95
         },
         {
           "tenor_weeks": 6,
-          "cusip": "912797VA2",
-          "maturity_date": "2026-12-03",
-          "days": 38,
-          "discount_pct": 3.94,
-          "coupon_equivalent_pct": 4.01
+          "cusip": "912797VH7",
+          "maturity_date": "2026-12-17",
+          "days": 41,
+          "discount_pct": 3.9,
+          "coupon_equivalent_pct": 3.97
         },
         {
           "tenor_weeks": 8,
-          "cusip": "912797WG8",
-          "maturity_date": "2026-12-22",
-          "days": 57,
-          "discount_pct": 4.02,
-          "coupon_equivalent_pct": 4.1
+          "cusip": "912797WN3",
+          "maturity_date": "2027-01-05",
+          "days": 60,
+          "discount_pct": 3.98,
+          "coupon_equivalent_pct": 4.06
         },
         {
           "tenor_weeks": 13,
-          "cusip": "912797VU8",
-          "maturity_date": "2027-01-28",
-          "days": 94,
-          "discount_pct": 4.05,
-          "coupon_equivalent_pct": 4.15
+          "cusip": "912797VV6",
+          "maturity_date": "2027-02-04",
+          "days": 90,
+          "discount_pct": 4.01,
+          "coupon_equivalent_pct": 4.11
         },
         {
           "tenor_weeks": 17,
-          "cusip": "912797XA0",
-          "maturity_date": "2027-02-23",
-          "days": 120,
-          "discount_pct": 4.13,
-          "coupon_equivalent_pct": 4.25
+          "cusip": "912797XG7",
+          "maturity_date": "2027-03-09",
+          "days": 123,
+          "discount_pct": 4.08,
+          "coupon_equivalent_pct": 4.19
         },
         {
           "tenor_weeks": 26,
-          "cusip": "912797WW3",
-          "maturity_date": "2027-04-29",
-          "days": 185,
-          "discount_pct": 4.21,
-          "coupon_equivalent_pct": 4.36
+          "cusip": "912797WX1",
+          "maturity_date": "2027-05-06",
+          "days": 181,
+          "discount_pct": 4.12,
+          "coupon_equivalent_pct": 4.26
         },
         {
           "tenor_weeks": 52,
-          "cusip": "912797WJ2",
-          "maturity_date": "2027-09-30",
-          "days": 339,
-          "discount_pct": 4.26,
-          "coupon_equivalent_pct": 4.45
+          "cusip": "912797WT0",
+          "maturity_date": "2027-10-28",
+          "days": 356,
+          "discount_pct": 4.13,
+          "coupon_equivalent_pct": 4.32
         }
       ],
       "source": {

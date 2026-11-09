@@ -1,0 +1,4 @@
+date,action,quote_date_before,quote_date_after,cpi_month_before,cpi_month_after,sha256_data_js,decision
+2026-11-09,release,2026-10-26,2026-11-06,2026-09,2026-09,fdb77deea2335f9000f4d803b295b5ffe29caed6ab5e533a81f95a05649f1bca,Data maintainer accepted after checking the before/after review and official-source comparison for 13-week and 26-week bank discount rates and CPI-U index
+2026-11-09,restore,2026-11-06,2026-10-26,2026-09,2026-09,a0fabcdf46f4c3ca62ea4b0662422ed9058f2a1c6808c64c27378285a4395c24,Restored after the page arithmetic validation command failed because Node.js was unavailable; Decimal verification passed all 15 checks
+2026-11-09,release,2026-10-26,2026-11-06,2026-09,2026-09,fdb77deea2335f9000f4d803b295b5ffe29caed6ab5e533a81f95a05649f1bca,Data maintainer explicitly accepted the reviewed rate and CPI candidate; acceptance reused after confirming identical candidate SHA-256 and a passing repeat review

@@ -147,6 +147,7 @@ One entry per substantive session. People appear by role only:
      - `refresh.py` downloaded before checking the unit setting, so an offline assistant would have stopped for the wrong reason. Settings are now checked first.
   6. **The review tool crashed with a bare `KeyError`** instead of naming a removed field. The automated check caught it. Removed fields now stop the review with their names.
   7. **The source-register check passed even without the update it tested.** The assistant's own review of the test caught it. It now checks the dates moving back on restore.
+  8. **The refresh checks failed after the first real release.** They took the raw files from the project folder but compared the results with the frozen 2026-10-26 data set, so 7 of 44 failed once Task A released the 2026-11-06 quotes. The assistant's live trial had not rerun this suite after releasing; merging the returned Task A files caught it. The frozen release now carries its raw inputs (`tests/fixtures/inputs_2026-10-26/`), and all 44 pass on the new data.
 - **Files and contributions:**
   - The assistant wrote the code and documents.
   - The project lead made the final decisions: the redesign as the final page, `refresh.py` in the package, human approval, group 9, and the class prefix.
