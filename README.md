@@ -23,29 +23,28 @@ Educational project. Not investment advice.
 
 ## Layout
 
-- `dev-g00-usd-cash/` is the course project folder, laid out exactly as the submission expects: the accepted dashboard (`index.html`, `data.js`), sources, calculations, evidence and slides. Start with `dev-g00-usd-cash/README.md`.
-- `dev-g00-usd-cash/extensions/` holds candidate additions the group has not accepted yet: a redesigned dashboard on the Salt design system, an automatic refresh, a liquidity calendar and a project review. Start with `dev-g00-usd-cash/extensions/README.md`.
-- `AGENTS.md` gives the rules for AI assistants working here, with an index of where the work is; `CLAUDE.md` points to it.
+- `dev-g00-usd-cash/` is the submission folder: the page (`index.html`, `data.js`), sources, method, maintenance skill, evaluations and evidence. Start with `dev-g00-usd-cash/README.md`.
+- `group/` holds group material that is never submitted: tasks and prompts for members (`group/handoff/`), presentation notes, the submission checklist, the changelog, design decisions and an earlier review.
+- `reference/` holds the course's agent guide and class vocabulary.
+- `AGENTS.md` gives the rules for AI assistants working here, with an index of where the work is; `CLAUDE.md` points to it. `INTERFACES.md` lists the contracts between the parts.
 
-The repository files (this README, `AGENTS.md`, `CLAUDE.md`, `.gitignore`) sit outside the project folder, so they never end up in the submission package.
+The first dashboard version is kept as the git tag `original-v2`.
 
-## See the two dashboards
+## See the dashboard
 
-- Accepted original: double-click `dev-g00-usd-cash/index.html`.
-- Candidate redesign: double-click `dev-g00-usd-cash/extensions/salt-dashboard/dist/index.html`.
+Double-click `dev-g00-usd-cash/index.html`.
 
 ## Working together
 
-1. Clone the repository and create a branch named after the change, such as `fix/stale-warning` or `feat/tabbed-layout`.
-2. Make small Conventional Commits, then open a pull request into `main`. Say what changed, which checks ran and what still needs a person.
-3. Another member reviews and merges. Nobody pushes straight to `main`.
-4. Record accepted changes in the project's `AI_LOG.md`, `AGENT_TEST.md` or `EVALS.md`, as the course requires.
+1. Pull `main`, make the change, and run the checks below.
+2. Commit straight to `main` with a Conventional Commit message. A bad change is undone by reverting its commit.
+3. Record work in the project's `AI_LOG.md`, `AGENT_TEST.md` or `EVALS.md`, as the course requires.
 
 ## Before every push
 
 - No names, student IDs, emails, client details, keys or local paths in any file or commit message (course rule).
-- If you touched `extensions/`, run `node dev-g00-usd-cash/extensions/tests/check_extensions.mjs`.
+- From `dev-g00-usd-cash/`, run `node tests/check_refresh.mjs` and `node dashboard/scripts/check-model.mjs`.
 
 ## Making the submission ZIP
 
-`dev-g00-usd-cash/tools/set_identity.py` writes the renamed folder and its ZIP next to the project folder, that is, in this repository's root. ZIPs are ignored by git; the group decides whether to commit the renamed folder. Because `.git` lives outside the project folder, it is never copied into the package.
+`python3 dev-g00-usd-cash/tools/set_identity.py --prefix bms5312 --group g09` writes `bms5312-g09-usd-cash/` and `bms5312-g09-usd-cash.zip` in this repository's root. Both are ignored by git. Because `.git` lives outside the project folder, it is never copied into the package.

@@ -1,30 +1,86 @@
-# USD cash reserves: purchasing power over roughly three or six months
+# Project proposal: USD Cash Reserve Lab
 
-**Status:** Revision v2 candidate, not human-accepted. Working proposal implemented as an educational prototype. Topic chosen by the user. Detailed method and thresholds proposed by the assistant require group endorsement. The class prefix and group number are not yet known; `dev-g00-usd-cash` is a development ID.
+Educational project. Not investment advice.
 
 ## User and question
-A family-office client holds a USD reserve for spending in approximately three to six months. When is the cash needed, which reference maturity fits that calendar date, and how could purchasing power change under different inflation assumptions? Liquidity and meeting obligations take priority. The dashboard makes the purchasing-power cost visible without demanding that every cash reserve beat inflation.
+The user is a family-office client and their advisor. The client holds a USD reserve for payments due in the next few months: tax instalments, tuition, a household budget.
+
+The question: when is each payment due, which saved U.S. Treasury bill maturity reaches it, and how could the reserve's purchasing power change meanwhile? Liquidity and meeting the payment dates come first. The dashboard shows the purchasing-power cost without asking every reserve to beat inflation.
 
 ## Decisions informed and scope excluded
-Compare maturity dates with the client's spending horizon, stress the purchasing power of a chosen reserve amount, and identify when a data review is needed. Exclude personal data, buy/sell advice, early-sale pricing, FX, fees, taxes, roll-over forecasts and actual trading/backtesting. The user must independently assess deadline suitability and execution terms.
+The dashboard informs three decisions:
+1. Whether a saved maturity reaches each payment date, or whether the cash would wait or the bill would have to be sold early.
+2. How sensitive purchasing power is to the inflation assumption.
+3. When the data need refreshing.
 
-## Workflow and topics
-`family-office-client`; `wealth-planning`; `wealth-and-goals`. Three observed series: 13-week and 26-week bank discount quotes and CPI-U all-items NSA. Rate history covers 2024–2026; CPI inputs start in 2023 to calculate 2024 year-on-year changes. The narrower period keeps the initial project reproducible and does not support long-run regime claims.
+It excludes:
+- personal data and client records;
+- buy, sell or ranking advice;
+- early-sale prices, settlement, taxes, fees and FX;
+- reinvestment and rolling between bills;
+- funding-adequacy checks: dates are matched, amounts are not.
 
-## Sources and permissions
-Direct Treasury XML and BLS JSON snapshots, retrieved 27 October 2026, are included. Treasury dataset 015-DO-021 is listed as CC0 in Data.gov; BLS states its published data are public domain. Attribution and the exact source/permission basis appear in SOURCE_REGISTER.csv. No FRED, Yahoo, paid data, logos or third-party images are used.
+## Workflow and topics from the class vocabulary
+- Persona: `family-office-client`.
+- Workflow: `wealth-planning`.
+- Topic: `wealth-and-goals`.
+- Core concepts: `core:inflation`, `core:price` and `core:total-return`.
+- Group terms in `ontology.yml`: bank discount rate, real holding return, break-even inflation, purchasing power and the decomposition amounts.
 
-## Method and assumptions
-Use actual quote-to-maturity calendar days. Modeled price per $100 = 100 × (1 − decimal bank discount rate × days/360). Nominal return = 100/price − 1. Convert a user-entered effective annual inflation assumption with (1+inflation)^(days/365); divide nominal maturity proceeds by that factor. Purchase on quote date, fractional holdings and no costs are simplifying assumptions. Historical CPI is separate context, not a forecast or a point-in-time signal.
+## Proposed sources and permission checks
+- U.S. Treasury Daily Treasury Bill Rates (dataset 015-DO-021, XML). It is CC0 1.0 in its Data.gov metadata. It supplies the bank discount rates, coupon equivalents, maturity dates and CUSIPs of seven bill tenors.
+- BLS CPI-U series `CUUR0000SA0` (public API v2, JSON). BLS published data are public domain.
+
+Both are official, free and need no key. Snapshots are saved in `data/raw/`. `SOURCE_REGISTER.csv` and `evidence/source_review.md` record the terms and the reuse basis.
+
+## Method and key assumptions
+The holding period runs from the saved quote date to the bill's maturity date, in calendar days. Prices use the Treasury bank-discount formula. Purchasing power divides the maturity proceeds by an assumed inflation factor over the same days. The break-even rate is the assumption at which purchasing power is unchanged.
+
+Key assumptions:
+- purchase on the quote date, held to maturity, with no costs;
+- inflation is a stated assumption, not a forecast;
+- defaults of $100,000 and 3%.
+
+Formulas are in `README.md` and `calculations/method.md`.
 
 ## Views and interaction
-Four graphical views: date timeline, inflation sensitivity, discount-rate history and CPI history. Matching cards, a numerical purchasing-power decomposition and a same-period zero-interest benchmark support these views. Controls: principal, reference bill, optional cash-need date, annual inflation, a common calendar window and rate-series visibility. No rollover or post-maturity return is modeled. Sources, dates, formulas, limitations and the required disclaimer remain visible.
+- **Overview:** a payment-timing chart of all seven saved maturities against the payment dates. Next to it, the purchasing-power bridge (cash placed, interest, inflation effect, result) and the two reference bills side by side.
+- **Calendar:** month grids where the client adds up to twelve payments and sees the matching maturity for each.
+- **Scenarios:** purchasing power across inflation assumptions, with break-even rates.
+- **History:** rates and CPI over 12 months, 24 months or all saved data.
+- **Method:** formulas and sources.
+
+Controls: amount, inflation, reference bill, payment dates and type, history window. Copy and Print produce a discussion summary that ends with the disclaimer.
 
 ## Success criteria and risks
-Correct local display, deterministic rebuild, eight documented evaluations, separate arithmetic checks and normal/failure maintenance evidence. Main risks: confusing annual quotes with holding returns, treating CPI as personal or future inflation, stale data and settlement assumptions. Human independent checks and a fresh-chat handover must be completed before submission.
+**Success criteria:**
+- the page opens offline by double-click;
+- `data.js` rebuilds byte-identically from the saved inputs;
+- eight evaluations pass, with student checks against the sources;
+- a fresh assistant completes a normal and a failure maintenance task under human review.
 
-## Three substantive decisions and rejected alternative
-1. Direct official data: traceable observations and documented reuse basis.
-2. Same-period real-return calculation: prevents subtracting past annual inflation from a future short holding return.
-3. Manual reviewed maintenance: preserves an accepted version and avoids unsupported automatic-refresh claims.
-Rejected: a retirement-depletion simulator. Its long-run return, withdrawal and longevity assumptions would dilute this small project's data and maintenance focus.
+**Risks and controls:**
+- **Reading an annual quote as a holding return:** the page shows days and holding-period figures.
+- **Treating CPI as personal or future inflation:** CPI is history only; the scenario inflation is an assumption.
+- **Stale data:** dated banner and age limits.
+- **Reading a date match as enough cash:** the page states that only timing is matched.
+
+## Three substantive decisions and their reasons
+1. **Payment timing comes before purchasing power.** The Overview opens with the maturities against the payment dates, and the calendar uses all seven tenors of the latest quote date.
+   - *Reason:* for a reserve, missing a payment date costs more than a few basis points.
+   - *Reason:* the two reference bills alone left wide gaps. A payment on 2027-03-01 was 32 days after the 13-week maturity, while a saved 17-week bill matured 6 days before it.
+2. **Inflation over the same period as the holding.** The assumed annual rate is converted to the holding period, (1 + a)^(n/365), before dividing the proceeds.
+   - *Reason:* subtracting last year's CPI from an annualised bill rate mixes two periods and two conventions.
+   - *Reason:* a user-set assumption makes the uncertainty explicit.
+3. **Data update by `refresh.py`, released only after a person approves.**
+   - The script downloads and recalculates by the accepted method into a candidate folder. A review step checks that the candidate rebuilds exactly and keeps every field, then shows the changes with source links. Nothing replaces the accepted data until the data maintainer accepts.
+   - No scheduler runs it.
+   - *Reason:* quotes go stale within a week, so manual downloads were too slow and error-prone. Unattended publishing would let a malformed download reach the client page.
+
+## One rejected alternative and its reason
+**Ranking the bills or recommending a tenor** (for example "the 26-week bill pays more"). It was rejected for three reasons:
+- The right bill depends on each payment date and on how much cash must be ready, which only the client and advisor know.
+- A ranking would be investment advice.
+- A ranking would hide the timing risk the dashboard exists to show. A longer bill that matures after the payment has to be sold early at an unknown price.
+
+The dashboard therefore shows both reference bills side by side, with the same fields and no "best" label.

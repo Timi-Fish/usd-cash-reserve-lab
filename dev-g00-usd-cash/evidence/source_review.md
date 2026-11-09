@@ -19,4 +19,4 @@ https://www.bls.gov/regions/mid-atlantic/data/consumerpriceindexhistorical_us_ta
 https://www.bls.gov/news.release/cpi.htm
 
 ## Actual retrieval limitations
-Terminal requests to BLS HTML returned 403; BLS JSON downloaded successfully, and the official HTML pages were separately read through the web research tool. Treasury XML downloaded successfully after using the correct resource-center/data-chart-center URL. No access restriction was bypassed and no unseen data were claimed as checked.
+Terminal requests to BLS HTML returned 403; BLS JSON downloaded successfully, and the official HTML pages were separately read through the web research tool. Treasury XML downloaded successfully from the resource-center/data-chart-center URL used by `refresh.py`.

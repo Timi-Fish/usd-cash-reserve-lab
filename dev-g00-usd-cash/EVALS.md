@@ -1,19 +1,142 @@
-# Revision v2 evaluation record
+# Evaluation results
 
-2026-10-27. Operator: development assistant. Expected conditions were defined before execution in calculations/check_revision.mjs and the browser workflow. The current records below were rerun; files under evidence/v1/ are historical only. No student or human acceptance is implied.
+Eight checks, following section 7 of the assignment. Each has two routes:
+- **Assistant route:** scripts run by the development assistant.
+- **Student route:** a group member working from the official sources with visible formulas.
 
-| ID | Expected outcome / tolerance | Actual result | Status and evidence |
+Expected results and tolerances were set before any comparison. The version checked is the quote date in `data.js` (`summary.as_of`); scripts rerun after every release.
+
+| ID | Check | Assistant route | Student route |
 |---|---|---|---|
-| E1 Source and default consistency | Raw quote/date/maturity correspondence; original default outputs within $0.01. | Both reference dates and 94/185 day counts match the raw XML and calendar subtraction. Default real proceeds remain $100302.3470297988 / $100691.411825568. Discount summary concepts corrected to group terms. | Technical pass: calculation_checks.json, revision_checks.json. Student source review pending. |
-| E2 Cash timing | Before/on/after maturity and absent/invalid date states. No early-sale or gap return assumption. | Both tenors tested in logic suite. Actual browser inputs 2027-01-27/28/29, prior-quote date and invalid February 30 gave expected states; Clear restored unassessed. March 1 example reports 32 days early / 59 days late. | Pass: revision_checks.json, browser_observations.json, screenshots. |
-| E3 Scenario sensitivity | Inflation increase lowers real proceeds but not nominal. Zero inflation, deflation, exact break-even and near-zero formatting. | Real amount falls at 6%; nominal stays $101069. Deflation adjustment negative. Exact 13-week break-even displays approximately unchanged and 0.00%. | Pass: revision_checks.json, browser_observations.json. |
-| E4 Decomposition and cash | B+(N-B)-(N-R)=R within 1e-8 USD; zero-interest B/F over the same days; shared formula. | Identities pass for both tenors across -5%, 0%, 3%, 6%, 15%. Browser decomposition responds to 0% and -2%; switching to 26-week updates benchmark to 185 days. | Pass: revision_checks.json, browser_observations.json. |
-| E5 Invalid data and input | Stop for mismatched days/dates, duplicate/missing tenor/security, missing quotes and unit errors. Empty user input must hide old results. | All deliberate malformed-data fixtures rejected. Browser empty amount hides scenario results; invalid date does likewise. Maintenance failures produce no candidate. | Pass: revision_checks.json, maintenance_rehearsal.json, browser_observations.json. |
-| E6 Historical exploration | Same 12/24/all calendar bounds, null gaps, correct toggle behavior and exact-date readout. | 12 months = 2025-11 through 2026-10; 24 = 2024-11 through 2026-10; all = 2023-01 through 2026-10. October 2025 CPI remains missing; one hidden rate leaves one path; both hidden display a message. | Pass: revision_checks.json, browser_observations.json. |
-| E7 Age, maturity, usability | Device date affects warnings only; expired references historical. Desktop/mobile readable; keyboard text alternatives. | Age/lifecycle fixture tests pass; baseline model remains fixed. Actual desktop and 390×844 mobile reviewed; document width equals scroll width (390), including $100 million input. Chart/mobile sizing and singular-day grammar corrected during testing. | Logic and HTTP browser pass. Actual file-mode rendering NOT RUN. Screenshots and browser_observations.json. |
-| E8 Reproduction and maintenance | Rebuild from extracted sources equals delivered data; rerun normal/failure trials; distinguish human steps. | Clean-package result recorded in clean_reproduction.json. Normal candidate matches, two failure runs exit 1, baseline/original files preserved. | Technical evidence only. New fresh-context handover, student calculations, human file opening, non-builder trial and acceptance remain PENDING. |
+| E1 | Source match | Pass | Not run |
+| E2 | Calculation check | Pass | Not run |
+| E3 | Second calculation and boundary | Pass | Not run |
+| E4 | Financial interpretation | Pass | Not run |
+| E5 | Interaction | Pass | Not run |
+| E6 | Missing or invalid input | Pass | Not run |
+| E7 | Freshness and update | Pass | Not run |
+| E8 | Clean reproduction | Pass | Not run |
 
-## Execution boundaries
-`revision_checks.json` tests real inline functions in Node VM, not a rendered browser. `browser_observations.json` records actual UI interactions over loopback HTTP. A direct file:// browser opening was attempted but blocked by the tool's protocol policy. No HTTP or logic check is presented as that missing file-mode test. Another member must double-click the fully extracted index.html on their machine and record the result.
+## E1 Source match
+- **Purpose:** every saved observation equals the official source.
+- **Input:**
+  - `data.js`;
+  - `data/raw/treasury_<quote year>.xml` and `data/raw/cpi_2023_2026.json`;
+  - the Treasury Daily Treasury Bill Rates page for the quote year;
+  - the BLS CPI release linked on the Method tab.
+- **Expected:**
+  - Exact match for the 13-week and 26-week bank discount rates (2 decimals as published), their maturity dates and CUSIPs on the quote date.
+  - Exact match for the CPI-U index (3 decimals) of the saved month and of the same month a year earlier.
+- **Assistant route:** `calculations/verify.py` traced each rate, maturity date and day count to the raw XML field, and the CPI ratio to the raw JSON. Run on 2026-11-09 for quote date 2026-10-26: exact matches, pass.
+- **Student route:** a member reads the same values from the two web pages into sheet "1 Source match" of `evidence/independent_check.xlsx` and compares them with the Method tab.
+- **Evidence:** `evidence/calculation_checks.json`, `evidence/source_review.md` (a hand cross-check of three BLS index values), `evidence/independent_check.xlsx`.
 
-The final archive must retain the exact disclaimer, metadata, same-origin hosted-first/local fallback loader and lab-about section. No external market-data fetches, libraries, tracking or build dependencies were added.
+## E2 Calculation check
+- **Purpose:** the default 13-week result is correct.
+- **Input:**
+  - cash placed $100,000, 3% assumed inflation;
+  - the 13-week rate and dates from E1;
+  - the Overview figures.
+- **Expected:**
+  - Price per $100 within 1e-8.
+  - Nominal proceeds and purchasing power within $0.01, or ±$0.50 against the whole dollars shown on the page.
+  - Real return within 0.005 percentage points of the page.
+- **Assistant route:**
+  - `node dashboard/scripts/check-model.mjs`: the page's JavaScript reproduces all 12 saved results of both bills within 1e-9 (32 of 32 checks).
+  - `calculations/verify.py`: the price and real proceeds again in Decimal arithmetic (15 of 15).
+  - Both run on 2026-11-09, pass.
+- **Student route:** sheet "2 Calculation" recomputes P, N, F, R and the real return with visible Excel formulas from the E1 inputs. The member compares the results with the Overview.
+- **Evidence:** `evidence/model_checks.json`, `evidence/calculation_checks.csv`, `evidence/independent_check.xlsx`.
+
+## E3 Second calculation and boundary
+- **Purpose:** a second route, and the edges of the model, behave as documented.
+- **Input:** the 26-week reference; break-even inflation; zero rate with zero inflation; out-of-range inputs.
+- **Expected:**
+  - At the break-even rate, purchasing power equals the cash placed within $0.01.
+  - A 0% rate with 0% inflation returns the cash placed exactly.
+  - A 4% rate for 90 days gives a price of exactly 99.
+  - Cash of $0, cash above $100,000,000, and inflation below −5% or above 15% show a message and no result.
+  - Nominal proceeds do not change with inflation; purchasing power falls as inflation rises.
+- **Assistant route:** `check-model.mjs` (break-even, decomposition, inflation direction, the four rejections) and `verify.py` (boundary fixtures). Run 2026-11-09, pass.
+- **Student route:** sheet "3 Boundary" computes both bills' break-even rates with a formula. The member checks that purchasing power at that rate equals the cash placed, and compares the rates with the Scenarios tab.
+- **Evidence:** `evidence/model_checks.json`, `evidence/calculation_checks.json`, `evidence/independent_check.xlsx`.
+
+## E4 Financial interpretation
+- **Purpose:** the page leads a reader to correct conclusions.
+- **Input:** the Overview, Calendar and Scenarios tabs, with a payment date the tester chooses.
+- **Expected:**
+  - The tester names the maturity that reaches the payment and the days the cash waits.
+  - The tester says that a later bill would have to be sold early at an unknown price.
+  - The tester says that higher inflation lowers purchasing power, not the dollar proceeds.
+  - The tester calls no bill "best".
+- **Assistant route:**
+  - `check-model.mjs` checks the summary wording: the outcome at maturity, the payment-fit text, the line about sale before maturity, and the disclaimer last.
+  - Every view was read in headless Chrome at desktop and phone width.
+  - Run 2026-11-09, pass.
+- **Student route:** a member who did not build the page answers the three questions in `evidence/user_test.md` using only the page.
+- **Evidence:** `evidence/model_checks.json`, `evidence/user_test.md`.
+
+## E5 Interaction
+- **Purpose:** every control works in a normal browser opened by double-click.
+- **Input:** `index.html` beside `data.js`.
+- **Controls:**
+  - amount, inflation and reference bill;
+  - add, select, remove and clear payments;
+  - break-even buttons;
+  - history window and series switches;
+  - Copy summary and Print summary.
+- **Expected:**
+  - Each control updates every view that depends on it.
+  - No console error.
+  - Copy places the summary on the clipboard.
+  - Print shows only the summary.
+- **Assistant route:** headless Chrome loaded the page from `file://` and opened all five tabs at 1440 px and 390 px, with the example payment dates. It found no console errors or exceptions. Run 2026-11-09, pass.
+- **Student route:** the same member as E4 records the controls tried, including Copy and Print, in `evidence/user_test.md`.
+- **Evidence:** `evidence/screenshots/`, `evidence/user_test.md`.
+
+## E6 Missing or invalid input
+- **Purpose:** bad input stops with a clear message and never replaces accepted data.
+- **Input (in a throwaway copy):**
+  - a failed BLS request;
+  - quotes older than the accepted version;
+  - a CPI month not yet released;
+  - a candidate with a field removed;
+  - a candidate with a hand-edited value.
+- **Input (on the page):** an empty payment name, a rolled-over date such as 2027-02-30, a thirteenth payment, and a broken bill record.
+- **Expected:**
+  - The download and review steps print `STOP`, exit 1 and write or copy nothing.
+  - The unreleased CPI month is held back with a warning.
+  - Each page entry error names its form field.
+- **Assistant route:** `node tests/check_refresh.mjs` (44 of 44, including the basis-points setting stopping before any download) and `check-model.mjs` (32 of 32). Run 2026-11-09, pass.
+- **Student route:** Task B in `AGENT_TEST.md`: a fresh assistant meets an incompatible unit in a test copy.
+- **Evidence:** `evidence/refresh_checks.json`, `evidence/model_checks.json`, `AGENT_TEST.md`.
+
+## E7 Freshness and update
+- **Purpose:** the page states the age of its data, and an update follows the supervised process.
+- **Input:** the frozen 2026-10-26 data set at chosen dates; the live sources for Task A.
+- **Expected:**
+  - Quotes 7 days old are within the limit; 8 days old are flagged.
+  - A device date before the quote date is flagged.
+  - A matured reference is listed as historical.
+  - A refresh adds the newest observation without changing any field. A release happens only after a human accepts, and the old version stays restorable.
+- **Assistant route:** `check-model.mjs` and `tests/check_refresh.mjs` cover all four age states and the review, release, reject and restore steps. Run 2026-11-09, pass.
+- **Student route:** Task A in `AGENT_TEST.md` updates the live data with a fresh assistant, and the data maintainer decides.
+- **Evidence:** `evidence/model_checks.json`, `evidence/refresh_checks.json`, `AGENT_TEST.md`, `maintenance/release_log.csv`, `evidence/release_review.md`.
+
+## E8 Clean reproduction
+- **Purpose:** the package works from the ZIP alone.
+- **Input:** the submission ZIP, extracted into an empty folder on another computer.
+- **Expected:**
+  - `index.html` opens by double-click and shows data.
+  - `python3 calculations/rebuild.py --out candidate` gives a `candidate/data.js` byte-identical to `data.js`.
+  - `node tests/check_refresh.mjs` and `node dashboard/scripts/check-model.mjs` pass.
+  - In `dashboard/`, `npm ci && npm run build` writes an `index.html` byte-identical to the shipped one.
+- **Assistant route:** a copy packed by the same exclusion rules, with no `node_modules`, `dist` or working folders, was extracted into an empty folder on 2026-11-09. Results:
+  - 1.5 MB ZIP;
+  - `data.js` byte-identical after the rebuild;
+  - 32, 44 and 15 checks passed;
+  - the page rebuilt byte-identically with Node 24 and Python 3.14.
+
+  Pass.
+- **Student route:** a member repeats this on their own computer from the final ZIP and records the operating system and versions in `evidence/user_test.md`.
+- **Evidence:** this section and `evidence/user_test.md`.

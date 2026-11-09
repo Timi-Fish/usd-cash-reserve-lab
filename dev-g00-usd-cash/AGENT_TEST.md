@@ -1,14 +1,45 @@
-# Revision v2 maintenance tests
+# Supervised AI maintenance tests
 
-Date: 2026-10-27. Operator: development assistant in the current conversation. These tests were actually rerun against the revised exporter and saved candidate. They are not a new fresh-context trial and are not human-accepted.
+Both tests follow `SKILL.md` in a new assistant conversation, using the prompts in `maintenance/FRESH_CHAT_PROMPTS.md`. The operator is a group member in the data-maintainer role who did not write `SKILL.md`. Entries marked "—" are completed from the actual run.
 
-## Normal withheld-observation update
-Expected before execution: reveal genuine 2026-10-26 source records from a baseline cutoff of 2026-10-23; update rates, reference maturities, days and modeled proceeds together. Preserve the root candidate and original accepted project.
+## Task A Normal update
+| Item | Record |
+|---|---|
+| Date | — |
+| AI tool and capabilities | — |
+| Operator role | Data maintainer |
+| Files supplied | The project folder at the accepted version (quote date 2026-10-26, CPI 2026-09) |
+| Observation and source | Genuine newer observations: Treasury Daily Treasury Bill Rates after 2026-10-26 and any newly released BLS CPI-U month, downloaded live by `refresh.py` |
+| Exact prompt | Task A prompt in `maintenance/FRESH_CHAT_PROMPTS.md` |
+| Actions actually executed | — |
+| Manual interventions | — |
+| Candidate output files | — |
+| Three before/after comparisons | — |
+| One independent calculation | — |
+| Evaluation results after release | — |
+| Evidence paths | — |
+| Human decision | — |
 
-Actual: quote date advanced; 13-week discount 4.04% → 4.05%; 26-week 4.17% → 4.21%; 13-week days 90 → 94; default real proceeds $100286.70 → $100302.35. The updated candidate is byte-identical to this revision's root data.js. Changes in days reflect reference maturity changes, not a rolling model start. See evidence/maintenance_rehearsal.json and the two summary files.
+## Task B Failure and stopping
+| Item | Record |
+|---|---|
+| Date | — |
+| AI tool and capabilities | — |
+| Operator role | Data maintainer |
+| Test-copy input | A separate copy of the project folder whose `project.json` is replaced by `maintenance/invalid_unit_config.json` |
+| Problem introduced | `rate_unit` is `basis-points`, while the Treasury source publishes percent |
+| Expected response, set before testing | `refresh.py` prints `STOP: Incompatible input unit` and exits 1. No `candidate/` folder. `data.js` keeps its SHA-256. The assistant explains the unit conflict and asks for a corrected `project.json` without changing numbers or the method. |
+| Exact prompt | Task B prompt in `maintenance/FRESH_CHAT_PROMPTS.md` |
+| Actual response | — |
+| Tool actions | — |
+| Preservation of accepted data | — |
+| Evidence paths | — |
+| Human decision | — |
 
-## Failure trial
-Expected: incompatible rate_unit stops with no candidate data output and no change to the root file. Actual: exit 1, explicit incompatible-unit stop and no output. A separate missing-latest-quote-field input also exited 1 without output. Source and accepted files were preserved. Actual command/output records and hashes are in evidence/maintenance_rehearsal.json.
+## Instruction improvements and retests
+—
 
-## Independent routes and decisions
-The Decimal/source script and revision JavaScript suite were executed for this revision. These are AI-operated checks, not student independent calculations. Human accept/reject: PENDING. A fresh-context maintenance trial of the changed SKILL.md is NOT RUN. The prior fresh-context report is retained under evidence/v1/ and applies only to the earlier version. Use maintenance/FRESH_CHAT_PROMPTS.md to complete the student-supervised handover; append actual evidence, not a simulated transcript.
+## Remaining limitations
+- The assistant cannot judge whether a market move is genuine. The review flags rate or CPI moves above 0.50 percentage points, and the data maintainer compares them with the source pages before accepting.
+- Assistants that run without internet access need the maintainer to allow the download or to supply the three source files by hand (`--sources`). The run record says which route was used.
+- `maintenance/cpi_release_schedule.csv` needs next year's BLS release dates each December; the review flags the gap.
