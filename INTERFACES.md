@@ -12,6 +12,7 @@ Contracts between the parts of `bms5312-g09-usd-cash/`. Only cross-module bounda
 | `dashboard/` | `src/`, `dist/`; `npm run build` publishes `../index.html` | `data.js`, storage, network |
 | `dashboard/scripts/check-model.mjs` | `evidence/model_checks.json` | Everything else is read only |
 | `tests/check_refresh.mjs` | `evidence/refresh_checks.json` and an OS temp folder | Everything else is read only |
+| `tools/set_identity.py` | The ZIP next to the folder. With a new ID, a renamed copy: IDs replaced, `data.js` and the frozen test release rebuilt | Network; raw snapshots |
 
 ## data.js (read by every module)
 Exactly `window.DASHBOARD_DATA = {JSON};` and a newline, under 2 MB. `summary` follows the course contract (`reference/AGENT_GUIDE.md`); `summary.refresh` comes from `project.json`. `data` holds:
@@ -27,6 +28,9 @@ Exactly `window.DASHBOARD_DATA = {JSON};` and a newline, under 2 MB. `summary` f
 | `bill_ladder` | `schema` `usd-cash-reserve-lab/bill-ladder/v1`, `quote_date`, `access_date`, `freshness_days`, `bills` [{`tenor_weeks`, `cusip`, `maturity_date`, `days`, `discount_pct`, `coupon_equivalent_pct`}], `source` {`provider`, `dataset`, `url`, `fields`, `terms_url`, `permission_basis`} |
 
 Missing observations are null. A refresh changes values and adds dates; fields are never renamed or removed, and `tools/candidate.py review` stops on a removed field. The 13- and 26-week entries of `bill_ladder` equal `instruments` (`rebuild.py` raises otherwise).
+
+## Frozen test release
+`tests/fixtures/data_2026-10-26.js` is the 2026-10-26 release, and `tests/fixtures/inputs_2026-10-26/raw/` holds its raw inputs. `rebuild.py --input tests/fixtures/inputs_2026-10-26` with that file's `data.config` reproduces it byte for byte. `check_refresh.mjs` builds its lab from both. `check-model.mjs` uses the data set for date-dependent expectations. `set_identity.py` rebuilds it from those inputs when the ID changes. Releases never touch either.
 
 ## rebuild.py functions used by other modules
 - `check_config(config)`: raises `ValueError` on an unknown unit, refresh mode or cadence.

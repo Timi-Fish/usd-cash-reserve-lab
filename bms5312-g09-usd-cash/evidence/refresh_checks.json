@@ -2,6 +2,7 @@
   "date": "2026-11-09",
   "environment": "python3 -I subprocesses in a throwaway project copy; Node VM for ladder.js; no network",
   "frozen_fixture": "tests/fixtures/data_2026-10-26.js",
+  "frozen_inputs": "tests/fixtures/inputs_2026-10-26/raw/",
   "checks": [
     {
       "id": "offline refresh exits 0",
@@ -147,8 +148,8 @@
     },
     {
       "id": "review leaves the accepted data.js untouched",
-      "expected": "984283772ccbc4a46017d7ecb297681bf275b905c574e5cd92e13dff84f700f3",
-      "actual": "984283772ccbc4a46017d7ecb297681bf275b905c574e5cd92e13dff84f700f3",
+      "expected": "bb02f91595ad16276be6cbd7bf765a28470ecd2bc1866b64d17a1bc531d9e414",
+      "actual": "bb02f91595ad16276be6cbd7bf765a28470ecd2bc1866b64d17a1bc531d9e414",
       "pass": true
     },
     {

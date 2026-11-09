@@ -1,7 +1,8 @@
 // Maintenance checks: refresh.py offline, the candidate review / release / restore steps of tools/candidate.py, and
 // the payment-calendar logic in dashboard/src/ladder.js. Everything runs in a throwaway copy of the project ("lab")
-// whose accepted version is the frozen data set tests/fixtures/data_2026-10-26.js, so the checks do not depend on the
-// release in use. Deliberately broken inputs are marked FIXTURE. No network. The real project files are only read.
+// whose accepted version is the frozen 2026-10-26 release: tests/fixtures/data_2026-10-26.js and its raw inputs in
+// tests/fixtures/inputs_2026-10-26/raw/, so the checks do not depend on the release in use. Deliberately broken inputs
+// are marked FIXTURE. No network. The real project files are only read.
 // Run: node tests/check_refresh.mjs (Node 18+, Python 3.10+). Writes evidence/refresh_checks.json; exits 1 on a failure.
 import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path'; import vm from 'node:vm';
 import crypto from 'node:crypto'; import {spawnSync} from 'node:child_process'; import {fileURLToPath} from 'node:url';
@@ -23,11 +24,13 @@ const writeData = (file, payload) => fs.writeFileSync(file, 'window.DASHBOARD_DA
 const sha = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const python = (script, args) => spawnSync('python3', ['-I', script, ...args], {encoding: 'utf8'});
 
-// The lab: scripts and raw snapshots from the project; accepted data.js and project.json from the frozen fixture.
+// The lab: scripts from the project; raw snapshots, accepted data.js and project.json from the frozen release.
 const frozenFile = path.join(project, 'tests', 'fixtures', 'data_2026-10-26.js');
+const frozenInputs = path.join(project, 'tests', 'fixtures', 'inputs_2026-10-26', 'raw');
 const frozen = readData(frozenFile);
 const lab = path.join(tmp, 'lab');
-for (const item of ['refresh.py', 'calculations', 'maintenance', 'tools', 'data', 'SOURCE_REGISTER.csv']) fs.cpSync(path.join(project, item), path.join(lab, item), {recursive: true});
+for (const item of ['refresh.py', 'calculations', 'maintenance', 'tools', 'SOURCE_REGISTER.csv']) fs.cpSync(path.join(project, item), path.join(lab, item), {recursive: true});
+fs.cpSync(frozenInputs, path.join(lab, 'data', 'raw'), {recursive: true});
 fs.mkdirSync(path.join(lab, 'evidence'));
 fs.rmSync(path.join(lab, 'maintenance', 'release_log.csv'), {force: true});
 fs.copyFileSync(frozenFile, path.join(lab, 'data.js'));
@@ -166,7 +169,7 @@ check('calendar extends to the latest payment', () => L.calendarMonths(ladder, [
 
 fs.rmSync(tmp, {recursive: true, force: true});
 const report = {date: new Date().toISOString().slice(0, 10), environment: 'python3 -I subprocesses in a throwaway project copy; Node VM for ladder.js; no network',
-  frozen_fixture: 'tests/fixtures/data_2026-10-26.js', checks: rows, all_pass: rows.every(r => r.pass)};
+  frozen_fixture: 'tests/fixtures/data_2026-10-26.js', frozen_inputs: 'tests/fixtures/inputs_2026-10-26/raw/', checks: rows, all_pass: rows.every(r => r.pass)};
 fs.writeFileSync(path.join(project, 'evidence', 'refresh_checks.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({checks: rows.length, all_pass: report.all_pass, failures: rows.filter(r => !r.pass)}, null, 1));
 if (!report.all_pass) process.exit(1);

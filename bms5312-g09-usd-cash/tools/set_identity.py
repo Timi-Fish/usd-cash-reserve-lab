@@ -26,14 +26,14 @@ else:
  if target.exists():p.error('Target already exists; choose a clean destination to avoid overwrite')
  shutil.copytree(ROOT,target,ignore=shutil.ignore_patterns(*SKIP))
  for f in target.rglob('*'):
-  if not f.is_file() or 'evidence' in f.relative_to(target).parts or 'data/raw' in f.as_posix():continue
+  if not f.is_file() or {'evidence','raw'}&set(f.relative_to(target).parts):continue  # evidence and raw snapshots stay byte-identical
   if f.suffix in ['.md','.json','.html','.js','.yml','.csv']:
    s=f.read_text();s=s.replace(oldid,ident).replace(oldgroup+':',a.group+':')
    if f.name=='ontology.yml':s=s.replace('group: '+oldgroup,'group: '+a.group)
    f.write_text(s)
  for f in [target/'project.json',target/'maintenance/baseline_config.json',target/'maintenance/invalid_unit_config.json']:
   c=json.loads(f.read_text());c.update(dashboard_id=ident,group_id=a.group,identity_status='Group '+a.group+' · '+a.prefix);f.write_text(json.dumps(c,indent=2)+'\n')
- # The frozen test data set takes the new identity as well, rebuilt by the same route so it stays self-consistent.
+ # The frozen test release takes the new identity as well, rebuilt from its own frozen inputs so later releases cannot change it.
  fixture=target/'tests/fixtures/data_2026-10-26.js'
  fc=json.loads(fixture.read_text().split('=',1)[1].strip().removesuffix(';'))['data']['config']
  fc.update(dashboard_id=ident,group_id=a.group,identity_status='Group '+a.group+' · '+a.prefix)
@@ -42,7 +42,7 @@ else:
   shutil.copyfile(Path(tmp)/'data.js',target/'data.js')
   for n in ['quotes_normalized.csv','cpi_normalized.csv']:shutil.copyfile(Path(tmp)/n,target/'data'/n)
   (Path(tmp)/'fixture.json').write_text(json.dumps(fc,indent=2))
-  rebuild(target,Path(tmp)/'fixture','--config',str(Path(tmp)/'fixture.json'))
+  rebuild(target,Path(tmp)/'fixture','--input',str(target/'tests/fixtures/inputs_2026-10-26'),'--config',str(Path(tmp)/'fixture.json'))
   shutil.copyfile(Path(tmp)/'fixture'/'data.js',fixture)
  subprocess.run([sys.executable,str(target/'calculations/verify.py')],check=True)
 archive=target.parent/(ident+'.zip')
