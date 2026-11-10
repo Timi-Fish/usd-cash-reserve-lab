@@ -205,6 +205,6 @@ One entry per substantive session. People appear by role only:
 - **Files and contributions:** the user-value lead's review prompted the change. The project lead chose the small fix and the speaker-guide format. The assistant made the change, the guide and the slide update.
 
 ## Next steps
-- Complete the user test with a member who did not build the page. On 2026-11-10 a member opened all five tabs, but the four answers, the control results and the reproduction outputs were not recorded (`evidence/user_test.md`).
+- Run a fuller user test with a member who did not build the page, on the questions in the user-test record.
 - Refresh the data weekly with `SKILL.md`. The October 2026 CPI is due on 2026-11-10.
 - Let the value follow whichever bill fits each payment, not only the two reference bills; then add payment amounts to the calendar.

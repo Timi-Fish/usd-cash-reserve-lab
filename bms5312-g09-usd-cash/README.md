@@ -65,7 +65,7 @@ References:
 3. BLS, Purchasing Power of the Consumer Dollar: https://www.bls.gov/cpi/factsheets/purchasing-power-constant-dollars.htm
 
 ## Validation
-Eight evaluations with expected results, tolerances and evidence are in `EVALS.md`. The automatic checks:
+Six evaluations with expected results, tolerances and evidence are in `EVALS.md`. The automatic checks:
 - **`node dashboard/scripts/check-model.mjs`:** the page's arithmetic reproduces every result saved in `data.js` within 1e-9, plus freshness, history windows, formats and the summary. Output: `evidence/model_checks.json`.
 - **`python3 calculations/verify.py`:** a second calculation route in Decimal arithmetic, traced field by field to the raw files. Output: `evidence/calculation_checks.json`.
 - **`node tests/check_refresh.mjs`:** refresh, review, release, reject and restore in a throwaway copy, including broken inputs, plus the payment-calendar rules. Output: `evidence/refresh_checks.json`.

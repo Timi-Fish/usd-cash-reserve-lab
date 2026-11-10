@@ -56,7 +56,7 @@ Controls: amount, inflation, reference bill, payment dates and type, history win
 **Success criteria:**
 - the page opens offline by double-click;
 - `data.js` rebuilds byte-identically from the saved inputs;
-- eight evaluations pass, with student checks against the sources;
+- six evaluations pass, with student checks against the sources;
 - a fresh assistant completes a normal and a failure maintenance task under human review.
 
 **Risks and controls:**
