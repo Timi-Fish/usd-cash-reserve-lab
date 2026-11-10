@@ -9,7 +9,7 @@ This repository holds a university group project: an offline dashboard about U.S
 | The page | `bms5312-g09-usd-cash/index.html` with `data.js`, built from `bms5312-g09-usd-cash/dashboard/` (React and Salt); `npm run build` publishes it |
 | Data updates | `bms5312-g09-usd-cash/SKILL.md`: `refresh.py --out candidate`, then `tools/candidate.py review`, then a person accepts, then `release` |
 | Contracts between the parts | `INTERFACES.md` |
-| Group material, never in the ZIP | `group/`: `handoff/` for members, presentation notes, submission checklist, changelog, decisions, review |
+| Group material, never in the ZIP | `group/`: `handoff/` for members, `SPEAKER_GUIDE.pdf` (built by `speaker-guide/`), backup slides, submission checklist, changelog, decisions, review |
 | Course rules | `reference/AGENT_GUIDE.md` and `reference/CLASS_ONTOLOGY.yml`. They override this file |
 | The first dashboard version | git tag `original-v2` |
 

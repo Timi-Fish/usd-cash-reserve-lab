@@ -12,3 +12,5 @@ __pycache__/
 /*/previous/
 # Submission ZIPs that tools/set_identity.py writes next to the submission folder
 /*.zip
+# Intermediate page that group/speaker-guide/build_guide.py prints to SPEAKER_GUIDE.pdf
+/group/speaker-guide/guide.html

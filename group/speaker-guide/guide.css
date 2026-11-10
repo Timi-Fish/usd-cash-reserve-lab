@@ -1,0 +1,84 @@
+@page { size: A4 landscape; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font: 9.5pt/1.38 "Helvetica Neue", Arial, sans-serif; color: #14171c; background: #fff; }
+
+.page { width: 297mm; height: 210mm; padding: 10mm 12mm 7mm; display: flex; flex-direction: column; gap: 4mm;
+  overflow: hidden; break-after: page; }
+.page:last-child { break-after: auto; }
+h1, h3, .big { font-family: Georgia, "Times New Roman", serif; font-weight: 700; color: #14213d; }
+.kicker { font: 600 7.2pt/1.2 "Helvetica Neue", Arial, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+  color: #5B6472; }
+
+/* Header: speaker badge, title, timing, and the running-order strip */
+.head { display: grid; grid-template-columns: 14mm 1fr auto; gap: 4mm; align-items: center; padding-bottom: 3mm;
+  border-bottom: .4mm solid #1E3A66; }
+.head.plain { grid-template-columns: 1fr; }
+.badge { width: 14mm; height: 14mm; border-radius: 50%; background: #1E3A66; color: #fff;
+  font: 700 20pt/14mm Georgia, serif; text-align: center; }
+.ht h1 { font-size: 16pt; line-height: 1.15; margin: .8mm 0; }
+.meta { font: 7.8pt/1.3 Menlo, monospace; color: #5B6472; }
+.strip { display: flex; gap: 1.2mm; list-style: none; }
+.strip li { width: 24mm; padding: 1.4mm 1.8mm; border-radius: 1.5mm; background: #F1F4F8; font-size: 6.8pt;
+  line-height: 1.25; color: #5B6472; }
+.strip li b { display: block; color: #14213d; font-size: 7.4pt; }
+.strip li span { display: block; }
+.strip li i { font: normal 6.5pt Menlo, monospace; }
+.strip li.on { background: #1E3A66; color: #DCE5F3; }
+.strip li.on b { color: #fff; }
+
+/* Body: one capture with the steps beside it, or two captures with their steps underneath */
+main { flex: 1; min-height: 0; }
+main.one { display: grid; grid-template-columns: 1.62fr 1fr; gap: 7mm; }
+main.two { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+main.one > div, main.two > div { display: flex; flex-direction: column; gap: 3.5mm; min-height: 0; }
+.shot { position: relative; border: .3mm solid #D5DCE6; border-radius: 1.5mm; }
+.shot img { display: block; width: 100%; border-radius: 1.5mm; }
+.two .shot { align-self: center; }
+.two .shot img { width: auto; height: auto; max-width: 133mm; max-height: 84mm; }
+.two .say { font-size: 9.6pt; }
+.mark { position: absolute; border: .7mm solid #D93B1F; border-radius: 1.2mm; box-shadow: 0 0 0 .4mm rgba(255, 255, 255, .85); }
+.mark span { position: absolute; left: -3.2mm; top: -3.2mm; width: 6mm; height: 6mm; border-radius: 50%;
+  background: #D93B1F; color: #fff; font: 700 9pt/6mm "Helvetica Neue", Arial, sans-serif; text-align: center;
+  box-shadow: 0 0 0 .5mm #fff; }
+.mark.edge-x span { left: .8mm; }
+.mark.edge-y span { top: .8mm; }
+
+.steps { list-style: none; display: flex; flex-direction: column; }
+.steps li { display: grid; grid-template-columns: 15mm 1fr; gap: 2.5mm; padding: 1.8mm 0; border-top: .25mm solid #E1E6ED; }
+.steps li:first-child { border-top: 0; padding-top: 0; }
+.steps li.flag { background: #FFF4B8; border: .35mm dashed #8A6D00; border-radius: 1mm; padding: 1.8mm; margin-top: 1mm; }
+.when { font: 8pt/1.2 Menlo, monospace; color: #5B6472; }
+.when div { display: flex; flex-wrap: wrap; gap: .8mm; margin-top: 1mm; }
+.n { display: inline-block; width: 5mm; height: 5mm; border-radius: 50%; background: #D93B1F; color: #fff;
+  font: 700 7.5pt/5mm "Helvetica Neue", Arial, sans-serif; text-align: center; }
+.n.none { background: #C9D1DC; }
+.act { font-size: 8pt; line-height: 1.3; color: #5B6472; }
+.say { font-size: 10pt; line-height: 1.38; color: #14171c; margin-top: .6mm; }
+
+.asked { background: #F3F6FA; border-radius: 1.5mm; padding: 3mm 3.5mm; }
+.asked h3 { font-size: 10pt; margin-bottom: .5mm; }
+.asked dt { font-weight: 700; font-size: 8.3pt; margin-top: 1.6mm; color: #14213d; }
+.asked dd { font-size: 8.3pt; line-height: 1.35; color: #2B3240; }
+
+footer { display: flex; justify-content: space-between; font: 7pt Menlo, monospace; color: #8A93A1;
+  border-top: .25mm solid #E1E6ED; padding-top: 1.8mm; }
+
+/* Cover and questions pages */
+.cover { gap: 5mm; }
+.cover .big { font-size: 34pt; line-height: 1; }
+.lede { font-size: 12pt; color: #2B3240; }
+.cover .strip li { width: auto; flex: 1; font-size: 8.5pt; padding: 2.5mm 3mm; }
+.cover .strip li b { font-size: 9.5pt; }
+.cover .strip li i { font-size: 8pt; }
+.thread { border: .4mm solid #1E3A66; border-radius: 2mm; padding: 3.5mm 4.5mm; font-size: 11pt; line-height: 1.45;
+  background: #F7F9FC; }
+.thread b { color: #1E3A66; }
+main.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; }
+main.cols.wide { grid-template-columns: 1.6fr 1fr; }
+main.cols.three { grid-template-columns: 1.15fr 1fr 1fr; }
+main.cols h3 { font-size: 12pt; margin-bottom: 2.5mm; }
+.list { padding-left: 5mm; display: flex; flex-direction: column; gap: 2mm; font-size: 10pt; line-height: 1.4; }
+.qa dt { font-weight: 700; font-size: 9pt; margin-top: 2.4mm; color: #14213d; }
+.qa dt:first-child { margin-top: 0; }
+.qa dd { font-size: 9pt; line-height: 1.4; color: #2B3240; }

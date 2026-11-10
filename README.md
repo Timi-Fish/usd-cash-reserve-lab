@@ -24,7 +24,7 @@ Educational project. Not investment advice.
 ## Layout
 
 - `bms5312-g09-usd-cash/` is the submission folder: the page (`index.html`, `data.js`), sources, method, maintenance skill, evaluations and evidence. Start with `bms5312-g09-usd-cash/README.md`.
-- `group/` holds group material that is never submitted: tasks and prompts for members (`group/handoff/`), presentation notes, the submission checklist, the changelog, design decisions and an earlier review.
+- `group/` holds group material that is never submitted: tasks and prompts for members (`group/handoff/`), the speaker guide (`group/SPEAKER_GUIDE.pdf`, built from `group/speaker-guide/`), the backup slides, the submission checklist, the changelog, design decisions and an earlier review.
 - `reference/` holds the course's agent guide and class vocabulary.
 - `AGENTS.md` gives the rules for AI assistants working here, with an index of where the work is; `CLAUDE.md` points to it. `INTERFACES.md` lists the contracts between the parts.
 
