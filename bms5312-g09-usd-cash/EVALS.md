@@ -12,7 +12,7 @@ Expected results and tolerances were set before any comparison. The version chec
 | E2 | Calculation check | Pass | Pass |
 | E3 | Second calculation and boundary | Pass | Pass |
 | E4 | Financial interpretation | Pass | Not run |
-| E5 | Interaction | Pass | Not run |
+| E5 | Interaction | Pass | Partial |
 | E6 | Missing or invalid input | Pass | Pass |
 | E7 | Freshness and update | Pass | Pass |
 | E8 | Clean reproduction | Pass | Not run |
@@ -73,7 +73,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - `check-model.mjs` checks the summary wording: the outcome at maturity, the payment-fit text, the line about sale before maturity, and the disclaimer last.
   - Every view was read in headless Chrome at desktop and phone width.
   - Run 2026-11-10, pass.
-- **Student route:** a member who did not build the page answers the four questions in `evidence/user_test.md` using only the page.
+- **Student route:** not run. On 2026-11-10 a group member opened the page in Chrome on macOS but recorded no answers to the four questions in `evidence/user_test.md`; whether they took part in building the page was not confirmed.
 - **Evidence:** `evidence/model_checks.json`, `evidence/user_test.md`.
 
 ## E5 Interaction
@@ -91,7 +91,7 @@ Expected results and tolerances were set before any comparison. The version chec
   - Copy places the summary on the clipboard.
   - Print shows only the summary.
 - **Assistant route:** headless Chrome loaded the page from `file://` and opened all five tabs at 1440 px and 390 px, with the example payment dates. It found no console errors or exceptions. Run 2026-11-10, pass.
-- **Student route:** the same member as E4 records the controls tried, including Copy and Print, in `evidence/user_test.md`.
+- **Student route:** partial. The same member opened all five tabs with no error reported; the other controls, including Copy and Print, were not recorded (`evidence/user_test.md`).
 - **Evidence:** `evidence/screenshots/`, `evidence/user_test.md`.
 
 ## E6 Missing or invalid input
@@ -139,5 +139,5 @@ Expected results and tolerances were set before any comparison. The version chec
   - the page opened from `file://` with no console errors.
 
   Pass.
-- **Student route:** a member repeats this on their own computer from the final ZIP and records the operating system and versions in `evidence/user_test.md`.
+- **Student route:** not run; the member recorded no commands or outputs. The teammate's assistant reran the rebuild and the three check suites in a copy on 2026-11-10: `data.js` byte-identical, 15, 32 and 44 checks passed (`evidence/user_test.md`).
 - **Evidence:** this section and `evidence/user_test.md`.

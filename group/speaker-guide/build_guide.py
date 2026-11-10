@@ -95,9 +95,9 @@ SPEAKERS = [
               'byte, and one downloads and checks an update. Nothing is released until a person accepts it. The main '
               'risk: there is no scheduler, so if nobody refreshes for a week, the banner says "Review required".',
               False),
-             ('4:35', [], 'No click. To update after the user test: swap in the tester\'s finding.',
+             ('4:35', [], 'No click.',
               'A teammate\'s AI-assisted review found that the chart shows seven bills while the value uses two, so the '
-              'chart now names the two reference bills.', True),
+              'chart now names the two reference bills.', False),
              ('4:47', [3], 'Click Overview to finish.',
               'Our next step: let the value follow whichever bill fits each payment, not only the two reference bills. '
               'Thank you.', False)]),
@@ -212,8 +212,7 @@ def cover():
     read = [
         'Red numbers on the screenshot: what to click or point at, in this order.',
         'Grey line: what the driver does. Black text: what you say.',
-        'The time on the left is when the step starts.',
-        'Yellow: update it if the user test comes back.']
+        'The time on the left is when the step starts.']
     who = [
         'Give each part to the member who did the work behind it: the Excel check for Speaker 3, the data update or '
         'the failure test for Speaker 4.',
