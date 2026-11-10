@@ -22,7 +22,7 @@ Accepted files were not replaced. No release, acceptance, commit, push or public
 - Ran the existing bundled Node by its full path against `dashboard/scripts/check-model.mjs`: 32 checks, all_pass true, failures empty.
 - Ran `python3 calculations/verify.py` again: 15 checks, all_pass true.
 - Final saved quote date: 2026-11-06; CPI: 2026-09. index.html was not edited and reads the released data.js. No browser inspection was performed.
-- One independent manual calculation: Not run. The Decimal verifier is an automated second calculation route, not a manual independent calculation.
+- One independent manual calculation: done separately in Task C, the student's Excel check of the same released data (`evidence/independent_check.xlsx`). The Decimal verifier is an automated second calculation route.
 - No Task B execution or edits. No commit, push or publication. Packaging excludes candidate, previous and caches.
 
 
