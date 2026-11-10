@@ -82,7 +82,7 @@ export function PaymentTimeline({ladder, payments, bill}) {
           {monthStarts(start, end).map(day => <span key={day} style={{left: at(day)}}>{monthLabel(day)}</span>)}
         </div>
       </div>
-      <p className="ladder-note">Bars run from the saved quote date, {ladder.quoteDate}, to each bill’s maturity; lines mark the payment dates, solid for the next one.</p>
+      <p className="ladder-note">Bars run from the saved quote, {ladder.quoteDate}, to each maturity. The navy 13-week and mid-blue 26-week bars are the reference bills valued below; pale bars show timing only.</p>
       <dl className="timing-facts">
         <div><dt><span className={`swatch ${next.type}`} />Next payment</dt><dd>{next.date}<span>{next.label}</span></dd></div>
         <div><dt>Nearest maturity before it</dt><dd>{cells.nearest}</dd></div>

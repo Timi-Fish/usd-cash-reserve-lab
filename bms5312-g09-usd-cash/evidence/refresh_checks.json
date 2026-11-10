@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "environment": "python3 -I subprocesses in a throwaway project copy; Node VM for ladder.js; no network",
   "frozen_fixture": "tests/fixtures/data_2026-10-26.js",
   "frozen_inputs": "tests/fixtures/inputs_2026-10-26/raw/",

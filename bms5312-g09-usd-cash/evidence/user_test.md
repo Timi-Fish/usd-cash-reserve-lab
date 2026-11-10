@@ -38,4 +38,5 @@ A group member who did not build the page opens the final ZIP on their own compu
 | Python and Node versions | — |
 
 ## Feedback and resulting change
-—
+- **AI-assisted review by the user-value lead, 2026-11-10** (not the non-builder test above). The Calendar and the timing chart match payments across seven maturities, but the purchasing-power figures use only the 13- or 26-week reference bill, so a new user may think the value follows the matched bill.
+- **Change:** the timing chart's caption now names the navy 13-week and mid-blue 26-week bars as the reference bills valued below, and says the pale bars show timing only. Letting the value follow the matched bill is the next step in `AI_LOG.md`.
