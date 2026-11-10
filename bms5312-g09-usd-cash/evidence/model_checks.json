@@ -151,13 +151,13 @@
       "pass": true
     },
     {
-      "id": "full window",
+      "id": "full window starts at the first plotted month",
       "expected": [
-        "2023-01",
+        "2024-01",
         "2026-10"
       ],
       "actual": [
-        "2023-01",
+        "2024-01",
         "2026-10"
       ],
       "pass": true

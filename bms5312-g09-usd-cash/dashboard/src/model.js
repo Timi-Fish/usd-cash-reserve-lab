@@ -93,7 +93,9 @@ export function freshness(dash, today) {
 export function historyWindow(dash, choice) {
   const rateMonths = dash.rates.dates.map(date => isoDate(dayNumber(date)).slice(0, 7));
   const end = Math.max(...rateMonths.map(monthIndex), ...dash.cpi.dates.map(monthIndex));
-  const first = Math.min(monthIndex(rateMonths[0]), monthIndex(dash.cpi.dates[0]));
+  // "All saved" starts at the first month either chart can plot. CPI levels before that only feed the first year-on-year rates.
+  const firstYoy = dash.cpi.dates[dash.cpi.yoy_pct.findIndex(v => v !== null)];
+  const first = Math.min(monthIndex(rateMonths[0]), monthIndex(firstYoy));
   const start = choice === 'all' ? first : end - Number(choice) + 1;
   const rates = new Map(rateMonths.map((m, i) => [m, {date: dash.rates.dates[i], bill13: dash.rates.bill13[i], bill26: dash.rates.bill26[i]}]));
   const cpi = new Map(dash.cpi.dates.map((m, i) => [m, {level: dash.cpi.levels[i], yoy: dash.cpi.yoy_pct[i]}]));

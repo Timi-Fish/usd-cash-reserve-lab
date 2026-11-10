@@ -61,7 +61,7 @@ check('rejects CPI metadata that disagrees with the series', () => broken(d => {
 const windowOf = choice => { const w = historyWindow(fixed, choice); return [w.start, w.end, w.rows.length]; };
 check('12-month window', () => windowOf('12'), ['2025-11', '2026-10', 12]);
 check('24-month window', () => windowOf('24'), ['2024-11', '2026-10', 24]);
-check('full window', () => windowOf('all').slice(0, 2), ['2023-01', '2026-10']);
+check('full window starts at the first plotted month', () => windowOf('all').slice(0, 2), ['2024-01', '2026-10']);
 check('October 2025 CPI stays missing', () => historyWindow(fixed, '24').rows.find(r => r.month === '2025-10').cpi.level, null);
 check('the newest month has no CPI yet', () => historyWindow(fixed, '12').rows.at(-1).cpi, null);
 const status = date => { const f = freshness(fixed, day(date)); return [f.state, f.matured.map(q => q.name)]; };
