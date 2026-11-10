@@ -187,7 +187,24 @@ One entry per substantive session. People appear by role only:
   These led to the `SKILL.md` changes recorded in `AGENT_TEST.md`.
 - **Files and contributions:** `AGENT_TEST.md`, `evidence/task_a_operations.md`, `evidence/task_b_operations.md`, `evidence/release_review.md`, `maintenance/release_log.csv`, `evidence/independent_check.xlsx` and the E1–E3 student routes in `EVALS.md`. Members who did not write `SKILL.md` ran Task A and the Excel check; the project lead ran Task B. The assistants ran the commands and drafted the records; the people made every decision.
 
+## 2026-11-10: Feedback on the two layers, and the speaker guide
+- **Tool:** Claude Code desktop app; an independent AI reviewer in a separate context.
+- **Goal and supplied files:** act on the user-value lead's AI-assisted review and prepare the speaker material. Supplied: the review note, and a speaker guide from another course as a format example.
+- **Prompt summary:**
+  - Say which screen the note refers to and how to fix it without crowding the layout.
+  - Check whether the 13- and 26-week bills are the ones most used.
+  - Rewrite the script as one page per speaker, on the screen they present, with the clicks numbered.
+- **Decisions and reasons:**
+  - Value keeps using two reference bills and timing seven maturities; the chart caption now names the reference bills. Letting the value follow the matched bill would change the model, the checks and the evidence the night before the talk, so it is the next step.
+  - The talk presents the page as a benchmark for a payment reserve. Which bill to buy, and anything beyond the reserve, stays with the advisor.
+- **Executed:** the caption in `PaymentTimeline.jsx` changed, `index.html` was rebuilt and the checks rerun; the screenshots were recaptured; `group/SPEAKER_GUIDE.pdf` was built from replayed clicks; the backup slides were updated.
+- **Errors and concerns tested, and how they were checked:**
+  1. **An unsupported claim.** The assistant first said the 13- and 26-week bills were the most used. Treasury auction results for August to October 2026 showed six tenors with similar volumes; the 13-week bill was 17.1% and the 26-week 14.7% of the bills sold. The claim was withdrawn. The Federal Reserve's H.15 release and FRED (DTB3, DTB6) confirm them as the published 3-month and 6-month reference maturities, which is the reason now given.
+  2. **A wrong caption draft.** The independent reviewer found that the first draft said "two dark bars", while only the 13-week bar is dark and bar colours do not follow the selected bill. The final caption names navy and mid-blue.
+  3. **A framing that conflicted with the reserve's purpose.** "If the bills do not beat inflation, move to other assets" was rejected. The money is for payments due in months, so liquidity comes first; below the break-even rate (4.17% for the 13-week bill) it keeps its purchasing power.
+- **Files and contributions:** the user-value lead's review prompted the change. The project lead chose the small fix and the speaker-guide format. The assistant made the change, the guide and the slide update.
+
 ## Next steps
 - The user test (E4, E5) by a member who did not build the page has not run yet; the questions are in `evidence/user_test.md`. The student route of the clean reproduction (E8) has not run either.
 - Refresh the data weekly with `SKILL.md`. The October 2026 CPI is due on 2026-11-10.
-- Add payment amounts to the calendar, so it shows whether the cash covers each payment.
+- Let the value follow whichever bill fits each payment, not only the two reference bills; then add payment amounts to the calendar.
